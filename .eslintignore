@@ -1,0 +1,7 @@
+/build/
+/config/
+/dist/
+/.out/
+/*.js
+/tests/unit/coverage/
+/stories/*.stories.js
