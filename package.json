@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "homepage": "https://gloriajun.github.io/glria-vuejs-ui/",
   "description": "UI components for Vue.js based on Bootstrap",
+  "main": "dist/gvu.common.js",
+  "unpkg": "dist/gvu.umd.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gloriaJun/glria-vuejs-ui"
+  },
   "author": "Gloria Jun<pureainu@gmail.com>",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target wc --name gvu",
+    "build": "vue-cli-service build --target lib --name gvu ./src/main.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",
