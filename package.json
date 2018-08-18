@@ -19,24 +19,26 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
-    "@storybook/addons": "^3.4.10",
-    "@storybook/vue": "^3.4.10",
+    "@storybook/addon-actions": "^4.0.0-alpha.16",
+    "@storybook/addon-console": "^1.0.4",
+    "@storybook/addon-links": "^4.0.0-alpha.16",
+    "@storybook/addons": "^4.0.0-alpha.16",
+    "@storybook/vue": "^4.0.0-alpha.16",
     "@vue/cli-plugin-babel": "^3.0.0",
     "@vue/cli-plugin-eslint": "^3.0.0",
     "@vue/cli-plugin-unit-jest": "^3.0.0",
     "@vue/cli-service": "^3.0.0",
     "@vue/eslint-config-airbnb": "^3.0.1",
     "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "babel-preset-vue": "^2.0.2",
+    "gh-pages": "^1.2.0",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.17",
-    "@storybook/addon-actions": "^3.4.10",
-    "@storybook/addon-links": "^3.4.10"
+    "vue-template-compiler": "^2.5.17"
   }
 }

@@ -1,4 +1,5 @@
 # glria-vuejs-ui
+UI components for Vue.js based on Bootstrap
 
 ## Project setup
 ```
