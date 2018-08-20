@@ -1,7 +1,11 @@
+@charset "utf-8";
+
 // override bootstrap variables
 @import "variables";
 // vendors
 @import "vendors";
+// normalize
+@import "normalize";
 // mixins
 @import "mixins";
 // components

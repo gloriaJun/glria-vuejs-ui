@@ -1,6 +1,10 @@
-// /** Buttons **/
-// export { default as VuButton } from './Button';
-//
+export { default as VuButton } from './Buttons';
+
+export default {
+};
+
+// export { default as VuButton } from './Buttons';
+
 // /** Others **/
 // export { default as VuAvatar } from './Avatar';
 // export { default as VuFooter } from './Footer';

@@ -1,0 +1,10 @@
+*{
+  outline: none;
+}
+
+// input
+input {
+  &:invalid, &:required {
+    box-shadow:none;
+  }
+}

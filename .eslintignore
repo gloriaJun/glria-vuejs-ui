@@ -5,3 +5,4 @@
 /*.js
 /tests/unit/coverage/
 /stories/*.stories.js
+*.stories.js

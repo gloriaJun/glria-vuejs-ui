@@ -2,8 +2,9 @@ import './styles/index.scss';
 
 import * as components from './components';
 
-const Gvu = {
+const VuComponent = {
   install(Vue, options = {}) {
+    console.log(options);
     // plugin
     // Vue.use(VeeValidate, {
     //   events: 'input|change|blur',
@@ -35,7 +36,7 @@ const Gvu = {
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(Gvu);
+  window.Vue.use(VuComponent);
 }
 
-export default Gvu;
+export default VuComponent;
