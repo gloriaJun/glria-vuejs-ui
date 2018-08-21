@@ -6,7 +6,7 @@ import {
   select,
 } from '@storybook/addon-knobs';
 
-import { COLOR_TYPES, SIZES } from '@/utils/constants';
+import { COLOR_TYPES, SIZES } from '../constants';
 
 storiesOf('Components|Buttons', module)
   .addDecorator(VueInfoAddon)
@@ -57,7 +57,9 @@ storiesOf('Components|Buttons', module)
           :round="${round}"
           :circle="${circle}"
           :disabled="${disabled}"
-          @click="onClick">A</vu-button>
+          @click="onClick">
+          <vu-icon icon="check"></vu-icon>Check
+        </vu-button>
       `,
       methods: {
         onClick: (e) => action('click button')(e),

@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.vu-icon {
+
+  /* by color */
+  @each $color, $value in $theme-colors {
+    &.icon-#{$color} {
+      color: $value;
+    }
+  } // end of color type
+}

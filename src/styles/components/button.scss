@@ -3,6 +3,10 @@
 .vu-button {
   @extend .btn;
 
+  .vu-icon:first-child {
+    margin-right: .1875em;
+  }
+
   &.btn-round {
     border-radius: $vu-border-radius-lg;
   }

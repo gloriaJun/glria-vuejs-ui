@@ -25,9 +25,6 @@ export const POSITIONS = Object.freeze({
 
 export const SIZES = Object.freeze({
   DEFAULT: '',
-  // X_LARGE: 'xl',
   LARGE: 'lg',
-  // MEDIUM: 'md',
   SMALL: 'sm',
-  // X_SMALL: 'xs',
 });

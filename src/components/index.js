@@ -1,4 +1,5 @@
 export { default as VuButton } from './Buttons';
+export { default as VuIcon } from './Icon';
 
 export default {
 };

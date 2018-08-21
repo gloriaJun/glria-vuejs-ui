@@ -1,4 +1,22 @@
-import { COLOR_TYPES, SIZES } from '../utils/constants';
+export const STATUS_TYPES = Object.freeze({
+  INFO: 'info',
+  SUCCESS: 'success',
+  WARNING: 'warning',
+  ERROR: 'danger',
+});
+
+export const COLOR_TYPES = Object.assign({
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  LIGHT: 'light',
+  DARK: 'dark',
+}, STATUS_TYPES);
+
+export const SIZES = Object.freeze({
+  DEFAULT: '',
+  LARGE: 'lg',
+  SMALL: 'sm',
+});
 
 /**
  * @mixin
@@ -10,6 +28,7 @@ export default {
      */
     color: {
       type: String,
+      default: COLOR_TYPES.PRIMARY,
       validator: value => Object.values(COLOR_TYPES).indexOf(value) > -1,
     },
     /**

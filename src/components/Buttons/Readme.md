@@ -17,4 +17,7 @@
 <iframe height='265' scrolling='no' title='gvu-button-style' src='//codepen.io/gloriaJun/embed/VGYvMa/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/VGYvMa/'>gvu-button-style</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+#### with icon
+<iframe height='265' scrolling='no' title='gvu-button-with-icon' src='//codepen.io/gloriaJun/embed/xabRbp/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/xabRbp/'>gvu-button-with-icon</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
