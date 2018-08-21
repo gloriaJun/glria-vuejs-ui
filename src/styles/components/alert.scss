@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.vu-alert {
+
+  /* by color */
+  @each $color, $value in $theme-colors {
+    &.alert-#{$color} {
+      color: $value;
+    }
+  } // end of color type
+}
