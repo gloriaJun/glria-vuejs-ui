@@ -1,16 +1,21 @@
 {
-  "name": "glria-vuejs-ui",
+  "name": "@gloriajun/gvu",
   "version": "0.1.0",
   "homepage": "https://gloriajun.github.io/glria-vuejs-ui/",
   "description": "UI components for Vue.js based on Bootstrap",
   "main": "dist/gvu.common.js",
   "unpkg": "dist/gvu.umd.min.js",
+  "files": [
+    "dist",
+    "src",
+    "public"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/gloriaJun/glria-vuejs-ui"
   },
   "author": "Gloria Jun<pureainu@gmail.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "vue-cli-service build --target lib --name gvu ./src/main.js",
     "lint": "vue-cli-service lint",
