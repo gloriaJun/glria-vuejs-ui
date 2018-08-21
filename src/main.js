@@ -2,7 +2,7 @@ import './styles/index.scss';
 
 import * as components from './components';
 
-const VuComponent = {
+const Gvu = {
   install(Vue, options = {}) {
     console.log(options);
     // plugin
@@ -36,7 +36,7 @@ const VuComponent = {
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VuComponent);
+  window.Vue.use(Gvu);
 }
 
-export default VuComponent;
+export default Gvu;

@@ -4,11 +4,12 @@ import { setDefaults } from 'storybook-addon-vue-info';
 import { withKnobs } from '@storybook/addon-knobs/vue';
 
 import Vue from 'vue';
-import VuComponent from '../src/main';
+import Gvu from '../src/main';
 
-Vue.use(VuComponent);
+Vue.use(Gvu);
 
 setOptions({
+  addonPanelInRight: true,
   hierarchyRootSeparator: /\|/,
 });
 
@@ -19,8 +20,8 @@ setDefaults({
 addDecorator(withKnobs);
 
 // automatically import all files ending in *.stories.js
-// const req = require.context('../stories', true, /.stories.js$/);
-const req = require.context('../stories', true, /index.stories.js$/);
+const req = require.context('../stories', true, /.stories.js$/);
+// const req = require.context('../stories', true, /index.stories.js$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }

@@ -6,6 +6,7 @@ export const STATUS_TYPES = Object.freeze({
 });
 
 export const COLOR_TYPES = Object.assign({
+  DEFAULT: '',
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   LIGHT: 'light',

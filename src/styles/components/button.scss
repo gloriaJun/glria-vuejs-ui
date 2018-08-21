@@ -2,4 +2,14 @@
 
 .vu-button {
   @extend .btn;
+
+  &.btn-round {
+    border-radius: $vu-border-radius-lg;
+  }
+  &.btn-circle {
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: $vu-border-radius-xl;
+    padding: 0;
+  }
 }

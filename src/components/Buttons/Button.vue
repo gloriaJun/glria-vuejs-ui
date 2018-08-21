@@ -2,40 +2,68 @@
   <button
     v-bind="$attrs"
     :class="elClasses"
-    class="vu-button">
+    class="vu-button"
+    @click="onClick">
     <slot></slot>
   </button>
 </template>
 
 <script>
-import { COLOR_TYPES, SIZES } from '@/utils/constants';
+import typeProps from '../../mixins/typeProps';
 
 export default {
   name: 'VuButton',
+  mixins: [typeProps],
   props: {
-    color: {
-      type: String,
-      default: COLOR_TYPES.PRIMARY,
-      validator: value => Object.values(COLOR_TYPES).indexOf(value) > -1,
-
+    /**
+     * block button style
+     */
+    block: {
+      type: Boolean,
+      default: false,
     },
-    size: {
-      type: String,
-      default: SIZES.DEFAULT,
-      validator: value => Object.values(SIZES).indexOf(value) > -1,
+    /**
+     * outline button style
+     */
+    outline: {
+      type: Boolean,
+      default: false,
     },
-    outline: Boolean,
+    /**
+     * round button style
+     */
+    round: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * circle button style
+     */
+    circle: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     elClasses() {
+      const color = this.color ? this.color : 'primary';
       return [
-        `btn-${this.outline ? 'outline-' : ''}${this.color}`,
-        this.size ? `btn-${this.size}` : '',
+        `btn-${this.outline ? 'outline-' : ''}${color}`,
+        this.size && `btn-${this.size}`,
+        { 'btn-block': this.block },
+        { 'btn-round': this.round },
+        { 'btn-circle': this.circle },
       ];
+    },
+  },
+  methods: {
+    /**
+     * @event click
+     * @param event
+     */
+    onClick(event) {
+      this.$emit('click', event);
     },
   },
 };
 </script>
-
-<style scoped>
-</style>

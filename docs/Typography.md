@@ -1,3 +1,13 @@
-Qui adipisicing officia voluptate cillum duis magna eu esse. Officia velit do tempor veniam exercitation ullamco irure. Reprehenderit laborum aliquip ipsum dolore ullamco. Consequat irure commodo culpa id nostrud. Aute et officia esse cillum amet commodo consequat nulla amet aute sint elit proident. Incididunt sunt tempor in ullamco ea eiusmod quis mollit occaecat ea. Sint minim eu mollit occaecat cupidatat velit sunt aliqua reprehenderit do minim anim magna dolore.
+## Headings
 
-Aute fugiat nulla eu cillum dolore proident eu nisi sint minim veniam. Sunt velit aliqua ullamco quis qui sint aliqua incididunt irure dolor sint nulla commodo qui. Eu nisi pariatur Lorem dolore id aute occaecat adipisicing. Consectetur cupidatat magna magna aute anim eu non officia Lorem esse. Pariatur exercitation id velit anim id laborum dolore laboris esse est in anim dolor. Aute ea in et laboris culpa voluptate laboris ipsum nisi.
+All HTML headings, `<h1> through <h6>`, are available.
+```html
+<div>
+  <h1>h1. heading</h1>
+  <h2>h2. heading</h2>
+  <h3>h3. heading</h3>
+  <h4>h4. heading</h4>
+  <h5>h5. heading</h5>
+  <h6>h6. heading</h6>
+</div>
+```
