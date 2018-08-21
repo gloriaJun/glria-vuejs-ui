@@ -24,7 +24,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build",
+    "styleguide:build": "vue-cli-service styleguidist:build --dest doc-dist",
     "deploy": "gh-pages -d dist",
     "publish": "npm login;npm publish --access public"
   },

@@ -1,0 +1,35 @@
+language: node_js
+node_js:
+- "10"
+
+branches:
+  only:
+    - master
+
+install:
+  - npm install
+
+before_install:
+  - 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
+
+before_script:
+  - git config user.name "gloria"
+  - git config user.email "pureainu@gmail.com"
+  - sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
+
+cache:
+  directories:
+  - "node_modules"
+
+stages:
+- doc
+- deploy
+jobs:
+  include:
+    - stage: doc
+      script:
+        - npm run styleguide:build
+
+    - stage: deploy
+      script:
+        - npm run build
