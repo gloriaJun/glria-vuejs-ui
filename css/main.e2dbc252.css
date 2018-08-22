@@ -2,11 +2,7 @@
  * Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
-.fa,
-.fas,
-.far,
-.fal,
-.fab {
+.fa, .fab, .fal, .far, .fas {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -17,7 +13,7 @@
 
 .fa-lg {
   font-size: 1.33333em;
-  line-height: 0.75em;
+  line-height: .75em;
   vertical-align: -.0667em; }
 
 .fa-xs {
@@ -76,7 +72,7 @@
   line-height: inherit; }
 
 .fa-border {
-  border: solid 0.08em #eee;
+  border: .08em solid #eee;
   border-radius: .1em;
   padding: .2em .25em .15em; }
 
@@ -86,79 +82,68 @@
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left,
-.fas.fa-pull-left,
-.far.fa-pull-left,
-.fal.fa-pull-left,
-.fab.fa-pull-left {
+.fa.fa-pull-left, .fab.fa-pull-left, .fal.fa-pull-left, .far.fa-pull-left, .fas.fa-pull-left {
   margin-right: .3em; }
 
-.fa.fa-pull-right,
-.fas.fa-pull-right,
-.far.fa-pull-right,
-.fal.fa-pull-right,
-.fab.fa-pull-right {
+.fa.fa-pull-right, .fab.fa-pull-right, .fal.fa-pull-right, .far.fa-pull-right, .fas.fa-pull-right {
   margin-left: .3em; }
 
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear; }
+  -webkit-animation: a 2s infinite linear;
+          animation: a 2s infinite linear; }
 
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
-  animation: fa-spin 1s infinite steps(8); }
+  -webkit-animation: a 1s infinite steps(8);
+          animation: a 1s infinite steps(8); }
 
-@-webkit-keyframes fa-spin {
+@-webkit-keyframes a {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
 
-@keyframes fa-spin {
+@keyframes a {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
 
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg); }
+          transform: rotate(90deg); }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
-  transform: rotate(180deg); }
+          transform: rotate(180deg); }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
-  transform: rotate(270deg); }
+          transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-  -webkit-transform: scale(-1, 1);
-  transform: scale(-1, 1); }
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1); }
 
 .fa-flip-vertical {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(1, -1);
-  transform: scale(1, -1); }
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1); }
+
+.fa-flip-horizontal.fa-flip-vertical, .fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)"; }
 
 .fa-flip-horizontal.fa-flip-vertical {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(-1, -1);
-  transform: scale(-1, -1); }
+  -webkit-transform: scale(-1);
+          transform: scale(-1); }
 
-:root .fa-rotate-90,
-:root .fa-rotate-180,
-:root .fa-rotate-270,
-:root .fa-flip-horizontal,
-:root .fa-flip-vertical {
+:root .fa-flip-horizontal, :root .fa-flip-vertical, :root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270 {
   -webkit-filter: none;
   filter: none; }
 
@@ -170,8 +155,7 @@
   vertical-align: middle;
   width: 2em; }
 
-.fa-stack-1x,
-.fa-stack-2x {
+.fa-stack-1x, .fa-stack-2x {
   left: 0;
   position: absolute;
   text-align: center;
@@ -186,8 +170,6 @@
 .fa-inverse {
   color: #fff; }
 
-/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-readers do not read off random characters that represent icons */
 .fa-500px:before {
   content: "\F26E"; }
 
@@ -3642,36 +3624,36 @@ readers do not read off random characters that represent icons */
   width: auto; }
 
 @font-face {
-  font-family: 'Font Awesome 5 Brands';
+  font-family: "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
   src: url(fonts/fa-brands-400.e8019d50.eot);
   src: url(fonts/fa-brands-400.e8019d50.eot?#iefix) format("embedded-opentype"), url(fonts/fa-brands-400.6814d0e8.woff2) format("woff2"), url(fonts/fa-brands-400.da408238.woff) format("woff"), url(fonts/fa-brands-400.fdf44bc4.ttf) format("truetype"), url(img/fa-brands-400.83e6c29f.svg#fontawesome) format("svg"); }
 
 .fab {
-  font-family: 'Font Awesome 5 Brands'; }
+  font-family: "Font Awesome 5 Brands"; }
 
 @font-face {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 400;
   src: url(fonts/fa-regular-400.e6c93cb4.eot);
   src: url(fonts/fa-regular-400.e6c93cb4.eot?#iefix) format("embedded-opentype"), url(fonts/fa-regular-400.8d9ab84b.woff2) format("woff2"), url(fonts/fa-regular-400.dad90637.woff) format("woff"), url(fonts/fa-regular-400.8d220c79.ttf) format("truetype"), url(img/fa-regular-400.ba2a91dc.svg#fontawesome) format("svg"); }
 
 .far {
-  font-family: 'Font Awesome 5 Free';
   font-weight: 400; }
 
 @font-face {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 900;
   src: url(fonts/fa-solid-900.ea363ed4.eot);
   src: url(fonts/fa-solid-900.ea363ed4.eot?#iefix) format("embedded-opentype"), url(fonts/fa-solid-900.b75b4bfe.woff2) format("woff2"), url(fonts/fa-solid-900.2d0415fa.woff) format("woff"), url(fonts/fa-solid-900.132e9759.ttf) format("truetype"), url(img/fa-solid-900.de1d242d.svg#fontawesome) format("svg"); }
 
-.fa,
-.fas {
-  font-family: 'Font Awesome 5 Free';
+.fa, .far, .fas {
+  font-family: "Font Awesome 5 Free"; }
+
+.fa, .fas {
   font-weight: 900; }
 
 /*!
