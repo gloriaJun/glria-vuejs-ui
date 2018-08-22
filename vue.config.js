@@ -1,10 +1,12 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const path = require('path');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  css: {
-    extract: {filename: 'styles.css'}
-  },
-  productionSourceMap: false,
+  // css: {
+  //   extract: {filename: 'styles.css'},
+  // },
+  // productionSourceMap: false,
   // configureWebpack: {
   //   plugins: [
   //     new CopyWebpackPlugin([

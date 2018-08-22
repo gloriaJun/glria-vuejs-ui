@@ -15,7 +15,7 @@ storiesOf('Components|Icon', module)
     const type = select('type', ['fas', 'fab'], 'fas');
     const size = select('size', SIZES, '');
     const color = select('color', COLOR_TYPES, 'dark');
-    const animation = select('animation',  ['spin', 'pulse'], '');
+    const animation = select('animation',  ['', 'spin', 'pulse'], '');
     const icon = text('icon', 'home');
 
     return ({

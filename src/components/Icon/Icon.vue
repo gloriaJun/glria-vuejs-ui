@@ -46,6 +46,7 @@ export default {
     animation: {
       type: String,
       validator: value => [
+        '',
         'spin',
         'pulse',
       ].indexOf(value) > -1,

@@ -1,6 +1,6 @@
 {
   "name": "@gloriajun/gvu",
-  "version": "0.1.2-m0.3",
+  "version": "0.1.2-m0.5",
   "homepage": "https://gloriajun.github.io/glria-vuejs-ui/",
   "description": "UI components for Vue.js based on Bootstrap",
   "license": "MIT",
@@ -35,7 +35,6 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-env": "^7.0.0-rc.1",
-    "storybook-addon-vue-info": "^0.6.0",
     "@storybook/addon-actions": "^4.0.0-alpha.16",
     "@storybook/addon-knobs": "4.0.0-alpha.16",
     "@storybook/addon-links": "^4.0.0-alpha.16",
@@ -44,18 +43,20 @@
     "@storybook/vue": "^4.0.0-alpha.16",
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
-    "@vue/cli-service": "^3.0.0-rc.5",
     "@vue/cli-plugin-unit-jest": "^3.0.0",
+    "@vue/cli-service": "^3.0.0-rc.5",
     "@vue/eslint-config-airbnb": "^3.0.1",
     "@vue/test-utils": "^1.0.0-beta.20",
-    "vue-cli-plugin-styleguidist": "^0.0.4",
     "babel-jest": "^23.0.1",
     "babel-preset-vue": "^2.0.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "gh-pages": "^1.2.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "storybook-addon-vue-info": "^0.6.0",
+    "vue-cli-plugin-styleguidist": "^0.0.4",
     "vue-template-compiler": "^2.5.17"
   }
 }

@@ -1,3 +1,5 @@
+import '@fortawesome/fontawesome-free/js/all.min';
+
 import './styles/index.scss';
 
 import * as components from './components';
