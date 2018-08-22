@@ -35,10 +35,13 @@ module.exports = {
       }
     }
   },
+  require: [
+    path.join(__dirname, 'src/styles/index.scss'),
+  ],
   // webpackConfig: {
   //   // custom config goes here
   // }
   defaultExample: true,
   showUsage: true,
-  showCode: true,
+  // showCode: true,
 };

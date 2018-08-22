@@ -1,3 +1,27 @@
-#### Basic
-<iframe height='265' scrolling='no' title='gvu-icon' src='//codepen.io/gloriaJun/embed/RYNGKQ/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/RYNGKQ/'>gvu-icon</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+### Full Example Code
+[![Edit Gvu-Icon](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/k2pyypr1xo?module=%2Fsrc%2FApp.vue)
+
+### Basic
+###### color 
+```jsx
+<div style="font-size:2rem;">
+  <h4>Color</h4>
+  <vu-icon icon="user"></vu-icon>
+  <vu-icon color="secondary" icon="user"></vu-icon>
+  <vu-icon color="info" icon="user"></vu-icon>
+  <vu-icon color="success" icon="user"></vu-icon>
+  <vu-icon color="warning" icon="user"></vu-icon>
+  <vu-icon color="danger" icon="user"></vu-icon>
+  <vu-icon color="dark" icon="user"></vu-icon>
+</div>
+```
+
+###### size
+```jsx
+<div style="font-size:2rem;">
+  <h4>Size</h4>
+  <vu-icon icon="envelope" size="sm"></vu-icon>
+  <vu-icon icon="envelope"></vu-icon>
+  <vu-icon icon="envelope" size="lg"></vu-icon>
+</div>
+```

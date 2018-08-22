@@ -10,7 +10,7 @@
 import typeProps, { COLOR_TYPES } from '../../mixins/typeProps';
 
 export default {
-  name: 'VuIcon',
+  name: 'VuAlert',
   mixins: [typeProps],
   props: {
     /**

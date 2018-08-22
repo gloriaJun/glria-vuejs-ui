@@ -1,23 +1,148 @@
-#### Basic
-<iframe height='265' scrolling='no' title='gvu-button-basic' src='//codepen.io/gloriaJun/embed/wEBBzQ/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/wEBBzQ/'>gvu-button-basic</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+### Full Example Code
+[![Edit Gvu-Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/13m6xr01m7?module=%2Fsrc%2FApp.vue)
 
-#### Button Type
-<iframe height='265' scrolling='no' title='gvu-button-type' src='//codepen.io/gloriaJun/embed/mGyyRx/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/mGyyRx/'>gvu-button-type</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+### Basic
+###### normal
+```jsx
+<div>
+    <vu-button>primary</vu-button>
+    <vu-button color="secondary">secondary</vu-button>
+    <vu-button color="info">info</vu-button>
+    <vu-button color="success">success</vu-button>
+    <vu-button color="warning">warning</vu-button>
+    <vu-button color="danger">danger</vu-button>
+    <vu-button color="light">light</vu-button>
+    <vu-button color="dark">dark</vu-button>
+</div>
+```
 
-#### Outline
-<iframe height='265' scrolling='no' title='gvu-button-outline' src='//codepen.io/gloriaJun/embed/jvEPVM/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/jvEPVM/'>gvu-button-outline</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+###### disabled
+```jsx
+<div>
+    <vu-button disabled>primary</vu-button>
+    <vu-button color="secondary" disabled>secondary</vu-button>
+    <vu-button color="info" disabled>info</vu-button>
+    <vu-button color="success" disabled>success</vu-button>
+    <vu-button color="warning" disabled>warning</vu-button>
+    <vu-button color="danger" disabled>danger</vu-button>
+    <vu-button color="light" disabled>light</vu-button>
+    <vu-button color="dark" disabled>dark</vu-button>
+</div>
+```
 
-#### Size
-<iframe height='265' scrolling='no' title='gvu-button-outline' src='//codepen.io/gloriaJun/embed/NLPPpJ/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/NLPPpJ/'>gvu-button-outline</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
 
-#### Style
-<iframe height='265' scrolling='no' title='gvu-button-style' src='//codepen.io/gloriaJun/embed/VGYvMa/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/VGYvMa/'>gvu-button-style</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+### Button Type
+```jsx
+<div>
+  <vu-button type="button">Button (default)</vu-button>
+  <vu-button type="submit">Submit</vu-button>
+  <vu-button type="reset">Reset</vu-button>
+</div>
+```
 
-#### with icon
-<iframe height='265' scrolling='no' title='gvu-button-with-icon' src='//codepen.io/gloriaJun/embed/xabRbp/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gloriaJun/pen/xabRbp/'>gvu-button-with-icon</a> by gloria (<a href='https://codepen.io/gloriaJun'>@gloriaJun</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+### Outline
+###### normal
+```jsx
+<div>
+    <vu-button outline>primary</vu-button>
+    <vu-button color="secondary" outline>secondary</vu-button>
+    <vu-button color="info" outline>info</vu-button>
+    <vu-button color="success" outline>success</vu-button>
+    <vu-button color="warning" outline>warning</vu-button>
+    <vu-button color="danger" outline>danger</vu-button>
+    <vu-button color="light" outline>light</vu-button>
+    <vu-button color="dark" outline>dark</vu-button>
+</div>
+```
 
+###### disabled
+```jsx
+<div>
+    <vu-button outline disabled>primary</vu-button>
+    <vu-button color="secondary" outline disabled>secondary</vu-button>
+    <vu-button color="info" outline disabled>info</vu-button>
+    <vu-button color="success" outline disabled>success</vu-button>
+    <vu-button color="warning" outline disabled>warning</vu-button>
+    <vu-button color="danger" outline disabled>danger</vu-button>
+    <vu-button color="light" outline disabled>light</vu-button>
+    <vu-button color="dark" outline disabled>dark</vu-button>
+</div>
+```
+
+### Size
+```jsx
+<div>
+  <div>
+    <vu-button size="sm">Small Size</vu-button>
+    <vu-button>Default Size</vu-button>
+    <vu-button size="lg">Large Size</vu-button>
+  </div>
+  <hr/>
+  
+  <div>
+    <vu-button block>Block Button</vu-button>
+  </div>
+</div>
+```
+
+### Style
+###### round
+```jsx
+<div>
+    <vu-button round>primary</vu-button>
+    <vu-button color="secondary" round>secondary</vu-button>
+    <vu-button color="info" round>info</vu-button>
+    <vu-button color="success" round>success</vu-button>
+    <vu-button color="warning" round>warning</vu-button>
+    <vu-button color="danger" round>danger</vu-button>
+    <vu-button color="light" round>light</vu-button>
+    <vu-button color="dark" round>dark</vu-button>
+</div>
+```
+
+###### circle 
+```jsx
+<div>
+    <vu-button circle><vu-icon icon="user"></vu-icon></vu-button>
+    <vu-button color="secondary" circle>
+      <vu-icon icon="check"></vu-icon>
+    </vu-button>
+    <vu-button color="info" circle>
+      <vu-icon icon="envelope"></vu-icon>
+    </vu-button>
+    <vu-button color="success" circle>
+      <vu-icon icon="home"></vu-icon>
+    </vu-button>
+    <vu-button color="warning" circle>
+      <vu-icon icon="key"></vu-icon>
+    </vu-button>
+    <vu-button color="danger" circle> 
+      <vu-icon icon="paste"></vu-icon>
+    </vu-button>
+    <vu-button color="light" circle> 
+      <vu-icon icon="lock"></vu-icon>
+    </vu-button>
+    <vu-button color="dark" circle>  
+      <vu-icon icon="globe"></vu-icon>
+    </vu-button>
+</div>
+```
+
+
+### with icon
+```jsx
+<div>
+  <vu-button>
+    <vu-icon icon="user"></vu-icon>User Add
+  </vu-button>
+  <vu-button color="secondary" outline>
+    <vu-icon icon="check"></vu-icon>Check
+  </vu-button>
+  <vu-button color="info" round>
+    <vu-icon icon="envelope"></vu-icon>Write
+  </vu-button>
+  <vu-button color="success" round outline>
+    <vu-icon icon="home"></vu-icon>Home
+  </vu-button>
+</div>
+```
