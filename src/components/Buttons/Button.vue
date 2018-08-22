@@ -20,7 +20,7 @@ export default {
      */
     color: {
       type: String,
-      default: colorUtility.COLORS.PRIMARY,
+      default: 'primary',
       validator: value => colorUtility.isColor(value),
     },
     /**

@@ -3,14 +3,14 @@
 ### Basic
 ```jsx
 <div>
-    <vu-alert color="primary">A simple alert</vu-alert>
-    <vu-alert color="secondary">A simple alert</vu-alert>
-    <vu-alert color="info">A simple alert</vu-alert>
-    <vu-alert color="success">A simple alert</vu-alert>
-    <vu-alert color="warning">A simple alert</vu-alert>
-    <vu-alert color="danger">A simple alert</vu-alert>
-    <vu-alert color="light">A simple alert</vu-alert>
-    <vu-alert color="dark">A simple alert</vu-alert>
+    <vu-alert color="primary">A simple primary alert</vu-alert>
+    <vu-alert color="secondary">A simple secondary alert</vu-alert>
+    <vu-alert color="info">A simple info alert</vu-alert>
+    <vu-alert color="success">A simple success alert</vu-alert>
+    <vu-alert color="warning">A simple warning alert</vu-alert>
+    <vu-alert color="danger">A simple danger alert</vu-alert>
+    <vu-alert color="light">A simple light alert</vu-alert>
+    <vu-alert color="dark">A simple dark alert</vu-alert>
 </div>
 ```
 

@@ -20,12 +20,8 @@ jobs:
   - stage: document
     script:
       - npm run styleguide:build
-    deploy:
-      provider: pages
-      skip_cleanup: true
-      github_token: $GITHUB_TOKEN
-      local_dir: node_modules/vue-cli-plugin-styleguidist/styleguide
-      on:
-        branch: gh-pages
-
-
+      - cd node_modules/vue-cli-plugin-styleguidist/styleguide
+      - git init
+      - git add -A
+      - git commit -m 'deploy'
+      - git push -f https://${GITHUB_TOKEN}github.com/gloriaJun/glria-vuejs-ui.git master:gh-pages

@@ -10,7 +10,7 @@ export default {
      */
     color: {
       type: String,
-      default: colorUtility.COLORS.PRIMARY,
+      default: 'primary',
       validator: value => colorUtility.isColor(value),
     },
     /**
@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     hasIcon() {
-      return this.showIcon && this.iconName;
+      return (this.showIcon && this.iconName) || this.icon;
     },
     iconName() {
       return this.icon ? this.icon : colorUtility.statusColorIcon(this.color);
