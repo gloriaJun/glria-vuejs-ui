@@ -7,25 +7,27 @@ branches:
     - master
 
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s
-  - export PATH="$HOME/.yarn/bin:$PATH"
-  - yarn -v
   - git config user.name "gloria"
   - git config user.email "pureainu@gmail.com"
 
 install:
-  - yarn install
+  - npm run install
 
 script:
-  - yarn build
-  - yarn styleguide:build
-
-after_success:
+  - npm run styleguide:build
   - gh-pages -d node_modules/vue-cli-plugin-styleguidist/styleguide
 
-deploy:
-  provider: npm
-  email: pureainu@gmail.com
-  api_key: $NPM_TOKEN
-  on:
-    tags: false
+jobs:
+  include:
+  - stage: npm release
+    script:
+      - echo "Deploying to npm ..."
+      - npm run build
+    deploy:
+      provider: npm
+      email: pureainu@gmail.com
+      api_key: $NPM_TOKEN
+      skip_cleanup: true
+      on:
+        tags: true
+
