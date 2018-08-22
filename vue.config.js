@@ -1,11 +1,13 @@
-// const path = require('path');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  // css: {
-  //   extract: {filename: 'styles.css'},
-  // },
+  baseUrl: '.',
+  css: {
+    extract: {
+      filename: '[name].[contenthash:8].css',
+      chunkFilename: '[name].[id].[contenthash:8].css'
+    }
+  }
   // productionSourceMap: false,
   // configureWebpack: {
   //   plugins: [
