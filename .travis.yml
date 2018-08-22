@@ -10,6 +10,8 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s
   - export PATH="$HOME/.yarn/bin:$PATH"
   - yarn -v
+  - git config user.name "gloria"
+  - git config user.email "pureainu@gmail.com"
 
 install:
   - yarn install
@@ -19,16 +21,12 @@ script:
   - yarn styleguide:build
 
 after_success:
-  - yarn deploy
+  - gh-pages -d /home/travis/build/gloriaJun/glria-vuejs-ui/node_modules/vue-cli-plugin-styleguidist/styleguide
   - npm publish
-#before_script:
-#  - git config user.name "gloria"
-#  - git config user.email "pureainu@gmail.com"
-#  #- sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
-#  - yarn install
-#
-#script:
-#  - yarn styleguide:build
-#  - yarn build
-#
-#
+
+deploy:
+  provider: npm
+  email: pureainu@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: false
