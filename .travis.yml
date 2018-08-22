@@ -21,8 +21,7 @@ script:
   - yarn styleguide:build
 
 after_success:
-  - gh-pages -d /home/travis/build/gloriaJun/glria-vuejs-ui/node_modules/vue-cli-plugin-styleguidist/styleguide
-  - npm publish
+  - gh-pages -d node_modules/vue-cli-plugin-styleguidist/styleguide
 
 deploy:
   provider: npm

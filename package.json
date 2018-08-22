@@ -24,19 +24,18 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build --dest doc-dist",
-    "deploy": "gh-pages -d dist",
-    "publish": "npm login;npm publish --access public"
+    "styleguide:build": "vue-cli-service styleguidist:build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
-    "storybook-addon-vue-info": "^0.6.0",
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-env": "^7.0.0-rc.1",
-    "@fortawesome/fontawesome-free": "^5.2.0",
+    "storybook-addon-vue-info": "^0.6.0",
     "@storybook/addon-actions": "^4.0.0-alpha.16",
     "@storybook/addon-knobs": "4.0.0-alpha.16",
     "@storybook/addon-links": "^4.0.0-alpha.16",
