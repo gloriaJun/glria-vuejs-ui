@@ -6,22 +6,26 @@ branches:
   only:
     - master
 
-before_install:
-  - git config user.name "gloria"
-  - git config user.email "pureainu@gmail.com"
-  - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-
 install:
   - npm install
 
 jobs:
   include:
   - stage: npm publish
+    before_script:
+      - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
     script:
       - npm run build
       - npm publish
   - stage: document
     script:
       - npm run styleguide:build
-      - gh-pages -d node_modules/vue-cli-plugin-styleguidist/styleguide
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      local_dir: node_modules/vue-cli-plugin-styleguidist/styleguide
+      on:
+        branch: gh-pages
+
 
