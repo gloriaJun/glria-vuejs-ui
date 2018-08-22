@@ -7642,7 +7642,7 @@ input[type="button"].btn-block {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem; }
 
-.badge {
+.badge, .vu-badge {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
@@ -7652,10 +7652,10 @@ input[type="button"].btn-block {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem; }
-  .badge:empty {
+  .badge:empty, .vu-badge:empty {
     display: none; }
 
-.btn .badge, .vu-button .badge {
+.btn .badge, .vu-button .badge, .btn .vu-badge, .vu-button .vu-badge {
   position: relative;
   top: -1px; }
 
@@ -10979,7 +10979,7 @@ a.text-dark:hover, a.text-dark:focus {
     min-width: 992px !important; }
   .navbar {
     display: none; }
-  .badge {
+  .badge, .vu-badge {
     border: 1px solid #000000; }
   .table {
     border-collapse: collapse !important; }
