@@ -7,21 +7,29 @@
 </template>
 
 <script>
-import typeProps, { COLOR_TYPES } from '../../mixins/typeProps';
+import colorUtility from '../../utils/color';
+import sizeUtility from '../../utils/size';
 
 export default {
   name: 'VuIcon',
-  mixins: [typeProps],
   props: {
     /**
      * The color for the button.
      */
     color: {
       type: String,
-      validator: value => Object.values(COLOR_TYPES).indexOf(value) > -1,
+      validator: value => colorUtility.isColor(value),
+    },
+    /**
+     * The size for the button.
+     */
+    size: {
+      type: String,
+      validator: value => sizeUtility.isSizes(value),
     },
     /**
      * icon package
+     * - fas, fab
      */
     pack: {
       type: String,
@@ -29,6 +37,17 @@ export default {
       validator: value => [
         'fas',
         'fab',
+      ].indexOf(value) > -1,
+    },
+    /**
+     * icon animation
+     * - spin, pulse
+     */
+    animation: {
+      type: String,
+      validator: value => [
+        'spin',
+        'pulse',
       ].indexOf(value) > -1,
     },
     /**
@@ -47,6 +66,7 @@ export default {
         this.pack,
         `fa-${this.icon}`,
         this.size && `fa-${this.size}`,
+        this.animation && `fa-${this.animation}`,
       ];
     },
   },

@@ -9,12 +9,27 @@
 </template>
 
 <script>
-import typeProps from '../../mixins/typeProps';
+import colorUtility from '../../utils/color';
+import sizeUtility from '../../utils/size';
 
 export default {
   name: 'VuButton',
-  mixins: [typeProps],
   props: {
+    /**
+     * The color for the button.
+     */
+    color: {
+      type: String,
+      default: colorUtility.COLORS.PRIMARY,
+      validator: value => colorUtility.isColor(value),
+    },
+    /**
+     * The size for the button.
+     */
+    size: {
+      type: String,
+      validator: value => sizeUtility.isSizes(value),
+    },
     /**
      * block button style
      */

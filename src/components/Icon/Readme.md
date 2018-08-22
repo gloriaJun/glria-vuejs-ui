@@ -5,7 +5,6 @@
 ###### color 
 ```jsx
 <div style="font-size:2rem;">
-  <h4>Color</h4>
   <vu-icon icon="user"></vu-icon>
   <vu-icon color="secondary" icon="user"></vu-icon>
   <vu-icon color="info" icon="user"></vu-icon>
@@ -19,9 +18,16 @@
 ###### size
 ```jsx
 <div style="font-size:2rem;">
-  <h4>Size</h4>
   <vu-icon icon="envelope" size="sm"></vu-icon>
   <vu-icon icon="envelope"></vu-icon>
   <vu-icon icon="envelope" size="lg"></vu-icon>
+</div>
+```
+
+### animation 
+```jsx
+<div style="font-size:2rem;">
+  <vu-icon icon="spinner" animation="spin"></vu-icon>
+  <vu-icon icon="spinner" animation="pulse"></vu-icon>
 </div>
 ```

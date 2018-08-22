@@ -1,53 +1,55 @@
 <template>
-   <span
-     :class="elClasses"
-     class="vu-alert">
-     <i :class="iconClasses"></i>
-  </span>
+  <div
+    v-if="active"
+    :class="classes"
+    class="vu-alert">
+
+    <vu-icon
+      v-if="hasIcon"
+      :icon="iconName"
+      size="lg"></vu-icon>
+
+    <div class="alert-content">
+      <h4
+        v-if="title"
+        class="alert-heading">{{ title }}</h4>
+      <slot></slot>
+    </div>
+
+    <vu-button
+        v-if="closable"
+        class="close"
+        @click="handleClose">
+      <span>&times;</span>
+    </vu-button>
+
+  </div>
 </template>
 
 <script>
-import typeProps, { COLOR_TYPES } from '../../mixins/typeProps';
+import messageMixin from '../../mixins/messageMixin';
 
 export default {
   name: 'VuAlert',
-  mixins: [typeProps],
+  mixins: [messageMixin],
   props: {
     /**
-     * The color for the button.
+     * close button show or not
      */
-    color: {
-      type: String,
-      validator: value => Object.values(COLOR_TYPES).indexOf(value) > -1,
-    },
-    /**
-     * icon package
-     */
-    pack: {
-      type: String,
-      default: 'fas',
-      validator: value => [
-        'fas',
-        'fab',
-      ].indexOf(value) > -1,
-    },
-    /**
-     * icon name
-     */
-    icon: String,
+    closable: Boolean,
   },
   computed: {
-    elClasses() {
+    classes() {
       return [
-        this.color && `icon-${this.color}`,
+        `alert-${this.color}`,
+        { 'alert-dismissible': this.closable },
       ];
     },
-    iconClasses() {
-      return [
-        this.pack,
-        `fa-${this.icon}`,
-        this.size && `fa-${this.size}`,
-      ];
+  },
+  methods: {
+    handleClose() {
+      this.active = false;
+      this.$emit('close');
     },
   },
 };

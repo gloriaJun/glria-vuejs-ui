@@ -1,11 +1,14 @@
 @charset "utf-8";
 
 .vu-alert {
+  @extend .alert;
+  display: flex;
 
-  /* by color */
-  @each $color, $value in $theme-colors {
-    &.alert-#{$color} {
-      color: $value;
-    }
-  } // end of color type
+  > .vu-icon {
+    margin-right: .7rem;
+  }
+
+  > .vu-button.close:hover {
+    background-color: inherit;
+  }
 }
