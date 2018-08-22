@@ -6,30 +6,29 @@ branches:
   only:
     - master
 
-install:
-  - npm install
-
 before_install:
-  - 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - yarn -v
 
-before_script:
-  - git config user.name "gloria"
-  - git config user.email "pureainu@gmail.com"
-  - sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
+install:
+  - yarn install
 
-cache:
-  directories:
-  - "node_modules"
+script:
+  - yarn build
+  - yarn styleguide:build
 
-stages:
-- doc
-- deploy
-jobs:
-  include:
-    - stage: doc
-      script:
-        - npm run styleguide:build
-
-    - stage: deploy
-      script:
-        - npm run build
+after_success:
+  - yarn deploy
+  - npm publish
+#before_script:
+#  - git config user.name "gloria"
+#  - git config user.email "pureainu@gmail.com"
+#  #- sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
+#  - yarn install
+#
+#script:
+#  - yarn styleguide:build
+#  - yarn build
+#
+#
