@@ -9,25 +9,19 @@ branches:
 before_install:
   - git config user.name "gloria"
   - git config user.email "pureainu@gmail.com"
+  - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
 
 install:
-  - npm run install
-
-script:
-  - npm run styleguide:build
-  - gh-pages -d node_modules/vue-cli-plugin-styleguidist/styleguide
+  - npm install
 
 jobs:
   include:
-  - stage: npm release
+  - stage: npm publish
     script:
-      - echo "Deploying to npm ..."
       - npm run build
-    deploy:
-      provider: npm
-      email: pureainu@gmail.com
-      api_key: $NPM_TOKEN
-      skip_cleanup: true
-      on:
-        tags: true
+      - npm publish
+  - stage: document
+    script:
+      - npm run styleguide:build
+      - gh-pages -d node_modules/vue-cli-plugin-styleguidist/styleguide
 
