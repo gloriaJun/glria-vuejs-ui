@@ -61,9 +61,8 @@ export default {
   },
   computed: {
     elClasses() {
-      const color = this.color ? this.color : 'primary';
       return [
-        `btn-${this.outline ? 'outline-' : ''}${color}`,
+        `btn-${this.outline ? 'outline-' : ''}${this.color}`,
         this.size && `btn-${this.size}`,
         { 'btn-block': this.block },
         { 'btn-round': this.round },

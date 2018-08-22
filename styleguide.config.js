@@ -44,4 +44,31 @@ module.exports = {
   defaultExample: true,
   showUsage: true,
   // showCode: true,
+  // assetsDir: '/dist-doc',
+  // require: [
+  //   path.join(__dirname, 'styleguide/styles.css')
+  // ],
+  // webpackConfig: {
+  //   module: {
+  //     rules: [
+  //       // Vue loader
+  //       {
+  //         test: /\.vue$/,
+  //         exclude: /node_modules/,
+  //         loader: 'vue-loader'
+  //       },
+  //       // Babel loader, will use your project’s .babelrc
+  //       {
+  //         test: /\.js?$/,
+  //         exclude: /node_modules/,
+  //         loader: 'babel-loader'
+  //       },
+  //       // Other loaders that are needed for your components
+  //       {
+  //         test: /\.css$/,
+  //         loader: 'style-loader!css-loader'
+  //       }
+  //     ]
+  //   }
+  // }
 };

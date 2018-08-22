@@ -1,55 +1,59 @@
 <template>
-  <div
-    v-if="active"
+  <component
+    :is="link ? 'a' : 'span'"
+    :href="link && '#'"
     :class="classes"
-    class="vu-alert">
-
-    <vu-icon
-      v-if="hasIcon"
-      :icon="iconName"
-      size="lg"></vu-icon>
-
-    <div class="alert-content">
-      <h4
-        v-if="title"
-        class="alert-heading">{{ title }}</h4>
-      <slot></slot>
-    </div>
-
-    <vu-button
-        v-if="closable"
-        class="close"
-        @click="handleClose">
-      <span>&times;</span>
-    </vu-button>
-
-  </div>
+    class="vu-badge"
+    @click.prevent="onClick">
+    <slot/>
+  </component>
 </template>
 
 <script>
-import messageMixin from '../../mixins/messageMixin';
+import colorUtility from '../../utils/color';
 
 export default {
-  name: 'VuAlert',
-  mixins: [messageMixin],
+  name: 'VuBadge',
   props: {
     /**
-     * close button show or not
+     * The color for the button.
      */
-    closable: Boolean,
+    color: {
+      type: String,
+      default: 'primary',
+      validator: value => colorUtility.isColor(value),
+    },
+    /**
+     * round button style
+     */
+    round: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * link
+     */
+    link: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classes() {
       return [
-        `alert-${this.color}`,
-        { 'alert-dismissible': this.closable },
+        `badge-${this.color}`,
+        { 'badge-pill': this.round },
       ];
     },
   },
   methods: {
-    handleClose() {
-      this.active = false;
-      this.$emit('close');
+    /**
+     * @event click
+     * @type undefined
+     * @description if link is true,
+     */
+    onClick() {
+      if (this.link) this.$emit('click');
     },
   },
 };
