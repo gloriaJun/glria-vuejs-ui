@@ -63,10 +63,10 @@ export default {
     elClasses() {
       return [
         `btn-${this.outline ? 'outline-' : ''}${this.color}`,
-        this.size && `btn-${this.size}`,
-        { 'btn-block': this.block },
-        { 'btn-round': this.round },
-        { 'btn-circle': this.circle },
+        { [`btn-${this.size}`]: Boolean(this.size) },
+        { 'btn-block': Boolean(this.block) },
+        { 'btn-round': Boolean(this.round) },
+        { 'btn-circle': Boolean(this.circle) },
       ];
     },
   },

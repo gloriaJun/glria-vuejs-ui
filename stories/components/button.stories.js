@@ -8,7 +8,7 @@ import {
 
 import { COLOR_TYPES, SIZES } from '../constants';
 
-storiesOf('Components|Buttons', module)
+storiesOf('Components|Buttons/Button', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const type = select('type', ['button', 'submit', 'reset'], 'button');
