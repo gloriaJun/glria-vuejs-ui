@@ -1654,7 +1654,7 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@vue/web-component-wrapper/-/web-component-wrapper-1.2.0.tgz#bb0e46f1585a7e289b4ee6067dcc5a6ae62f1dd1"
 
-"@vxna/mini-html-webpack-template@^0.1.4":
+"@vxna/mini-html-webpack-template@^0.1.7":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@vxna/mini-html-webpack-template/-/mini-html-webpack-template-0.1.7.tgz#2a8270e513ee14f395cc17c2ce22ced383c45d22"
   dependencies:
@@ -2127,7 +2127,11 @@ assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
 
-ast-types@^0.11.3:
+ast-types@0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.10.2.tgz#aef76a04fde54634976fc94defaad1a67e2eadb0"
+
+ast-types@0.11.5, ast-types@^0.11.5:
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.5.tgz#9890825d660c03c28339f315e9fa0a360e31ec28"
 
@@ -3095,7 +3099,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.5.0:
+babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.5.0, babel-runtime@^6.9.2:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -3134,6 +3138,10 @@ babel-types@^6.0.0, babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.24.
     esutils "^2.0.2"
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
+
+babylon@7.0.0-beta.40:
+  version "7.0.0-beta.40"
+  resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.40.tgz#91fc8cd56d5eb98b28e6fde41045f2957779940a"
 
 babylon@7.0.0-beta.44:
   version "7.0.0-beta.44"
@@ -3689,7 +3697,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -3791,9 +3799,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codemirror@^5.36.0:
-  version "5.39.2"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.39.2.tgz#778aa13b55ebf280745c309cb1b148e3fc06f698"
+codemirror@^5.39.0:
+  version "5.40.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.40.0.tgz#2f5ed47366e514f41349ba0fe34daaa39be4e257"
 
 collapse-white-space@^1.0.2:
   version "1.0.4"
@@ -3893,9 +3901,9 @@ commander@~2.16.0:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
 
-common-dir@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/common-dir/-/common-dir-1.0.1.tgz#4fd872085ebc5f262d9cc23b0ff34b3e457677f0"
+common-dir@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/common-dir/-/common-dir-2.0.2.tgz#cfea16f48564a0ecbb088065fad029047f469dc1"
   dependencies:
     common-sequence "^1.0.2"
 
@@ -4034,7 +4042,7 @@ copy-to-clipboard@^3.0.8:
   dependencies:
     toggle-selection "^1.0.3"
 
-copy-webpack-plugin@^4.5.1, copy-webpack-plugin@^4.5.2:
+copy-webpack-plugin@^4.5.2:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.5.2.tgz#d53444a8fea2912d806e78937390ddd7e632ee5c"
   dependencies:
@@ -4960,7 +4968,7 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-escodegen@^1.9.1:
+escodegen@^1.10.0, escodegen@^1.9.1:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-1.11.0.tgz#b27a9389481d5bfd5bec76f7bb1eb3f8f4556589"
   dependencies:
@@ -5138,7 +5146,7 @@ esprima@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
 
-esprima@^4.0.0:
+esprima@^4.0.0, esprima@~4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
 
@@ -5737,7 +5745,7 @@ function-bind@^1.0.2, function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
-function.name-polyfill@^1.0.5:
+function.name-polyfill@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/function.name-polyfill/-/function.name-polyfill-1.0.6.tgz#c54e37cae0a77dfcb49d47982815b0826b5c60d9"
 
@@ -7423,7 +7431,7 @@ jss-nested@^6.0.1:
   dependencies:
     warning "^3.0.0"
 
-jss@^9.8.1:
+jss@^9.8.7:
   version "9.8.7"
   resolved "https://registry.yarnpkg.com/jss/-/jss-9.8.7.tgz#ed9763fc0f2f0260fc8260dac657af61e622ce05"
   dependencies:
@@ -7783,7 +7791,7 @@ markdown-table@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
 
-markdown-to-jsx@^6.6.0:
+markdown-to-jsx@^6.6.8:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.7.1.tgz#25b2304ad7aa617ba7ca2116a6b5821b8b22859b"
   dependencies:
@@ -8162,6 +8170,12 @@ node-cache@^4.1.1:
   dependencies:
     clone "2.x"
     lodash "4.x"
+
+node-dir@^0.1.10:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
+  dependencies:
+    minimatch "^3.0.2"
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -8542,7 +8556,7 @@ optionator@^0.8.1, optionator@^0.8.2:
     type-check "~0.3.2"
     wordwrap "~1.0.0"
 
-ora@^2.0.0, ora@^2.1.0:
+ora@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ora/-/ora-2.1.0.tgz#6caf2830eb924941861ec53a173799e008b51e5b"
   dependencies:
@@ -9387,7 +9401,7 @@ pretty@2.0.0:
     extend-shallow "^2.0.1"
     js-beautify "^1.6.12"
 
-private@^0.1.6, private@^0.1.8:
+private@^0.1.6, private@^0.1.8, private@~0.1.5:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
 
@@ -9432,7 +9446,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -9585,9 +9599,9 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-codemirror2@^4.2.1:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-4.3.0.tgz#e79aedca4da60d22402d2cd74f2885a3e5c009fd"
+react-codemirror2@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-5.1.0.tgz#62de4460178adea40eb52eabf7491669bf3794b8"
 
 react-color@^2.14.1:
   version "2.14.1"
@@ -9635,9 +9649,9 @@ react-dev-utils@6.0.0-next.3e165448:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-dev-utils@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.1.tgz#1f396e161fe44b595db1b186a40067289bf06613"
+react-dev-utils@^5.0.1:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.2.tgz#7bb68d2c4f6ffe7ed1184c5b0124fcad692774d2"
   dependencies:
     address "1.0.3"
     babel-code-frame "6.26.0"
@@ -9651,14 +9665,36 @@ react-dev-utils@^5.0.0:
     inquirer "3.3.0"
     is-root "1.0.0"
     opn "5.2.0"
-    react-error-overlay "^4.0.0"
+    react-error-overlay "^4.0.1"
     recursive-readdir "2.2.1"
     shell-quote "1.6.1"
-    sockjs-client "1.1.4"
+    sockjs-client "1.1.5"
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.2.0, react-dom@^16.4.2:
+react-docgen-annotation-resolver@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-docgen-annotation-resolver/-/react-docgen-annotation-resolver-1.1.0.tgz#0a0f8d5d4d7ba924866d479ec7e709ed6cf33807"
+
+react-docgen-displayname-handler@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-docgen-displayname-handler/-/react-docgen-displayname-handler-2.1.1.tgz#a7863a2cc0058ac3c72e6348fa5e40cc4278c5ae"
+  dependencies:
+    ast-types "0.11.5"
+
+react-docgen@3.0.0-beta12:
+  version "3.0.0-beta12"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-3.0.0-beta12.tgz#1285839296d6b616715b75c9d57f08d17c500be9"
+  dependencies:
+    async "^2.1.4"
+    babel-runtime "^6.9.2"
+    babylon "7.0.0-beta.40"
+    commander "^2.9.0"
+    doctrine "^2.0.0"
+    node-dir "^0.1.10"
+    recast "^0.13.0"
+
+react-dom@^16.4.1, react-dom@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
@@ -9678,9 +9714,9 @@ react-error-overlay@5.0.0-next.3e165448:
   version "5.0.0-next.3e165448"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.0.0-next.3e165448.tgz#2cbd10780c1fa9c7e35d6e443773e18948b7ee49"
 
-react-error-overlay@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
+react-error-overlay@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
 
 react-fuzzy@^0.5.2:
   version "0.5.2"
@@ -9691,7 +9727,7 @@ react-fuzzy@^0.5.2:
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-react-group@^1.0.5:
+react-group@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-group/-/react-group-1.0.6.tgz#8dd7c00c3b35d05ce164021458bb07d580e3001a"
   dependencies:
@@ -9746,6 +9782,70 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
+react-styleguidist@^7.2.4:
+  version "7.2.5"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.2.5.tgz#adc5f4d7fefa85052574bf36cf341ad2f4d18536"
+  dependencies:
+    "@vxna/mini-html-webpack-template" "^0.1.7"
+    acorn "^5.7.1"
+    ast-types "^0.11.5"
+    buble "^0.19.3"
+    classnames "^2.2.6"
+    clean-webpack-plugin "^0.1.19"
+    clipboard-copy "^2.0.0"
+    codemirror "^5.39.0"
+    common-dir "^2.0.2"
+    copy-webpack-plugin "^4.5.2"
+    css-loader "^0.28.11"
+    doctrine "^2.1.0"
+    es6-object-assign "~1.1.0"
+    es6-promise "^4.2.4"
+    escodegen "^1.10.0"
+    findup "^0.1.5"
+    function.name-polyfill "^1.0.6"
+    github-slugger "^1.2.0"
+    glob "^7.1.2"
+    glogg "^1.0.1"
+    highlight.js "^9.12.0"
+    is-directory "^0.3.1"
+    javascript-stringify "^1.6.0"
+    jss "^9.8.7"
+    jss-camel-case "^6.1.0"
+    jss-compose "^5.0.0"
+    jss-default-unit "^8.0.2"
+    jss-global "^3.0.0"
+    jss-isolate "^5.1.0"
+    jss-nested "^6.0.1"
+    kleur "^2.0.1"
+    leven "^2.1.0"
+    listify "^1.0.0"
+    loader-utils "^1.1.0"
+    lodash "^4.17.10"
+    lowercase-keys "^1.0.1"
+    markdown-to-jsx "^6.6.8"
+    mini-html-webpack-plugin "^0.2.3"
+    minimist "^1.2.0"
+    ora "^2.1.0"
+    prop-types "^15.6.2"
+    q-i "^2.0.1"
+    react-codemirror2 "^5.1.0"
+    react-dev-utils "^5.0.1"
+    react-docgen "3.0.0-beta12"
+    react-docgen-annotation-resolver "^1.0.0"
+    react-docgen-displayname-handler "^2.1.0"
+    react-group "^1.0.6"
+    react-icons "^2.2.7"
+    react-lifecycles-compat "^3.0.4"
+    recast "^0.13.0"
+    remark "^9.0.0"
+    style-loader "^0.21.0"
+    to-ast "^1.0.0"
+    type-detect "^4.0.8"
+    uglifyjs-webpack-plugin "1.2.7"
+    unist-util-visit "^1.3.1"
+    webpack-dev-server "^2.11.2"
+    webpack-merge "^4.1.3"
+
 react-textarea-autosize@^7.0.4:
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-7.0.4.tgz#4e4be649b544a88713e7b5043f76950f35d3d503"
@@ -9761,7 +9861,7 @@ react-transition-group@^2.0.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.2.0, react@^16.4.2:
+react@^16.4.1, react@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
@@ -9849,6 +9949,15 @@ realpath-native@^1.0.0:
   resolved "https://registry.yarnpkg.com/realpath-native/-/realpath-native-1.0.1.tgz#07f40a0cce8f8261e2e8b7ebebf5c95965d7b633"
   dependencies:
     util.promisify "^1.0.0"
+
+recast@^0.13.0:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/recast/-/recast-0.13.2.tgz#919e7e856d5154f13284142ed1797753c6756137"
+  dependencies:
+    ast-types "0.10.2"
+    esprima "~4.0.0"
+    private "~0.1.5"
+    source-map "~0.6.1"
 
 rechoir@^0.6.2:
   version "0.6.2"
@@ -10983,13 +11092,6 @@ strip-json-comments@^2.0.0, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@^0.20.3:
-  version "0.20.3"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.3.tgz#ebef06b89dec491bcb1fdb3452e913a6fd1c10c4"
-  dependencies:
-    loader-utils "^1.1.0"
-    schema-utils "^0.4.5"
-
 style-loader@^0.21.0:
   version "0.21.0"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.21.0.tgz#68c52e5eb2afc9ca92b6274be277ee59aea3a852"
@@ -11398,9 +11500,9 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
-uglifyjs-webpack-plugin@1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.4.tgz#5eec941b2e9b8538be0a20fc6eda25b14c7c1043"
+uglifyjs-webpack-plugin@1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.7.tgz#57638dd99c853a1ebfe9d97b42160a8a507f9d00"
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
@@ -11528,7 +11630,7 @@ unist-util-visit-parents@^2.0.0:
   dependencies:
     unist-util-is "^2.1.2"
 
-unist-util-visit@^1.1.0, unist-util-visit@^1.3.0:
+unist-util-visit@^1.1.0, unist-util-visit@^1.3.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.0.tgz#1cb763647186dc26f5e1df5db6bd1e48b3cc2fb1"
   dependencies:
@@ -11719,16 +11821,16 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-cli-plugin-styleguidist@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-styleguidist/-/vue-cli-plugin-styleguidist-0.0.4.tgz#5a9e732710c44dea49f3e83b2dc5cd93e30753ab"
+vue-cli-plugin-styleguidist@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-styleguidist/-/vue-cli-plugin-styleguidist-0.1.0.tgz#d1bbac86ee8d2e1298ade3d6fa8238775bdc30d8"
   dependencies:
-    vue-styleguidist "^1.7.12"
+    vue-styleguidist "^1.7.13"
     webpack-merge "^4.1.2"
 
-vue-docgen-api@^2.3.11:
-  version "2.3.13"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.3.13.tgz#1a591ec3623092f20cd2f3e870b51b2fb68ae755"
+vue-docgen-api@^2.3.14:
+  version "2.3.14"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.3.14.tgz#200c7243c9931b458fe6d9e831beb51d9fccb515"
   dependencies:
     babel-core "^6.25.0"
     babel-plugin-transform-object-rest-spread "^6.26.0"
@@ -11792,70 +11894,72 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^1.7.12:
-  version "1.7.13"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-1.7.13.tgz#d2c805f11c5cc6d0a3fc653b81913c22925e7d39"
+vue-styleguidist@^1.7.13:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-1.8.0.tgz#2dfd3d55f46355b5b8cd25aaf8d18f58393cfdd9"
   dependencies:
-    "@vxna/mini-html-webpack-template" "^0.1.4"
-    acorn "^5.5.3"
-    ast-types "^0.11.3"
+    "@vxna/mini-html-webpack-template" "^0.1.7"
+    acorn "^5.7.1"
+    ast-types "^0.11.5"
     buble "^0.19.3"
-    chalk "^2.3.2"
-    classnames "^2.2.5"
+    classnames "^2.2.6"
     clean-webpack-plugin "^0.1.19"
     clipboard-copy "^2.0.0"
-    codemirror "^5.36.0"
-    common-dir "^1.0.1"
-    copy-webpack-plugin "^4.5.1"
+    codemirror "^5.39.0"
+    common-dir "^2.0.2"
+    copy-webpack-plugin "^4.5.2"
     css-loader "^0.28.11"
     doctrine "^2.1.0"
     es6-object-assign "~1.1.0"
     es6-promise "^4.2.4"
-    escodegen "^1.9.1"
+    escodegen "^1.10.0"
     esprima "^4.0.0"
     findup "^0.1.5"
-    function.name-polyfill "^1.0.5"
+    function.name-polyfill "^1.0.6"
     github-slugger "^1.2.0"
     glob "^7.1.2"
     glogg "^1.0.1"
     highlight.js "^9.12.0"
     is-directory "^0.3.1"
     javascript-stringify "^1.6.0"
-    jss "^9.8.1"
+    jss "^9.8.7"
     jss-camel-case "^6.1.0"
     jss-compose "^5.0.0"
     jss-default-unit "^8.0.2"
     jss-global "^3.0.0"
     jss-isolate "^5.1.0"
     jss-nested "^6.0.1"
+    kleur "^2.0.1"
     leven "^2.1.0"
     listify "^1.0.0"
     loader-utils "^1.1.0"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     lowercase-keys "^1.0.1"
-    markdown-to-jsx "^6.6.0"
+    markdown-to-jsx "^6.6.8"
     mini-html-webpack-plugin "^0.2.3"
     minimist "^1.2.0"
-    opn "^5.1.0"
-    ora "^2.0.0"
-    prop-types "^15.6.1"
+    ora "^2.1.0"
+    prop-types "^15.6.2"
     q-i "^2.0.1"
-    react "^16.2.0"
-    react-codemirror2 "^4.2.1"
-    react-dev-utils "^5.0.0"
-    react-dom "^16.2.0"
-    react-group "^1.0.5"
+    react "^16.4.1"
+    react-codemirror2 "^5.1.0"
+    react-dev-utils "^5.0.1"
+    react-dom "^16.4.1"
+    react-group "^1.0.6"
     react-icons "^2.2.7"
+    react-lifecycles-compat "^3.0.4"
+    react-styleguidist "^7.2.4"
+    recast "^0.13.0"
     remark "^9.0.0"
     strip-comments "^0.4.4"
-    style-loader "^0.20.3"
+    style-loader "^0.21.0"
     to-ast "^1.0.0"
     type-detect "^4.0.8"
-    uglifyjs-webpack-plugin "1.2.4"
-    unist-util-visit "^1.3.0"
-    vue-docgen-api "^2.3.11"
-    webpack-dev-server "^2.9.7"
-    webpack-merge "^4.1.2"
+    uglifyjs-webpack-plugin "1.2.7"
+    unist-util-visit "^1.3.1"
+    vue-docgen-api "^2.3.14"
+    webpack-dev-server "^2.11.2"
+    webpack-merge "^4.1.3"
 
 vue-template-compiler@^2.4.2, vue-template-compiler@^2.5.16, vue-template-compiler@^2.5.17:
   version "2.5.17"
@@ -11971,9 +12075,9 @@ webpack-dev-middleware@3.1.3, webpack-dev-middleware@^3.1.3:
     url-join "^4.0.0"
     webpack-log "^1.0.1"
 
-webpack-dev-server@^2.9.7:
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.11.2.tgz#1f4f4c78bf1895378f376815910812daf79a216f"
+webpack-dev-server@^2.11.2:
+  version "2.11.3"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.11.3.tgz#3fd48a402164a6569d94d3d17f131432631b4873"
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
@@ -11996,7 +12100,7 @@ webpack-dev-server@^2.9.7:
     selfsigned "^1.9.1"
     serve-index "^1.7.2"
     sockjs "0.3.19"
-    sockjs-client "1.1.4"
+    sockjs-client "1.1.5"
     spdy "^3.4.1"
     strip-ansi "^3.0.0"
     supports-color "^5.1.0"

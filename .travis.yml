@@ -25,7 +25,7 @@ jobs:
       skip-cleanup: true
       github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
       keep-history: true
-      local-dir: node_modules/vue-cli-plugin-styleguidist/styleguide
+      local-dir: dist-doc
       on:
         branch: master
       target-branch: gh-pages

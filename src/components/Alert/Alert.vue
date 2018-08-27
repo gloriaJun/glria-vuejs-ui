@@ -47,6 +47,12 @@ export default {
     },
   },
   methods: {
+    /**
+     * Close event
+     *
+     * @event close
+     * @type null
+     */
     handleClose() {
       this.active = false;
       this.$emit('close');

@@ -1,7 +1,8 @@
 const path = require('path');
+const vueLoader = require('vue-loader');
 
 module.exports = {
-  // set your styleguidist configuration here
+  version: '1.1.1',
   title: 'Gvu UI Component',
   sections: [
     {
@@ -11,13 +12,13 @@ module.exports = {
     {
       name: 'Components',
       components: 'src/components/**/[A-Z]*.vue',
-    }
+    },
   ],
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.vue');
     return `import { ${name} } from 'gvu';`;
   },
-  highlightTheme: 'material',
+  editorConfig: 'material',
   styles: {
     Markdown: {
       code: {
@@ -38,37 +39,25 @@ module.exports = {
   require: [
     path.join(__dirname, 'src/styles/index.scss'),
   ],
-  // webpackConfig: {
-  //   // custom config goes here
-  // }
-  defaultExample: true,
-  showUsage: true,
-  // showCode: true,
-  // assetsDir: '/dist-doc',
-  // require: [
-  //   path.join(__dirname, 'styleguide/styles.css')
-  // ],
+  usageMode: 'expand',
+  exampleMode: 'collapse',
+  // build setting
+  styleguideDir: 'dist-doc',
+  template: {
+    links: [{
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+    }],
+  },
+  // template: './docs/template.html',
   // webpackConfig: {
   //   module: {
   //     rules: [
-  //       // Vue loader
-  //       {
-  //         test: /\.vue$/,
-  //         exclude: /node_modules/,
-  //         loader: 'vue-loader'
-  //       },
-  //       // Babel loader, will use your project’s .babelrc
-  //       {
-  //         test: /\.js?$/,
-  //         exclude: /node_modules/,
-  //         loader: 'babel-loader'
-  //       },
-  //       // Other loaders that are needed for your components
   //       {
   //         test: /\.css$/,
   //         loader: 'style-loader!css-loader'
   //       }
   //     ]
   //   }
-  // }
+  // },
 };

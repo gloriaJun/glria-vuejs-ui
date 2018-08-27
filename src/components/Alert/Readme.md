@@ -2,7 +2,7 @@
 [![Edit Gvu-Alert](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/jv9z3mn9xw?module=%2Fsrc%2FApp.vue)
 
 ### Basic
-```jsx
+```vue
 <div>
     <vu-alert color="primary">A simple primary alert</vu-alert>
     <vu-alert color="secondary">A simple secondary alert</vu-alert>
@@ -16,18 +16,30 @@
 ```
 
 ### closable
-```jsx
-<div>
-    <vu-alert
+```vue
+<template>
+  <div>
+      <vu-alert
         closable
         @close="alertClose">
         This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-    </vu-alert>
-</div
+      </vu-alert>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    alertClose() {
+      console.log('close alert');
+    }
+  },
+};
+</script>
 ```
 
 ### icon 
-```jsx
+```vue
 <div>
     <vu-alert color="info" show-icon>A simple alert</vu-alert>
     <vu-alert color="success" show-icon>A simple alert</vu-alert>
@@ -49,5 +61,5 @@
       Aww yeah, you successfully read this important alert message. 
       This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
     </vu-alert>
-</div
+</div>
 ```
