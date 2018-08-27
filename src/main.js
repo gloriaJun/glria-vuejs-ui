@@ -3,8 +3,8 @@ import './styles/index.scss';
 import * as components from './components';
 
 const Gvu = {
-  install(Vue, options = {}) {
-    console.log(options);
+  // install(Vue, options = {}) {
+  install(Vue) {
     // plugin
     // Vue.use(VeeValidate, {
     //   events: 'input|change|blur',
