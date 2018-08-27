@@ -1,52 +1,49 @@
 ### Full Example Code
+[![Edit Gvu-Badge](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/v8mz66vr47?module=%2Fsrc%2FApp.vue)
 
 ### Basic
 ```jsx
 <div>
-    <vu-alert color="primary">A simple primary alert</vu-alert>
-    <vu-alert color="secondary">A simple secondary alert</vu-alert>
-    <vu-alert color="info">A simple info alert</vu-alert>
-    <vu-alert color="success">A simple success alert</vu-alert>
-    <vu-alert color="warning">A simple warning alert</vu-alert>
-    <vu-alert color="danger">A simple danger alert</vu-alert>
-    <vu-alert color="light">A simple light alert</vu-alert>
-    <vu-alert color="dark">A simple dark alert</vu-alert>
+  <vu-badge color="primary">primary</vu-badge>
+  <vu-badge color="secondary">secondary</vu-badge>
+  <vu-badge color="info">info</vu-badge>
+  <vu-badge color="success">success</vu-badge>
+  <vu-badge color="warning">warning</vu-badge>
+  <vu-badge color="danger">danger</vu-badge>
+  <vu-badge color="light">light</vu-badge>
+  <vu-badge color="dark">dark</vu-badge>
 </div>
 ```
 
-### closable
+##### round
 ```jsx
 <div>
-    <vu-alert
-        closable
-        @close="alertClose">
-        This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-    </vu-alert>
+  <vu-badge color="primary" round>primary</vu-badge>
+  <vu-badge color="secondary" round>secondary</vu-badge>
+  <vu-badge color="info" round>info</vu-badge>
+  <vu-badge color="success" round>success</vu-badge>
+  <vu-badge color="warning" round>warning</vu-badge>
+  <vu-badge color="danger" round>danger</vu-badge>
+  <vu-badge color="light" round>light</vu-badge>
+  <vu-badge color="dark" round>dark</vu-badge>
 </div>
 ```
 
-### icon 
-```jsx
-<div>
-    <vu-alert color="info" show-icon>A simple alert</vu-alert>
-    <vu-alert color="success" show-icon>A simple alert</vu-alert>
-    <vu-alert color="warning" show-icon>A simple alert</vu-alert>
-    <vu-alert color="danger" show-icon>A simple alert</vu-alert>
-    
-    <vu-alert
-      color="primary"
-      icon="check">
-      A simple primary alert
-      Aww yeah, you successfully read this important alert message. 
-      This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-    </vu-alert>    
-    <vu-alert
-      color="dark"
-      icon="home"
-      closable>
-      A simple primary alert
-      Aww yeah, you successfully read this important alert message. 
-      This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-    </vu-alert>
-</div>
+### link 
+```vue
+<template>
+  <div>
+     <vu-badge color="primary" link @click=onClick>primary</vu-badge>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+   onClick() {
+      console.log('click badge');
+    },
+  },
+};
+</script>
 ```
