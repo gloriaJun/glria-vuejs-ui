@@ -2,7 +2,7 @@
   <div
     v-if="active"
     :class="classes"
-    class="vu-alert">
+    class="vu-alert alert">
 
     <vu-icon
       v-if="hasIcon"

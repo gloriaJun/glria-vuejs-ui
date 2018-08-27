@@ -4,38 +4,34 @@
   alert
  */
 .vu-alert {
-  @extend .alert;
   display: flex;
-
-  > .vu-icon {
-    margin-right: .7rem;
-  }
-
-  > .vu-button.close:hover {
-    background-color: inherit;
-  }
+  > .vu-icon { margin-right: .7rem; }
+  > .vu-button.close:hover { background-color: inherit; }
 }
 
 /**
-  badge
+  breadcrumb
  */
-.vu-badge {
-  @extend .badge;
+.vu-breadcrumb {
+  .breadcrumb-item a {
+    text-decoration: none;
+    color: $gray-500;
+    &:hover {
+      color: $gray-600;
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: $gray-500;
+  }
 }
 
 /**
   button
  */
 .vu-button {
-  @extend .btn;
+  .vu-icon:first-child { margin-right: .1875em; }
 
-  .vu-icon:first-child {
-    margin-right: .1875em;
-  }
-
-  &.btn-round {
-    border-radius: $vu-border-radius-lg;
-  }
+  &.btn-round { border-radius: $vu-border-radius-lg; }
   &.btn-circle {
     width: 2.3rem;
     height: 2.3rem;

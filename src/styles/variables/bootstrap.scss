@@ -57,6 +57,12 @@ $alert-border-width:                0 !default;
 // Buttons
 $btn-focus-box-shadow:              none!important;
 
+// Breadcrumb
+$breadcrumb-divider: quote(">");
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-active-color:           $primary !default;
+
+
 // Progress bars
 $progress-height:               0.5rem !default;
 

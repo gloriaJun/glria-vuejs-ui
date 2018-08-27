@@ -1,5 +1,6 @@
 export { default as VuAlert } from './Alert';
 export { default as VuBadge } from './Badge';
+export { default as VuBreadcrumb } from './Breadcrumb';
 export { default as VuButton } from './Buttons';
 export { default as VuIcon } from './Icon';
 

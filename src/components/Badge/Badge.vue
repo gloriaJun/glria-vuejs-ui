@@ -3,7 +3,7 @@
     :is="link ? 'a' : 'span'"
     :href="link && '#'"
     :class="classes"
-    class="vu-badge"
+    class="vu-badge badge"
     @click.prevent="onClick">
     <slot/>
   </component>

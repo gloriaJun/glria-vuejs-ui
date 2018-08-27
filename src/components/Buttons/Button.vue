@@ -2,7 +2,7 @@
   <button
     v-bind="$attrs"
     :class="elClasses"
-    class="vu-button"
+    class="vu-button btn"
     @click="onClick">
     <slot></slot>
   </button>
