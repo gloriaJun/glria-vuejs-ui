@@ -1,5 +1,4 @@
 const path = require('path');
-const vueLoader = require('vue-loader');
 
 module.exports = {
   version: '1.1.1',
@@ -43,21 +42,13 @@ module.exports = {
   exampleMode: 'collapse',
   // build setting
   styleguideDir: 'dist-doc',
+  styleguidePublicPath: '/',
   template: {
-    links: [{
+    head: {
+      links: [{
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
-    }],
+      }],
+    },
   },
-  // template: './docs/template.html',
-  // webpackConfig: {
-  //   module: {
-  //     rules: [
-  //       {
-  //         test: /\.css$/,
-  //         loader: 'style-loader!css-loader'
-  //       }
-  //     ]
-  //   }
-  // },
 };

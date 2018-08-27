@@ -23,7 +23,7 @@
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "styleguide": "vue-cli-service styleguidist --verbose",
+    "styleguide": "vue-cli-service styleguidist",
     "styleguide:build": "vue-cli-service styleguidist:build"
   },
   "dependencies": {
