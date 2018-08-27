@@ -13,9 +13,6 @@ import sizeUtility from '../../utils/size';
 export default {
   name: 'VuButtonGroup',
   props: {
-    /**
-     * The size for the button.
-     */
     size: {
       type: String,
       validator: value => sizeUtility.isSizes(value),

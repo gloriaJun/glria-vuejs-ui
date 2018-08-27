@@ -4,6 +4,7 @@ export { default as VuBreadcrumb } from './Breadcrumb';
 export { default as VuButton } from './Button';
 export { default as VuButtonGroup } from './ButtonGroup';
 export { default as VuIcon } from './Icon';
+export { default as VuProgress } from './Progress';
 
 export default {
 };
