@@ -8,6 +8,9 @@ branches:
 
 install:
   - yarn install
+script:
+  - yarn build
+  - yarn styleguide:build
 
 jobs:
   include:
@@ -15,11 +18,8 @@ jobs:
     before_script:
       - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
     script:
-      - yarn run build
       - npm publish
   - stage: document
-    script:
-      - yarn run styleguide:build
     deploy:
       provider: pages
       skip-cleanup: true
