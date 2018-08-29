@@ -42,7 +42,7 @@ module.exports = {
   exampleMode: 'collapse',
   // build setting
   styleguideDir: 'dist-doc',
-  styleguidePublicPath: '/',
+  // styleguidePublicPath: '/',
   template: {
     head: {
       links: [{
