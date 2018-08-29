@@ -3,6 +3,7 @@ export { default as VuBadge } from './Badge';
 export { default as VuBreadcrumb } from './Breadcrumb';
 export { default as VuButton } from './Button';
 export { default as VuButtonGroup } from './ButtonGroup';
+export { default as VuCard } from './Card';
 export { default as VuIcon } from './Icon';
 export { default as VuProgress } from './Progress';
 
