@@ -37,6 +37,7 @@
   <vu-button type="button">Button (default)</vu-button>
   <vu-button type="submit">Submit</vu-button>
   <vu-button type="reset">Reset</vu-button>
+  <vu-button type="link" href="#">Link</vu-button>
 </div>
 ```
 

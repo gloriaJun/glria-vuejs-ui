@@ -1,11 +1,13 @@
 <template>
-  <button
+  <component
     v-bind="$attrs"
+    :is="isLink ? 'a' : 'button'"
+    :href="isLink && href"
     :class="elClasses"
     class="vu-button btn"
     @click="onClick">
     <slot></slot>
-  </button>
+  </component>
 </template>
 
 <script>
@@ -15,6 +17,20 @@ import sizeUtility from '../../utils/size';
 export default {
   name: 'VuButton',
   props: {
+    /**
+     * button type
+     * - button, submit, reset, link
+     */
+    type: {
+      type: String,
+      default: 'button',
+      validator: value => Object.values([
+        'button',
+        'submit',
+        'reset',
+        'link',
+      ]).includes(value),
+    },
     /**
      * The color for the button.
      */
@@ -58,6 +74,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * if button type is link,
+     */
+    href: String,
   },
   computed: {
     elClasses() {
@@ -68,6 +88,9 @@ export default {
         { 'btn-round': Boolean(this.round) },
         { 'btn-circle': Boolean(this.circle) },
       ];
+    },
+    isLink() {
+      return this.type === 'link';
     },
   },
   methods: {

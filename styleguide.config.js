@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  version: '1.1.1',
+  // version: '1.1.1',
   title: 'Gvu UI Component',
   sections: [
     {
