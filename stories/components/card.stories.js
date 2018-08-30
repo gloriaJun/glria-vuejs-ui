@@ -12,35 +12,20 @@ import { COLOR_TYPES } from '../constants';
 storiesOf('Components|Card', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    return ({
-      template: `
-        <vu-card>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </vu-card>
-      `,
-    });
-  })
-  .add('with title', () => {
-    return ({
-      template: `
-        <vu-card
-          title="Card Title"
-          sub-title="card subtitle">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </vu-card>
-      `,
-    });
-  })
-  .add('with action', () => {
+    const title = text('title', 'Card Title');
+    const subtitle = text('subtitle', 'subtitle');
+    const showAction = boolean('showAction', false);
     const position = select('align', ['left', 'center', 'right'], 'left');
 
     return ({
       template: `
-        <vu-card
-          title="Card Title"
-          sub-title="card subtitle">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          <vu-card-action position="${position}">
+        <vu-card class="text-${position}">
+          <vu-card-body
+            title="${title}"
+            sub-title="${subtitle}">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </vu-card-body>
+          <vu-card-action v-if="${showAction}">
             <vu-button type="link" href="#" color="link">Link</vu-button>
             <vu-button>Button</vu-button>
           </vu-card-action>
@@ -49,17 +34,40 @@ storiesOf('Components|Card', module)
     });
   })
   .add('header & footer', () => {
+    const position = select('align', ['left', 'center', 'right'], 'left');
+
     return ({
       template: `
-        <vu-card
-          title="Card Title"
-          sub-title="card subtitle">
+        <vu-card class="text-${position}">
           <div slot="header">Card Header</div>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          <vu-card-action>
-            <vu-button type="link" href="#" color="link">Link</vu-button>
-            <vu-button>Button</vu-button>
-          </vu-card-action>
+          <vu-card-body>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </vu-card-body>
+          <div
+            slot="footer"
+            class="text-muted">2 days ago</div>
+        </vu-card>
+      `,
+    });
+  })
+ .add('image card', () => {
+    const position = select('position', ['top', 'bottom'], 'top');
+    const imgSrc = text('image src', 'https://picsum.photos/600/300/?image=25');
+
+    return ({
+      template: `
+        <vu-card>
+          <vu-card-media
+            v-if="${position === 'top'}"
+            src="${imgSrc}">
+          </vu-card-media>
+          <vu-card-body>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </vu-card-body>
+          <vu-card-media
+            v-if="${position === 'bottom'}"
+            src="${imgSrc}">
+          </vu-card-media>
         </vu-card>
       `,
     });
