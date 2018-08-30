@@ -48,10 +48,8 @@
 .vu-card {
   .vu-card-action {
     margin-top: 1rem;
-    a +, .vu-button {
-      a, .vu-button {
-        margin-left: 1rem;
-      }
+    .vu-button + .vu-button {
+      margin-left: 1rem;
     }
   }
 }

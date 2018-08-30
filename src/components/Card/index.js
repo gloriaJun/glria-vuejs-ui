@@ -1,5 +1,7 @@
-import VuComponent from './Card.vue';
+import VuCard from './Card.vue';
+import VuCardAction from './CardAction.vue';
 
 export default (Vue) => {
-  Vue.component(VuComponent.name, VuComponent);
+  Vue.component(VuCard.name, VuCard);
+  Vue.component(VuCardAction.name, VuCardAction);
 };

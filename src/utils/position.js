@@ -8,3 +8,5 @@
 //   BOTTOM_CENTER: 'bottom-center',
 // });
 
+export default {
+};
