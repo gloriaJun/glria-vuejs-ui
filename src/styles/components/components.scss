@@ -30,6 +30,7 @@
   button
  */
 .vu-button {
+  &.btn-link { text-decoration: none; }
   .vu-icon:first-child { margin-right: .1875em; }
 
   &.btn-round { border-radius: $vu-border-radius-lg; }
@@ -38,6 +39,20 @@
     height: 2.3rem;
     border-radius: $vu-border-radius-xl;
     padding: 0;
+  }
+}
+
+/**
+  card
+ */
+.vu-card {
+  .vu-card-action {
+    margin-top: 1rem;
+    a +, .vu-button {
+      a, .vu-button {
+        margin-left: 1rem;
+      }
+    }
   }
 }
 

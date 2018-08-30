@@ -37,7 +37,7 @@ export default {
     color: {
       type: String,
       default: 'primary',
-      validator: value => colorUtility.isColor(value),
+      validator: value => colorUtility.isColor(value) || value === 'link',
     },
     /**
      * The size for the button.
@@ -75,6 +75,13 @@ export default {
       default: false,
     },
     /**
+     * disabled
+     */
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    /**
      * if button type is link,
      */
     href: String,
@@ -87,6 +94,7 @@ export default {
         { 'btn-block': Boolean(this.block) },
         { 'btn-round': Boolean(this.round) },
         { 'btn-circle': Boolean(this.circle) },
+        { disabled: this.disabled },
       ];
     },
     isLink() {

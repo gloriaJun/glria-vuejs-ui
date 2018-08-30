@@ -13,6 +13,7 @@
     <vu-button color="danger">danger</vu-button>
     <vu-button color="light">light</vu-button>
     <vu-button color="dark">dark</vu-button>
+    <vu-button color="link">link</vu-button>
 </div>
 ```
 
@@ -27,6 +28,7 @@
     <vu-button color="danger" disabled>danger</vu-button>
     <vu-button color="light" disabled>light</vu-button>
     <vu-button color="dark" disabled>dark</vu-button>
+    <vu-button color="link" disabled>link</vu-button>
 </div>
 ```
 

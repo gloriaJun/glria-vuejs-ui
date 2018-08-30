@@ -8,12 +8,13 @@ import {
 } from '@storybook/addon-knobs';
 
 import { COLOR_TYPES, SIZES } from '../constants';
+const color_type = Object.assign(COLOR_TYPES, {LINK: 'link'});
 
 storiesOf('Components|Buttons/Button', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const type = select('type', ['button', 'submit', 'reset', 'link'], 'button');
-    const color = select('color', COLOR_TYPES, 'primary');
+    const color = select('color', color_type, 'primary');
     const size = select('size', SIZES, '');
     const block = boolean('block', false);
     const outline = boolean('outline', false);
@@ -40,7 +41,7 @@ storiesOf('Components|Buttons/Button', module)
     });
   })
   .add('link button', () => {
-    const color = select('color', COLOR_TYPES, 'primary');
+    const color = select('color', color_type, 'link');
     const size = select('size', SIZES, '');
     const block = boolean('block', false);
     const outline = boolean('outline', false);
@@ -66,7 +67,7 @@ storiesOf('Components|Buttons/Button', module)
   })
   .add('with icon', () => {
     const type = select('type', ['button', 'submit', 'reset', 'link'], 'button');
-    const color = select('color', COLOR_TYPES, 'primary');
+    const color = select('color', color_type, 'primary');
     const size = select('size', SIZES, '');
     const block = boolean('block', false);
     const outline = boolean('outline', false);
