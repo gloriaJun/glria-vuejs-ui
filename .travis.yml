@@ -1,31 +1,33 @@
 language: node_js
 node_js:
-- "10"
+- 10
+- 9
+- 8
+
+before_script:
+- yarn install
 
 branches:
   only:
     - master
 
-install:
-  - yarn install
-
 jobs:
   include:
-  - stage: npm publish
-    before_script:
-      - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-    script:
-      - yarn build
-      - npm publish
-  - stage: document
-    deploy:
-      provider: pages
-#      skip-cleanup: true
-      github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-#      keep-history: true
+    - stage: npm publish
+      before_script:
+        - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
       script:
-        - yarn styleguide:build
-      local-dir: dist-doc
-      on:
-        branch: master
-      target-branch: gh-pages
+        - yarn build
+        - npm publish
+    - stage: document
+      deploy:
+        provider: pages
+#       skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+#       keep-history: true
+        script:
+          - yarn styleguide:build
+        local-dir: dist-doc
+        on:
+          branch: master
+        target-branch: gh-pages
