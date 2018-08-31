@@ -15,7 +15,13 @@
 export default {
   name: 'VuCardBody',
   props: {
+    /**
+     * The title for the card body
+     */
     title: String,
+    /**
+     * The subtitle for the card body
+     */
     subTitle: String,
   },
 };

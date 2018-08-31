@@ -3,15 +3,31 @@ const path = require('path');
 module.exports = {
   // version: '1.1.1',
   title: 'Gvu UI Component',
+  pagePerSection: true,
   sections: [
-    {
-      name: 'Typography',
-      content: 'docs/Typography.md',
-    },
+    { name: 'Typography', content: 'docs/Typography.md', },
     {
       name: 'Components',
-      components: 'src/components/**/[A-Z]*.vue',
-    },
+      components: () => [
+        './src/components/Alert/Alert.vue',
+        './src/components/Badge/Badge.vue',
+        './src/components/Breadcrumb/Breadcrumb.vue',
+        './src/components/Icon/Icon.vue',
+        './src/components/Progress/Progress.vue',
+      ],
+      sections: [
+        { name: 'Buttons', components: './src/components/Button*/*.vue' },
+        {
+          name: 'Card',
+          components: () => [
+            './src/components/Card/Card.vue',
+            './src/components/Card/CardBody.vue',
+            './src/components/Card/CardAction.vue',
+            './src/components/Card/CardMedia.vue',
+          ],
+        },
+      ],
+    }
   ],
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.vue');
@@ -37,6 +53,7 @@ module.exports = {
   },
   require: [
     path.join(__dirname, 'src/styles/index.scss'),
+    path.join(__dirname, 'src/main.js'),
   ],
   usageMode: 'expand',
   exampleMode: 'collapse',

@@ -1,7 +1,5 @@
-## Headings
-
 All HTML headings, `<h1> through <h6>`, are available.
-```html
+```vue
 <div>
   <h1>h1. heading</h1>
   <h2>h2. heading</h2>

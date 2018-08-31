@@ -1,13 +1,16 @@
 <template>
   <div class="vu-card card">
+    <!-- @slot Use this slot header -->
     <header
         v-if="hasSlot('header')"
         class="card-header">
       <slot name="header"></slot>
     </header>
 
+    <!-- @slot Use this slot body -->
     <slot></slot>
 
+    <!-- @slot Use this slot footer -->
     <header
         v-if="hasSlot('footer')"
         class="card-footer">
