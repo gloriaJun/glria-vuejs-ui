@@ -61,6 +61,10 @@
   .card-body + .vu-card-media {
     @extend .card-img-bottom;
   }
+
+  > .vu-list {
+    @extend .list-group-flush;
+  }
 }
 
 /**

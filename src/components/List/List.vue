@@ -1,7 +1,7 @@
 <template>
-  <ul class="vu-list list-group">
+  <div class="vu-list list-group">
     <slot></slot>
-  </ul>
+  </div>
 </template>
 
 <script>

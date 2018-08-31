@@ -2,6 +2,10 @@
   outline: none;
 }
 
+:disabled, .disabled {
+  pointer-events: none;
+}
+
 // input
 input {
   &:invalid, &:required {

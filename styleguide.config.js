@@ -18,10 +18,8 @@ module.exports = {
       ],
       sections: [
         { name: 'Buttons', components: './src/components/Button*/*.vue' },
-        {
-          name: 'Card',
-          components: 'src/components/Card/Card*.vue',
-        },
+        { name: 'Card', components: 'src/components/Card/*.vue' },
+        { name: 'List', components: 'src/components/List/*.vue' },
       ],
     }
   ],
