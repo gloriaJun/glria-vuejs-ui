@@ -12,6 +12,9 @@
 <script>
 import colorUtility from '../../utils/color';
 
+/**
+ * @example ../../../docs/examples/Badge.md
+ */
 export default {
   name: 'VuBadge',
   props: {

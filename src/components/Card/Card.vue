@@ -23,6 +23,9 @@
 <script>
 import SlotMixin from '../../mixins/slotMixin';
 
+/**
+ * @example ../../../docs/examples/Card.md
+ */
 export default {
   name: 'VuCard',
   mixins: [SlotMixin],

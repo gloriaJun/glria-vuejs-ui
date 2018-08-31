@@ -14,6 +14,9 @@
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
 
+/**
+ * @example ../../../docs/examples/Button.md
+ */
 export default {
   name: 'VuButton',
   props: {

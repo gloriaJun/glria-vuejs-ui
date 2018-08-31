@@ -10,6 +10,9 @@
 import VuButton from '../Button/Button.vue';
 import sizeUtility from '../../utils/size';
 
+/**
+ * @example ../../../docs/examples/ButtonGroup.md
+ */
 export default {
   name: 'VuButtonGroup',
   props: {

@@ -10,6 +10,9 @@
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
 
+/**
+ * @example ../../../docs/examples/Icon.md
+ */
 export default {
   name: 'VuIcon',
   props: {

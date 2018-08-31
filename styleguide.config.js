@@ -4,6 +4,7 @@ module.exports = {
   // version: '1.1.1',
   title: 'Gvu UI Component',
   pagePerSection: true,
+  // skipComponentsWithoutExample: true,
   sections: [
     { name: 'Typography', content: 'docs/Typography.md', },
     {
@@ -19,12 +20,7 @@ module.exports = {
         { name: 'Buttons', components: './src/components/Button*/*.vue' },
         {
           name: 'Card',
-          components: () => [
-            './src/components/Card/Card.vue',
-            './src/components/Card/CardBody.vue',
-            './src/components/Card/CardAction.vue',
-            './src/components/Card/CardMedia.vue',
-          ],
+          components: 'src/components/Card/Card*.vue',
         },
       ],
     }
