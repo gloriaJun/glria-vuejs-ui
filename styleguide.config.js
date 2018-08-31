@@ -11,6 +11,7 @@ module.exports = {
       name: 'Components',
       components: () => [
         './src/components/Alert/Alert.vue',
+        './src/components/Avatar/Avatar.vue',
         './src/components/Badge/Badge.vue',
         './src/components/Breadcrumb/Breadcrumb.vue',
         './src/components/Icon/Icon.vue',
