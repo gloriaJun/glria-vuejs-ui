@@ -7,6 +7,7 @@ export { default as VuButtonGroup } from './ButtonGroup';
 export { default as VuCard } from './Card';
 export { default as VuIcon } from './Icon';
 export { default as VuList } from './List';
+export { default as VuNav } from './Nav';
 export { default as VuProgress } from './Progress';
 
 export default {
