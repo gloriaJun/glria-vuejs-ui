@@ -55,7 +55,7 @@
     .vu-card-action { padding: 0; }
   }
 
-  + .vu-card-media {
+  .vu-card-media:first-child {
     @extend .card-img-top;
   }
   .card-body + .vu-card-media {
