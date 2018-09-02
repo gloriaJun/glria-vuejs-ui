@@ -110,3 +110,37 @@
   //  padding-right: .3rem;
   //}
 }
+
+/**
+  tabs
+ */
+.vu-tabs {
+  ul.nav:not(.nav-tabs):not(.nav-pills) {
+    position: relative;
+    &:after {
+      content: "";
+      border-bottom: 2px solid $gray-200;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .nav-item {
+      z-index: 1;
+      > .nav-link {
+        &:not(.disabled) {
+          color: inherit;
+        }
+        &.active {
+          color: $primary;
+          border-bottom: 2px solid $primary;
+        }
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+  .tab-contents {
+    margin-top: 1rem;
+  }
+}
