@@ -3,21 +3,12 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
-  text,
 } from '@storybook/addon-knobs';
-
-import { COLOR_TYPES } from '../constants';
-const color_type = Object.assign(COLOR_TYPES, {DEFAULT: ''});
 
 storiesOf('Components|Nav', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const color = select('color', color_type, '');
-    const active = boolean('active', false);
-    const disabled = boolean('disabled', false);
-    const isLink = boolean('link', false);
-    const isButton = boolean('button', false);
+    const vertical = boolean('vertical', false);
 
     return ({
       data () {
@@ -26,18 +17,18 @@ storiesOf('Components|Nav', module)
             { label: 'Item1' },
             { label: 'Item2' },
             { label: 'Item3' },
+            { label: 'Item4', disabled: true },
           ],
         }
       },
       template: `
-        <vu-nav>
+        <vu-nav
+          :vertical="${vertical}">
           <vu-nav-item
             v-for="(item, index) in items"
-            :key="index">{{ item.label }}</vu-nav-item>
+            :key="index"
+            :disabled="item.disabled">{{ item.label }}</vu-nav-item>
         </vu-nav>
       `,
-      methods: {
-        onClick: (e) => action('click button')(e),
-      }
     });
   })

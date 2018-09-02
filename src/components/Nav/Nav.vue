@@ -1,5 +1,7 @@
 <template>
-  <ul class="vu-nav nav">
+  <ul
+      :class="classes"
+      class="vu-nav nav">
     <slot></slot>
   </ul>
 </template>
@@ -11,10 +13,15 @@
 export default {
   name: 'VuNav',
   props: {
+    /**
+     * vertical
+     */
+    vertical: Boolean,
   },
   computed: {
-    elClasses() {
+    classes() {
       return [
+        { 'flex-column': this.vertical },
       ];
     },
   },
