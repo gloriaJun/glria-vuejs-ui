@@ -2,6 +2,7 @@
   <li class="vu-nav-item nav-item">
     <a
       v-bind="$attrs"
+      v-on="$listeners"
       :href="href"
       :class="classes"
       class="nav-link">
@@ -25,11 +26,16 @@ export default {
      * disabled
      */
     disabled: Boolean,
+    /**
+     * active
+     */
+    active: Boolean,
   },
   computed: {
     classes() {
       return [
         { disabled: this.disabled },
+        { active: this.active },
       ];
     },
   },

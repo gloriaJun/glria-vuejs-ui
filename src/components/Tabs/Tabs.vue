@@ -1,21 +1,13 @@
 <template>
   <div class="vu-tabs">
-    <ul
-        :class="classes"
-        class="nav">
-      <li
+    <vu-nav :class="classes">
+      <vu-nav-item
         v-for="(tab, index) in tabs"
         :key="index"
-        class="nav-item">
-        <a
-            href="#"
-            class="nav-link"
-            :class="[ {active: tab.isActive}, {disabled: tab.disabled} ]"
-            @click.prevent="handleClickTab(tab)">
-          {{ tab.label }}
-        </a>
-      </li>
-    </ul>
+        :disabled="tab.disabled"
+        :active="tab.isActive"
+        @click.prevent="handleClickTab(tab)">{{ tab.label }}</vu-nav-item>
+    </vu-nav>
 
     <div class="tab-contents">
       <slot></slot>
@@ -30,6 +22,9 @@
 export default {
   name: 'VuTabs',
   props: {
+    /**
+     * type of Tab
+     */
     type: {
       type: String,
       default: '',
@@ -42,6 +37,8 @@ export default {
   },
   data() {
     return {
+      // activeTabName: this.value,
+      // activeTabIndex: 0,
       tabs: [],
     };
   },
@@ -54,7 +51,7 @@ export default {
     },
   },
   mounted() {
-    this.tabs = this.$children;
+    this.tabs = this.$children.filter(child => child.$el.className === 'vu-tab-item');
 
     // if any tabl is not active, first index set active
     if (!this.tabs.some(tab => tab.isActive)) {
@@ -63,10 +60,14 @@ export default {
   },
   methods: {
     handleClickTab(tab) {
-      this.tabs.map((obj) => {
+      let activeIndex = 0;
+      this.tabs.map((obj, index) => {
         obj.isActive = (obj.id === tab.id);
+        if (obj.isActive) activeIndex = index;
         return obj;
       });
+
+      this.$emit('tab-click', activeIndex, tab.name);
     },
   },
 };

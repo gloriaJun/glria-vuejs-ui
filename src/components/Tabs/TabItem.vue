@@ -1,9 +1,9 @@
 <template>
-  <div
+  <section
     v-show="isActive"
     class="vu-tab-item">
     <slot></slot>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -20,9 +20,16 @@ export default {
       required: true,
     },
     /**
+     * tab name
+     */
+    name: String,
+    /**
      * icon for label
      */
-    icon: String,
+    icon: {
+      type: String,
+      default: null,
+    },
     /**
      * if tab active
      */
