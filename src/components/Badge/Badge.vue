@@ -1,12 +1,16 @@
 <template>
-  <component
-    :is="link ? 'a' : 'span'"
-    :href="link && '#'"
-    :class="classes"
-    class="vu-badge badge"
-    @click.prevent="onClick">
+  <div class="vu-badge">
     <slot/>
-  </component>
+
+    <vu-tag
+      :color="color"
+      :class="[`top-${position}`, {overlap: overlap}]"
+      round>
+      <slot name="badge">
+        {{ value }}
+      </slot>
+    </vu-tag>
+  </div>
 </template>
 
 <script>
@@ -19,45 +23,32 @@ export default {
   name: 'VuBadge',
   props: {
     /**
+     * display value
+     */
+    value: [String, Number],
+    /**
      * The color for the button.
      */
     color: {
       type: String,
-      default: 'primary',
+      default: 'error',
       validator: value => colorUtility.isColor(value),
     },
     /**
-     * round button style
+     * position of badge
      */
-    round: {
-      type: Boolean,
-      default: false,
+    position: {
+      type: String,
+      default: 'right',
+      validator: value => Object.values([
+        'right',
+        'left',
+      ]).includes(value),
     },
     /**
-     * link
+     * overlap
      */
-    link: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  computed: {
-    classes() {
-      return [
-        `badge-${this.color}`,
-        { 'badge-pill': this.round },
-      ];
-    },
-  },
-  methods: {
-    /**
-     * @event click
-     * @type undefined
-     * @description if link is true,
-     */
-    onClick() {
-      if (this.link) this.$emit('click');
-    },
+    overlap: Boolean,
   },
 };
 </script>
