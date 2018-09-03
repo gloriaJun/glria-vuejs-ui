@@ -6,10 +6,15 @@
         :key="index"
         :disabled="tab.disabled"
         :active="tab.isActive"
-        @click.prevent="handleClickTab(tab)">{{ tab.label }}</vu-nav-item>
+        @click.prevent="handleClickTab(tab)">
+        <vu-icon
+            v-if="tab.icon"
+            :icon="tab.icon"></vu-icon>
+        {{ tab.label }}
+      </vu-nav-item>
     </vu-nav>
 
-    <div class="tab-contents">
+    <div class="tab-content">
       <slot></slot>
     </div>
   </div>
@@ -34,11 +39,25 @@ export default {
         'pills',
       ]).includes(value),
     },
+    /**
+     * alignment styles
+     */
+    align: {
+      type: String,
+      default: '',
+      validator: value => Object.values([
+        '',
+        'center',
+        'end',
+      ]).includes(value),
+    },
+    /**
+     * whether width of tab automatically fits its container
+     */
+    grow: Boolean,
   },
   data() {
     return {
-      // activeTabName: this.value,
-      // activeTabIndex: 0,
       tabs: [],
     };
   },
@@ -47,11 +66,13 @@ export default {
       return [
         { 'nav-tabs': this.type === 'card' },
         { 'nav-pills  nav-fill': this.type === 'pills' },
+        this.align && `justify-content-${this.align}`,
+        { 'nav-justified': this.grow },
       ];
     },
   },
   mounted() {
-    this.tabs = this.$children.filter(child => child.$el.className === 'vu-tab-item');
+    this.tabs = this.$children.filter(child => child.$options._componentTag === 'vu-tab-item');
 
     // if any tabl is not active, first index set active
     if (!this.tabs.some(tab => tab.isActive)) {

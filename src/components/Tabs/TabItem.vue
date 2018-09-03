@@ -1,7 +1,8 @@
 <template>
   <section
     v-show="isActive"
-    class="vu-tab-item">
+    :class="{'show active': isActive}"
+    class="vu-tab-item tab-pane fade">
     <slot></slot>
   </section>
 </template>
@@ -15,10 +16,7 @@ export default {
     /**
      * tab label
      */
-    label: {
-      type: String,
-      required: true,
-    },
+    label: String,
     /**
      * tab name
      */
@@ -26,10 +24,7 @@ export default {
     /**
      * icon for label
      */
-    icon: {
-      type: String,
-      default: null,
-    },
+    icon: String,
     /**
      * if tab active
      */

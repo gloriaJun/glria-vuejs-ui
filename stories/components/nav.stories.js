@@ -15,19 +15,23 @@ storiesOf('Components|Nav', module)
         return {
           items: [
             { label: 'Item1' },
-            { label: 'Item2' },
+            { label: 'Item2', icon: 'info-circle' },
             { label: 'Item3' },
             { label: 'Item4', disabled: true },
           ],
         }
       },
       template: `
-        <vu-nav
-          :vertical="${vertical}">
+        <vu-nav :vertical="${vertical}">
           <vu-nav-item
             v-for="(item, index) in items"
             :key="index"
-            :disabled="item.disabled">{{ item.label }}</vu-nav-item>
+            :disabled="item.disabled">
+            <vu-icon
+              v-if="item.icon"
+              :icon="item.icon"></vu-icon>
+            {{ item.label }}
+            </vu-nav-item>
         </vu-nav>
       `,
     });
