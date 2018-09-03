@@ -1,5 +1,6 @@
 <template>
    <span
+     v-on="$listeners"
      :class="elClasses"
      class="vu-icon">
      <i :class="iconClasses"></i>

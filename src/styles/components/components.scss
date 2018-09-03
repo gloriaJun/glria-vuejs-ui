@@ -18,7 +18,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  font-size: 1.5em;
 
   &, img {
     @extend .rounded-circle;
@@ -142,5 +141,23 @@
   }
   .tab-content {
     margin-top: 1rem;
+  }
+}
+
+/**
+  tag
+ */
+.vu-tag {
+  &.badge-pill {
+    .vu-icon.closable {
+      margin-right: -.15rem;
+    }
+  }
+  .vu-icon.closable {
+    margin-left: .3rem;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
   }
 }

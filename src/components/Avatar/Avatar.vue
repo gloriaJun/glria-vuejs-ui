@@ -68,6 +68,7 @@ export default {
         height: `${this.size}px`,
         backgroundColor: this.bgColor,
         color: this.textColor,
+        fontSize: `${this.size / 2}px`,
       };
     },
   },

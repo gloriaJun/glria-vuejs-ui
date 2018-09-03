@@ -10,6 +10,7 @@ export { default as VuList } from './List';
 export { default as VuNav } from './Nav';
 export { default as VuProgress } from './Progress';
 export { default as VuTabs } from './Tabs';
+export { default as VuTag } from './Tag';
 
 export default {
 };
