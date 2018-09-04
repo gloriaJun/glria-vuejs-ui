@@ -20,9 +20,9 @@ jobs:
     - stage: document
       deploy:
         provider: pages
-#       skip-cleanup: true
+        skip-cleanup: true
         github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-#       keep-history: true
+        keep-history: true
         script:
           - yarn styleguide:build
         local-dir: dist-doc

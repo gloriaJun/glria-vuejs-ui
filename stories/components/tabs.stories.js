@@ -27,7 +27,7 @@ storiesOf('Components|Tabs', module)
             </template>
             <h2>This is Information</h2>
           </vu-tab-item>
-          <vu-tab-item label="Location" name="location">
+          <vu-tab-item label="Location" name="location" active>
             <h2>This is Location</h2>
           </vu-tab-item>
           <vu-tab-item label="About" disabled>

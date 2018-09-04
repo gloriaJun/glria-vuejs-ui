@@ -136,6 +136,35 @@
 }
 
 /**
+  steps
+ */
+.vu-steps {
+  > .nav {
+    margin-bottom: .5rem;
+
+    .nav-item {
+      padding: 1rem;
+      > .step-item {
+        background-color: $secondary;
+        color: $white;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      &.active > .step-item {
+        background-color: $primary;
+      }
+      + .liner {
+        flex: 1 1 0;
+        align-self: center;
+        border: 1px solid #e0e0e0;
+      }
+    }
+  }
+}
+
+/**
   tabs
  */
 .vu-tabs {
