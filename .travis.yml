@@ -18,13 +18,13 @@ jobs:
         - yarn build
         - npm publish
     - stage: document
+      script:
+        - yarn styleguide:build
       deploy:
         provider: pages
         skip-cleanup: true
         github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
         keep-history: true
-        script:
-          - yarn styleguide:build
         local-dir: dist-doc
         on:
           branch: master
