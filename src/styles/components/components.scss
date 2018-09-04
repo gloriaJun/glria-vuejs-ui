@@ -139,7 +139,11 @@
   tabs
  */
 .vu-tabs {
-  ul.nav:not(.nav-tabs):not(.nav-pills) {
+  .nav-justified .nav-item {
+    flex-basis: auto;
+  }
+
+  > .vu-nav.nav-line {
     position: relative;
     &:after {
       content: "";
@@ -148,22 +152,19 @@
       bottom: 0;
       width: 100%;
     }
-    .nav-item {
+    > .vu-nav-item {
       z-index: 1;
       > .nav-link {
-        &:not(.disabled) {
-          color: inherit;
-        }
+        &:not(.disabled) { color: inherit; }
         &.active {
           color: $primary;
           border-bottom: 2px solid $primary;
         }
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
+        &:hover { color: $primary; }
+      } // end of '.nav-link'
+    } // end of '.vu-nav-item'
+  } // end of '.vu-nav.nav-line'
+
   .tab-content {
     margin-top: 1rem;
   }

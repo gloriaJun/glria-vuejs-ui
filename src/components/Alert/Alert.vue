@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import messageMixin from '../../mixins/messageMixin';
+import messageMixin from '../../utils/messageMixin';
 
 /**
  * @example ../../../docs/examples/Alert.md

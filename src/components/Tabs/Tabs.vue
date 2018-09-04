@@ -7,10 +7,15 @@
         :disabled="tab.disabled"
         :active="tab.isActive"
         @click.prevent="handleClickTab(tab)">
-        <vu-icon
-            v-if="tab.icon"
-            :icon="tab.icon"></vu-icon>
-        {{ tab.label }}
+        <template v-if="tab.$slots.label">
+          <vu-slot
+            :component="tab"
+            tag="span"
+            name="label"></vu-slot>
+        </template>
+        <template v-else>
+          {{ tab.label }}
+        </template>
       </vu-nav-item>
     </vu-nav>
 
@@ -21,20 +26,25 @@
 </template>
 
 <script>
+import VuSlot from '../../utils/SlotComponent';
+
 /**
  * @example ../../../docs/examples/Tabs.md
  */
 export default {
   name: 'VuTabs',
+  components: {
+    VuSlot,
+  },
   props: {
     /**
      * type of Tab
      */
     type: {
       type: String,
-      default: '',
+      default: 'line',
       validator: value => Object.values([
-        '',
+        'line',
         'card',
         'pills',
       ]).includes(value),
@@ -44,9 +54,9 @@ export default {
      */
     align: {
       type: String,
-      default: '',
+      default: 'left',
       validator: value => Object.values([
-        '',
+        'left',
         'center',
         'end',
       ]).includes(value),
@@ -54,7 +64,7 @@ export default {
     /**
      * whether width of tab automatically fits its container
      */
-    grow: Boolean,
+    expanded: Boolean,
   },
   data() {
     return {
@@ -64,10 +74,9 @@ export default {
   computed: {
     classes() {
       return [
-        { 'nav-tabs': this.type === 'card' },
-        { 'nav-pills  nav-fill': this.type === 'pills' },
-        this.align && `justify-content-${this.align}`,
-        { 'nav-justified': this.grow },
+        `nav-${this.type}`,
+        `justify-content-${this.align}`,
+        { 'nav-justified': this.expanded },
       ];
     },
   },

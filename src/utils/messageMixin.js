@@ -1,4 +1,4 @@
-import colorUtility from '../utils/color';
+import colorUtility from './color';
 
 /**
  * @mixin

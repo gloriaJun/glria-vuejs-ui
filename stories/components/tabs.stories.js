@@ -9,21 +9,22 @@ import {
 storiesOf('Components|Tabs', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const type = select('type', ['', 'card', 'pills'], '');
-    const align = select('align', ['', 'center', 'end'], '');
-    const grow = boolean('grow', false);
-    const icon = boolean('icon', false);
+    const type = select('type', ['line', 'card', 'pills'], 'line');
+    const align = select('align', ['left', 'center', 'end'], 'left');
+    const expanded = boolean('expanded', false);
 
     return ({
       template: `
         <vu-tabs
-          :grow="${grow}"
+          :expanded="${expanded}"
           type="${type}"
           align="${align}"
           @tab-click="onClickTab">
-          <vu-tab-item
-            :icon="${icon} ? 'info-circle' : ''"
-            label="Information">
+          <vu-tab-item>
+            <template slot="label">
+              <vu-icon icon="info-circle"></vu-icon>
+              Information
+            </template>
             <h2>This is Information</h2>
           </vu-tab-item>
           <vu-tab-item label="Location" name="location">

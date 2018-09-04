@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import SlotMixin from '../../mixins/slotMixin';
+import SlotMixin from '../../utils/slotMixin';
 
 /**
  * @example ../../../docs/examples/Card.md

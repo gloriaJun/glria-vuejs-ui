@@ -22,10 +22,6 @@ export default {
      */
     name: String,
     /**
-     * icon for label
-     */
-    icon: String,
-    /**
      * if tab active
      */
     active: Boolean,
