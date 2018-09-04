@@ -155,6 +155,9 @@
       &.active > .step-item {
         background-color: $primary;
       }
+      &.done > .step-item {
+        background-color: lighten($primary, 18%);
+      }
       + .liner {
         flex: 1 1 0;
         align-self: center;

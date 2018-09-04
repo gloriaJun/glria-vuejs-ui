@@ -6,18 +6,19 @@
       <template v-for="(step, index) in steps">
         <li
           :key="step.uuid"
-          :class="[{disabled: step.disabled}, {active: step.isActive}]"
+          :class="[
+            {disabled: step.disabled},
+            {active: step.isActive},
+            {done: index < active}
+          ]"
           class="nav-item">
           <div class="step-item rounded-circle">
-            <template v-if="step.$slots.label">
-              <vu-slot
-                :component="step"
-                tag="span"
-                name="label"></vu-slot>
+            <template v-if="index >= active">
+              {{ index + 1 }}
             </template>
-            <template v-else>
-              {{ index }}
-            </template>
+            <vu-icon
+              v-else
+              icon="check"></vu-icon>
           </div>
         </li>
 
@@ -56,16 +57,15 @@ export default {
     /**
      * type of Tab
      */
-    type: {
-      type: String,
-      default: '',
-      validator: value => Object.values([
-      ]).includes(value),
-    },
+    // type: {
+    //   type: String,
+    //   default: '',
+    //   validator: value => Object.values([
+    //   ]).includes(value),
+    // },
   },
   data() {
     return {
-      currentStep: this.active,
       steps: [],
     };
   },
@@ -80,21 +80,9 @@ export default {
     this.steps = this.$children.filter(child => child.$options._componentTag === 'vu-step-item');
     // set step is active
     this.steps = this.steps.map((step, index) => {
-      step.isActive = (index === this.currentStep);
+      step.isActive = (index === this.active);
       return step;
     });
-  },
-  methods: {
-    handleClickTab(tab) {
-      let activeIndex = 0;
-      this.steps.map((obj, index) => {
-        obj.isActive = (obj.id === tab.id);
-        if (obj.isActive) activeIndex = index;
-        return obj;
-      });
-
-      this.$emit('tab-click', activeIndex, tab.name);
-    },
   },
 };
 </script>

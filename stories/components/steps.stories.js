@@ -9,11 +9,17 @@ import {
 storiesOf('Components|Steps', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const type = select('type', ['line', 'card', 'pills'], 'line');
-    const active = number('active', 0);
+    // const type = select('type', ['line', 'card', 'pills'], 'line');
+    const active = number('active', 0, {
+      range: true,
+      min: 0,
+      max: 2,
+      step: 1,
+    });
 
     return ({
       template: `
+      <div>
         <vu-steps :active="${active}">
           <vu-step-item>
             Step 1
@@ -25,9 +31,7 @@ storiesOf('Components|Steps', module)
             Step 3
           </vu-step-item>
         </vu-steps>
+      </div>
       `,
-      methods: {
-        onClickTab: (index, name) => action('tab-click')(index, name),
-      }
     });
   })

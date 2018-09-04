@@ -22,10 +22,6 @@ export default {
      */
     name: String,
     /**
-     * if tab active
-     */
-    active: Boolean,
-    /**
      * if tab disabled
      */
     disabled: Boolean,
@@ -33,7 +29,7 @@ export default {
   data() {
     return {
       uuid: uuid(),
-      isActive: this.active,
+      isActive: false,
     };
   },
 };

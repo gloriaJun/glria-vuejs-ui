@@ -7,12 +7,11 @@
         :disabled="tab.disabled"
         :active="tab.isActive"
         @click.prevent="handleClickTab(tab)">
-        <template v-if="tab.$slots.label">
-          <vu-slot
-            :component="tab"
-            tag="span"
-            name="label"></vu-slot>
-        </template>
+        <vu-slot
+          v-if="tab.$slots.label"
+          :component="tab"
+          tag="span"
+          name="label"></vu-slot>
         <template v-else>
           {{ tab.label }}
         </template>
