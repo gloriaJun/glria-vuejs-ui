@@ -2,12 +2,21 @@ language: node_js
 node_js:
 - 10
 
-script:
+# Install specific version
+before_install:
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.4
+- export PATH="$HOME/.yarn/bin:$PATH"
+
+install:
 - yarn install
 
 branches:
   only:
     - master
+
+# $HOME/.cache/yarn
+cache:
+  yarn: true
 
 jobs:
   include:
