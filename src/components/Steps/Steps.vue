@@ -1,8 +1,6 @@
 <template>
   <div class="vu-steps">
-    <ul
-      :class="classes"
-      class="nav border shadow-sm bg-white rounded">
+    <ul class="nav border shadow-sm bg-white rounded">
       <template v-for="(step, index) in steps">
         <li
           :key="step.uuid"
@@ -11,8 +9,8 @@
             {active: step.isActive},
             {done: index < active}
           ]"
-          class="nav-item">
-          <div class="step-item rounded-circle">
+          class="nav-item step-item">
+          <div class="step-item-icon rounded-circle">
             <template v-if="index >= active">
               {{ index + 1 }}
             </template>
@@ -20,12 +18,18 @@
               v-else
               icon="check"></vu-icon>
           </div>
+          <div
+            v-if="step.title"
+            class="step-item-content">
+            <div class="step-item-title">{{ step.title }}</div>
+            <div class="step-item-description">{{ step.description}}</div>
+          </div>
         </li>
 
         <hr
-          v-if="steps.length - 1 > index"
-          :key="index"
-          class="liner">
+            v-if="steps.length - 1 > index"
+            :key="index"
+            class="liner">
       </template>
     </ul>
 
@@ -54,27 +58,11 @@ export default {
       type: Number,
       default: 0,
     },
-    /**
-     * type of Tab
-     */
-    // type: {
-    //   type: String,
-    //   default: '',
-    //   validator: value => Object.values([
-    //   ]).includes(value),
-    // },
   },
   data() {
     return {
       steps: [],
     };
-  },
-  computed: {
-    classes() {
-      return [
-        `nav-${this.type}`,
-      ];
-    },
   },
   mounted() {
     this.steps = this.$children.filter(child => child.$options._componentTag === 'vu-step-item');

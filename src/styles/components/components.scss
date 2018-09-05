@@ -139,32 +139,55 @@
   steps
  */
 .vu-steps {
-  > .nav {
+  .nav {
     margin-bottom: .5rem;
 
-    .nav-item {
+    .step-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       padding: 1rem;
-      > .step-item {
-        background-color: $secondary;
+      .step-item-icon {
         color: $white;
         width: 25px;
         height: 25px;
+        line-height: 25px;
         text-align: center;
-        vertical-align: middle;
       }
-      &.active > .step-item {
+      .step-item-content {
+        text-align: center;
+        .step-item-description {
+          font-size: .9em;
+        }
+      }
+      &:not(.active):not(.done) {
+        > .step-item-icon {
+          background-color: $secondary;
+        }
+        > .step-item-content {
+          color: lighten($secondary, 10%);
+        }
+      }
+      &.active > .step-item-icon {
         background-color: $primary;
       }
-      &.done > .step-item {
+      &.done > .step-item-icon {
         background-color: lighten($primary, 18%);
       }
       + .liner {
         flex: 1 1 0;
-        align-self: center;
+        align-self: start;
+        margin-top: 28px;
         border: 1px solid #e0e0e0;
       }
     }
   }
+  //> .nav {
+  //
+  //  .nav-item {
+
+  //  }
+  //}
 }
 
 /**

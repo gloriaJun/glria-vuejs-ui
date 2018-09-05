@@ -14,17 +14,13 @@ export default {
   name: 'VuStepItem',
   props: {
     /**
-     * tab label
+     * title of step
      */
-    label: String,
+    title: String,
     /**
-     * tab name
+     * description
      */
-    name: String,
-    /**
-     * if tab disabled
-     */
-    disabled: Boolean,
+    description: String,
   },
   data() {
     return {
