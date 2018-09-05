@@ -1,47 +1,62 @@
 ### Full Example Code
-[![Edit Gvu-Badge](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/v8mz66vr47?module=%2Fsrc%2FApp.vue)
 
 ### Basic
-```jsx
-<div>
-  <vu-badge color="primary">primary</vu-badge>
-  <vu-badge color="secondary">secondary</vu-badge>
-  <vu-badge color="info">info</vu-badge>
-  <vu-badge color="success">success</vu-badge>
-  <vu-badge color="warning">warning</vu-badge>
-  <vu-badge color="danger">danger</vu-badge>
-  <vu-badge color="light">light</vu-badge>
-  <vu-badge color="dark">dark</vu-badge>
-</div>
-```
-
-##### round
-```jsx
-<div>
-  <vu-badge color="primary" round>primary</vu-badge>
-  <vu-badge color="secondary" round>secondary</vu-badge>
-  <vu-badge color="info" round>info</vu-badge>
-  <vu-badge color="success" round>success</vu-badge>
-  <vu-badge color="warning" round>warning</vu-badge>
-  <vu-badge color="danger" round>danger</vu-badge>
-  <vu-badge color="light" round>light</vu-badge>
-  <vu-badge color="dark" round>dark</vu-badge>
-</div>
-```
-
-### link 
 ```vue
 <template>
-  <vu-badge color="primary" link @click=onClick>primary</vu-badge>
+  <div class="wrapper">
+    <div class="row">
+      <vu-badge value="5">New</vu-badge>
+      <vu-badge value="45">
+        <vu-avatar icon="home"></vu-avatar>
+      </vu-badge>
+    </div>
+    <div class="row">
+      <vu-badge value="5" position="left">New</vu-badge>
+      <vu-badge value="999+" position="left">
+        <vu-avatar icon="home"></vu-avatar>
+      </vu-badge>
+    </div>
+  </div>
 </template>
-
 <script>
-export default {
-  methods: {
-   onClick() {
-      console.log('click badge');
-    },
-  },
-};
+  export default {
+  }
 </script>
+<style scoped>
+  .wrapper .vu-badge {
+    margin: 0 2rem;
+  }
+  .wrapper .row {
+    margin: 1rem 0;
+  }
+</style>
+```
+
+##### with icon 
+```vue
+<div>
+    <vu-badge>
+        <vu-button>Button</vu-button>
+        <vu-icon slot="badge" icon="info"></vu-icon>
+    </vu-badge>
+</div>
+```
+
+### overlap
+```vue
+<div>
+    <vu-badge overlap>
+        <vu-button>Button</vu-button>
+        <vu-icon slot="badge" icon="info"></vu-icon>
+    </vu-badge>
+</div>
+```
+
+### color
+```vue
+<div>
+  <vu-badge value="New" color="success">
+    <vu-avatar icon="home"></vu-avatar>
+  </vu-badge>
+</div>
 ```

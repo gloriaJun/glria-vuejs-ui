@@ -19,7 +19,7 @@
 import colorUtility from '../../utils/color';
 
 /**
- * @example ../../../docs/examples/Badge.md
+ * @example ../../../docs/examples/Tag.md
  */
 export default {
   name: 'VuTag',

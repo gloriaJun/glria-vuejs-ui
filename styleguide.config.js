@@ -16,6 +16,7 @@ module.exports = {
         './src/components/Breadcrumb/Breadcrumb.vue',
         './src/components/Icon/Icon.vue',
         './src/components/Progress/Progress.vue',
+        './src/components/Tag/Tag.vue',
       ],
       sections: [
         { name: 'Buttons', components: './src/components/Button*/*.vue' },

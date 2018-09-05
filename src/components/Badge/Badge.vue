@@ -35,7 +35,7 @@ export default {
      */
     color: {
       type: String,
-      default: 'error',
+      default: 'danger',
       validator: value => colorUtility.isColor(value),
     },
     /**
