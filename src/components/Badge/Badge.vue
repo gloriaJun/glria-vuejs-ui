@@ -15,12 +15,16 @@
 
 <script>
 import colorUtility from '../../utils/color';
+import VuTag from '../Tag/Tag.vue';
 
 /**
  * @example ../../../docs/examples/Badge.md
  */
 export default {
   name: 'VuBadge',
+  components: {
+    VuTag,
+  },
   props: {
     /**
      * display value

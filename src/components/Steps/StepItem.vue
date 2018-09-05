@@ -14,6 +14,10 @@ export default {
   name: 'VuStepItem',
   props: {
     /**
+     * icon
+     */
+    icon: String,
+    /**
      * title of step
      */
     title: String,

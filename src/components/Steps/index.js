@@ -1,4 +1,4 @@
-import VuSteps from './Steps.vue';
+import VuSteps from './Step.vue';
 import VuStepItem from './StepItem.vue';
 
 export default (Vue) => {

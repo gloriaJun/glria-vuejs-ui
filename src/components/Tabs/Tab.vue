@@ -1,5 +1,5 @@
 <template>
-  <div class="vu-tabs">
+  <div class="vu-tab">
     <vu-nav :class="classes">
       <vu-nav-item
         v-for="(tab, index) in tabs"
@@ -31,7 +31,7 @@ import VuSlot from '../../utils/SlotComponent';
  * @example ../../../docs/examples/Tabs.md
  */
 export default {
-  name: 'VuTabs',
+  name: 'VuTab',
   components: {
     VuSlot,
   },
@@ -57,7 +57,7 @@ export default {
       validator: value => Object.values([
         'left',
         'center',
-        'end',
+        'right',
       ]).includes(value),
     },
     /**
@@ -73,8 +73,8 @@ export default {
   computed: {
     classes() {
       return [
-        `nav-${this.type}`,
-        `justify-content-${this.align}`,
+        `nav-${this.type.replace('card', 'tabs')}`,
+        `justify-content-${this.align.replace('right', 'end')}`,
         { 'nav-justified': this.expanded },
       ];
     },
@@ -88,6 +88,10 @@ export default {
     }
   },
   methods: {
+    /**
+     * @event click tab
+     * @param tab
+     */
     handleClickTab(tab) {
       let activeIndex = 0;
       this.tabs.map((obj, index) => {

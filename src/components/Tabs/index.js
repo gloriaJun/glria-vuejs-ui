@@ -1,4 +1,4 @@
-import VuTabs from './Tabs.vue';
+import VuTabs from './Tab.vue';
 import VuTabItem from './TabItem.vue';
 
 export default (Vue) => {

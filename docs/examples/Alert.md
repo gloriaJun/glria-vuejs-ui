@@ -18,13 +18,11 @@
 ### closable
 ```vue
 <template>
-  <div>
-      <vu-alert
-        closable
-        @close="alertClose">
-        This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-      </vu-alert>
-  </div>
+  <vu-alert
+    closable
+    @close="alertClose">
+    This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+  </vu-alert>
 </template>
 
 <script>

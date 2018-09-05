@@ -17,8 +17,7 @@ storiesOf('Components|Steps', module)
 
     return ({
       template: `
-      <div>
-        <vu-steps :active="${active}">
+        <vu-step :active="${active}">
           <vu-step-item>
             Step 1
           </vu-step-item>
@@ -28,24 +27,21 @@ storiesOf('Components|Steps', module)
           <vu-step-item>
             Step 3
           </vu-step-item>
-        </vu-steps>
-      </div>
+        </vu-step>
       `,
     });
   })
   .add('with title', () => {
-    const active = number('active', 0, {
-      range: true,
-      min: 0,
-      max: 2,
-      step: 1,
-    });
-
     return ({
+      data() {
+        return {
+          active: 0,
+        }
+      },
       template: `
       <div>
-        <vu-steps :active="${active}">
-          <vu-step-item title="Step 1">
+        <vu-step :active="active">
+          <vu-step-item title="Step 1" icon="edit">
             Step 1
           </vu-step-item>
           <vu-step-item title="Step 2" description="description">
@@ -54,7 +50,11 @@ storiesOf('Components|Steps', module)
           <vu-step-item title="Step 3">
             Step 3
           </vu-step-item>
-        </vu-steps>
+        </vu-step>
+        <vu-button
+          :disabled="active === 2"
+          style="margin-top: 1rem;"
+          @click="active++">Next</vu-button>
       </div>
       `,
     });

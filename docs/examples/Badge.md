@@ -32,9 +32,7 @@
 ### link 
 ```vue
 <template>
-  <div>
-     <vu-badge color="primary" link @click=onClick>primary</vu-badge>
-  </div>
+  <vu-badge color="primary" link @click=onClick>primary</vu-badge>
 </template>
 
 <script>

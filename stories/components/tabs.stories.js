@@ -10,12 +10,12 @@ storiesOf('Components|Tabs', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const type = select('type', ['line', 'card', 'pills'], 'line');
-    const align = select('align', ['left', 'center', 'end'], 'left');
+    const align = select('align', ['left', 'center', 'right'], 'left');
     const expanded = boolean('expanded', false);
 
     return ({
       template: `
-        <vu-tabs
+        <vu-tab
           :expanded="${expanded}"
           type="${type}"
           align="${align}"
@@ -36,7 +36,7 @@ storiesOf('Components|Tabs', module)
           <vu-tab-item label="Q&A">
             <h2>This is Q&A</h2>
           </vu-tab-item>
-        </vu-tabs>
+        </vu-tab>
       `,
       methods: {
         onClickTab: (index, name) => action('tab-click')(index, name),

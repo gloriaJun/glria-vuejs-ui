@@ -6,10 +6,10 @@
     <vu-avatar src="https://vuematerial.io/assets/examples/avatar.png"></vu-avatar>
     <vu-avatar
         src="https://material-ui.com/static/images/uxceo-128.jpg"
-        size=70></vu-avatar>
+        :size=70></vu-avatar>
     <vu-avatar
         src="https://vuematerial.io/assets/examples/avatar-2.jpg"
-        size=30></vu-avatar>
+        :size=30></vu-avatar>
 </div>
 ```
 

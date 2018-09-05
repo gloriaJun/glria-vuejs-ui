@@ -22,6 +22,8 @@ module.exports = {
         { name: 'Card', components: 'src/components/Card/*.vue' },
         { name: 'List', components: 'src/components/List/*.vue' },
         { name: 'Nav', components: 'src/components/Nav/*.vue' },
+        { name: 'Steps', components: 'src/components/Steps/*.vue' },
+        { name: 'Tabs', components: 'src/components/Tabs/*.vue' },
       ],
     }
   ],

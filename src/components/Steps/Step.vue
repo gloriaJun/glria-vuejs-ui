@@ -1,5 +1,5 @@
 <template>
-  <div class="vu-steps">
+  <div class="vu-step">
     <ul class="nav border shadow-sm bg-white rounded">
       <template v-for="(step, index) in steps">
         <li
@@ -12,7 +12,12 @@
           class="nav-item step-item">
           <div class="step-item-icon rounded-circle">
             <template v-if="index >= active">
-              {{ index + 1 }}
+              <vu-icon
+                v-if="step.icon"
+                :icon="step.icon"></vu-icon>
+              <span v-else>
+                {{ index + 1 }}
+              </span>
             </template>
             <vu-icon
               v-else
@@ -46,7 +51,7 @@ import VuSlot from '../../utils/SlotComponent';
  * @example ../../../docs/examples/Steps.md
  */
 export default {
-  name: 'VuSteps',
+  name: 'VuStep',
   components: {
     VuSlot,
   },
@@ -64,13 +69,22 @@ export default {
       steps: [],
     };
   },
+  watch: {
+    active() {
+      this.setCurrentStep();
+    },
+  },
   mounted() {
     this.steps = this.$children.filter(child => child.$options._componentTag === 'vu-step-item');
-    // set step is active
-    this.steps = this.steps.map((step, index) => {
-      step.isActive = (index === this.active);
-      return step;
-    });
+    this.setCurrentStep();
+  },
+  methods: {
+    setCurrentStep() {
+      this.steps = this.steps.map((step, index) => {
+        step.isActive = (index === this.active);
+        return step;
+      });
+    },
   },
 };
 </script>
