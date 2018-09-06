@@ -7,15 +7,17 @@ import {
   select,
 } from '@storybook/addon-knobs';
 
-import { COLOR_TYPES } from '../constants';
+import { SIZES, ALIGNMENT } from '../constants';
 
 storiesOf('Components|Pagination', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const total = number('total', 26, { min: 0 });
-    // const pageSize = select('pageSize', [10, 20, 30, 50], 10);
+    const total = number('total', 286, { min: 0 });
+    const perPage = select('perPage', ['10', '20', '30', '50'], '10');
     const current = number('current', 1, { min: 1 });
     const border = boolean('border', false);
+    const size = select('size', SIZES, '');
+    const align = select('align', ALIGNMENT, ALIGNMENT.LEFT);
 
     return ({
       data() {
@@ -28,13 +30,16 @@ storiesOf('Components|Pagination', module)
         <h5>Current Page : {{ current }}</h5>
         <vu-pagination
           v-model="current" 
+          :border="${border}"
           :total="${total}"
-          :border="${border}"></vu-pagination>
+          :per-page="${parseInt(perPage)}"
+          size="${size}"
+          align="${align}"
+          @page-change="onChange"></vu-pagination>
       </div>
       `,
       methods: {
-        onClick: () => action('click badge')(),
-        onClose: () => action('click close')(),
+        onChange: (current) => action('click page')(current),
       },
     });
   })
