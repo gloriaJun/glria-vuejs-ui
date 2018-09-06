@@ -125,6 +125,28 @@
 }
 
 /**
+  pagination
+ */
+.vu-pagination {
+  .page-link:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &.border-none .page-item {
+    &.active .page-link {
+      color: theme-color("primary");
+      background-color: transparent;
+    }
+    .page-link {
+      border: none;
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+/**
   progress
  */
 .vu-progress {

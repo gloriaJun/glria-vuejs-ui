@@ -8,9 +8,10 @@ export { default as VuCard } from './Card';
 export { default as VuIcon } from './Icon';
 export { default as VuList } from './List';
 export { default as VuNav } from './Nav';
+export { default as VuPagination } from './Pagination';
 export { default as VuProgress } from './Progress';
-export { default as VuSteps } from './Steps';
-export { default as VuTabs } from './Tabs';
+export { default as VuStep } from './Steps';
+export { default as VuTab } from './Tabs';
 export { default as VuTag } from './Tag';
 
 export default {
