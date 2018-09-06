@@ -98,7 +98,6 @@ export default {
      */
     align: {
       type: String,
-      default: alignUtility.ALIGN.LEFT,
       validator: value => alignUtility.isAlign(value),
     },
   },
@@ -186,7 +185,8 @@ export default {
       this.current = (page > this.pageCount) ? this.pageCount : page;
     },
     /**
-     * @event triggers when current-page changes
+     * @event page-change
+     * @description triggers when current-page changes
      * @param page
      */
     handleClickPage(page) {
@@ -194,7 +194,8 @@ export default {
       this.$emit('page-change', this.current);
     },
     /**
-     * @event triggers when the prev button
+     * @event prev-click
+     * @description triggers when the prev button
      */
     handleClickPrev() {
       this.current = this.current - 1;
@@ -202,7 +203,8 @@ export default {
       this.$emit('prev-click', this.current);
     },
     /**
-     * @event triggers when the next button
+     * @event next-click
+     * @description triggers when the next button
      */
     handleClickNext() {
       this.current = this.current + 1;

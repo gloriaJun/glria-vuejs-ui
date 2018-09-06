@@ -15,6 +15,7 @@ module.exports = {
         './src/components/Badge/Badge.vue',
         './src/components/Breadcrumb/Breadcrumb.vue',
         './src/components/Icon/Icon.vue',
+        './src/components/Pagination/Pagination.vue',
         './src/components/Progress/Progress.vue',
         './src/components/Tag/Tag.vue',
       ],
