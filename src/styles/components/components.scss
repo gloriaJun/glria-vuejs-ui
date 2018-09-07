@@ -113,6 +113,15 @@
 }
 
 /**
+  dropdown
+ */
+.vu-dropdown {
+  > .dropdown-button .vu-button {
+    @extend .dropdown-toggle;
+  }
+}
+
+/**
   icon
  */
 .vu-icon {
