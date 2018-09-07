@@ -1,5 +1,9 @@
 <template>
-  <div class="vu-dropdown dropdown">
+  <div
+    :class="classes"
+    class="vu-dropdown dropdown"
+    @mouseover="handleHoverToggle(true)"
+    @mouseout="handleHoverToggle(false)">
     <div
       class="dropdown-button"
       @click="handleClickToggle">
@@ -23,6 +27,23 @@
 export default {
   name: 'VuDropdown',
   props: {
+    /**
+     * toggle button when hover
+     */
+    hoverable: Boolean,
+    /**
+     * placement of pop menu
+     */
+    placement: {
+      type: String,
+      default: 'bottom',
+      validator: value => Object.values([
+        'top',
+        'bottom',
+        'bottom-left',
+        'bottom-right',
+      ]).includes(value),
+    },
   },
   data() {
     return {
@@ -31,7 +52,13 @@ export default {
   },
   computed: {
     classes() {
+      let placement = '';
+      if (this.placement === 'top') placement = 'dropup';
+      else if (this.placement === 'bottom-left') placement = 'dropleft';
+      else if (this.placement === 'bottom-right') placement = 'dropright';
+
       return [
+        placement,
       ];
     },
   },
@@ -48,19 +75,31 @@ export default {
   methods: {
     /**
      * @event toggle
-     * @description Triggers when dropdown is activated or deactivated
+     * @description triggers when dropdown is activated or deactivated
+     */
+    toggle(show) {
+      this.show = show;
+      this.$emit('toggle');
+    },
+    /**
+     * click the button
      */
     handleClickToggle() {
-      this.show = !this.show;
-      this.$emit('toggle');
+      this.toggle(!this.show);
+    },
+    /**
+     * hover the button
+     */
+    handleHoverToggle(hover) {
+      if (!this.hoverable) return;
+      this.toggle(hover);
     },
     /**
      * Close dropdown if clicked document.
      */
     handleClickDocument(event) {
       if (!this.$el.contains(event.target)) {
-        this.show = false;
-        this.$emit('toggle');
+        this.toggle(false);
       }
     },
   },

@@ -8,16 +8,20 @@ import {
 } from '@storybook/addon-knobs';
 
 import { COLOR_TYPES } from '../constants';
-const color_type = Object.assign(COLOR_TYPES, {DEFAULT: ''});
 
 storiesOf('Components|Dropdown', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const color = select('color', color_type, '');
-    const active = boolean('active', false);
-    const disabled = boolean('disabled', false);
-    const isLink = boolean('link', false);
-    const isButton = boolean('button', false);
+    const hoverable = boolean('hoverable', false);
+    const placement = select('placement', [
+      'top',
+      'bottom',
+      'bottom-left',
+      'bottom-right',
+    ], 'bottom');
+    // const active = boolean('active', false);
+    // const isLink = boolean('link', false);
+    // const isButton = boolean('button', false);
 
     return ({
       data () {
@@ -31,7 +35,9 @@ storiesOf('Components|Dropdown', module)
         }
       },
       template: `
-        <vu-dropdown>
+        <vu-dropdown
+          :hoverable="${hoverable}"
+          placement="${placement}">
           <vu-button>Dropdown Button</vu-button>
           <template slot="menu">
             <vu-dropdown-item
