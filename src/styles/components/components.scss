@@ -116,8 +116,15 @@
   dropdown
  */
 .vu-dropdown {
+  &, > .dropdown-button {
+    display: inline-block;
+  }
   > .dropdown-button .vu-button {
     @extend .dropdown-toggle;
+  }
+  // placement
+  &.bottom-right .dropdown-menu {
+    @extend .dropdown-menu-right;
   }
 }
 

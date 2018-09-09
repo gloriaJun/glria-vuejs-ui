@@ -4,10 +4,7 @@ import { action } from '@storybook/addon-actions';
 import {
   boolean,
   select,
-  text,
 } from '@storybook/addon-knobs';
-
-import { COLOR_TYPES } from '../constants';
 
 storiesOf('Components|Dropdown', module)
   .addDecorator(VueInfoAddon)
@@ -15,13 +12,11 @@ storiesOf('Components|Dropdown', module)
     const hoverable = boolean('hoverable', false);
     const placement = select('placement', [
       'top',
-      'bottom',
+      'left',
+      'right',
       'bottom-left',
       'bottom-right',
-    ], 'bottom');
-    // const active = boolean('active', false);
-    // const isLink = boolean('link', false);
-    // const isButton = boolean('button', false);
+    ], 'bottom-left');
 
     return ({
       data () {
@@ -35,9 +30,43 @@ storiesOf('Components|Dropdown', module)
         }
       },
       template: `
+      <div
+        class="d-flex align-items-center justify-content-center"
+        style="height: 300px">
         <vu-dropdown
           :hoverable="${hoverable}"
           placement="${placement}">
+          <vu-button>Dropdown Button</vu-button>
+          <template slot="menu">
+            <vu-dropdown-item
+              v-for="(item, index) in items"
+              :key="index"
+              :active="item.active"
+              :disabled="item.disabled"
+              @click="onClick(item)">
+              {{ item.label }}
+            </vu-dropdown-item>
+          </template>
+        </vu-dropdown>
+      </div>
+      `,
+      methods: {
+        onClick: (item) => action('click item')(item),
+      }
+    });
+  })
+ .add('context menu', () => {
+    return ({
+      data () {
+        return {
+          items: [
+            { label: 'Menu1' },
+            { label: 'Menu2' },
+          ],
+        }
+      },
+      template: `
+        <vu-dropdown>
           <vu-button>Dropdown Button</vu-button>
           <template slot="menu">
             <vu-dropdown-item
@@ -48,8 +77,5 @@ storiesOf('Components|Dropdown', module)
           </template>
         </vu-dropdown>
       `,
-      methods: {
-        onClick: (e) => action('click button')(e),
-      }
     });
   })

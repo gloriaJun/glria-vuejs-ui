@@ -36,10 +36,11 @@ export default {
      */
     placement: {
       type: String,
-      default: 'bottom',
+      default: 'bottom-left',
       validator: value => Object.values([
         'top',
-        'bottom',
+        'left',
+        'right',
         'bottom-left',
         'bottom-right',
       ]).includes(value),
@@ -52,10 +53,9 @@ export default {
   },
   computed: {
     classes() {
-      let placement = '';
+      let placement = `${this.placement}`;
       if (this.placement === 'top') placement = 'dropup';
-      else if (this.placement === 'bottom-left') placement = 'dropleft';
-      else if (this.placement === 'bottom-right') placement = 'dropright';
+      else if (/^((left)|(right))$/.test(this.placement)) placement = `drop${this.placement}`;
 
       return [
         placement,
