@@ -113,6 +113,22 @@
 }
 
 /**
+  dropdown
+ */
+.vu-dropdown {
+  > .dropdown-button {
+    display: inline-block;
+  }
+  > .dropdown-button .vu-button {
+    @extend .dropdown-toggle;
+  }
+  // placement
+  &.bottom-right .dropdown-menu {
+    @extend .dropdown-menu-right;
+  }
+}
+
+/**
   icon
  */
 .vu-icon {
@@ -122,6 +138,29 @@
       color: $value;
     }
   } // end of color type
+}
+
+/**
+  pagination
+ */
+.vu-pagination {
+  margin-bottom: 0;
+  .page-link:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &.border-none .page-item {
+    &.active .page-link {
+      color: theme-color("primary");
+      background-color: transparent;
+    }
+    .page-link {
+      border: none;
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
 }
 
 /**

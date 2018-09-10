@@ -23,6 +23,12 @@ export const POSITIONS = Object.freeze({
   BOTTOM_CENTER: 'bottom-center',
 });
 
+export const ALIGNMENT = Object.freeze({
+  LEFT: 'left',
+  CENTER: 'center',
+  RIGHT: 'right',
+});
+
 export const SIZES = Object.freeze({
   DEFAULT: '',
   LARGE: 'lg',
