@@ -273,6 +273,12 @@
       margin-right: -.15rem;
     }
   }
+  @each $color, $value in $theme-colors {
+    &.outline-#{$color} {
+      border: 1px solid transparent;
+      @include button-outline-variant($value);
+    }
+  }
   .vu-icon.closable {
     margin-left: .3rem;
     cursor: pointer;

@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import {
   boolean,
   select,
-  text,
 } from '@storybook/addon-knobs';
 
 import { COLOR_TYPES } from '../constants';
@@ -14,6 +13,7 @@ storiesOf('Components|Tag', module)
   .add('default', () => {
     const color = select('color', COLOR_TYPES, COLOR_TYPES.PRIMARY);
     const round = boolean('round', false);
+    const outline = boolean('outline', false);
     const link = boolean('link', false);
     const closable = boolean('closable', false);
 
@@ -21,6 +21,7 @@ storiesOf('Components|Tag', module)
       template: `
         <vu-tag
           :round="${round}"
+          :outline="${outline}"
           :link="${link}"
           :closable="${closable}"
           color="${color}"
