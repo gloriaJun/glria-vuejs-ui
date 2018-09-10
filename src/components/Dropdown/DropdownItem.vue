@@ -3,7 +3,7 @@
     :href="href"
     :class="classes"
     class="vu-dropdown-item dropdown-item"
-    @click.prevent="handleClickMenu">
+    @click.stop.prevent="handleClickMenu">
     <slot></slot>
   </a>
 </template>
