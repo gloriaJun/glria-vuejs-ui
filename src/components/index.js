@@ -8,6 +8,7 @@ export { default as VuDropdown } from './Dropdown';
 export { default as VuCard } from './Card';
 export { default as VuIcon } from './Icon';
 export { default as VuList } from './List';
+export { default as VuLoading } from './Loading';
 export { default as VuNav } from './Nav';
 export { default as VuNavbar } from './Navbar';
 export { default as VuPagination } from './Pagination';
