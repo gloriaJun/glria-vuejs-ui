@@ -63,3 +63,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-alert {
+  display: flex;
+  > .vu-icon { margin-right: .7rem; }
+  > .vu-button.close:hover { background-color: inherit; }
+}
+</style>

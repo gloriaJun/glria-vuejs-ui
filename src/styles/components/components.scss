@@ -1,73 +1,20 @@
 @charset "utf-8";
 
 /**
-  alert
- */
-.vu-alert {
-  display: flex;
-  > .vu-icon { margin-right: .7rem; }
-  > .vu-button.close:hover { background-color: inherit; }
-}
-
-/**
-  avatar
- */
-.vu-avatar {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
-  &, img {
-    @extend .rounded-circle;
-  }
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/**
-  badge
- */
-.vu-badge {
-  position: relative;
-  display: inline-block;
-
-  .vu-tag {
-    position: absolute;
-    &.top-right { transform: translateY(-50%) translateX(100%); }
-    &.top-left { transform: translateY(-50%) translateX(-100%); }
-
-    &:not(.overlap) {
-      top: 0;
-      &.top-right { right: 0 };
-      &.top-left { left: 0 };
-    }
-    &.overlap {
-      top: 3px;
-      &.top-right { right: 11px; };
-      &.top-left { left: 11px; };
-    }
-  }
-}
-
-/**
   breadcrumb
  */
 .vu-breadcrumb {
+  $color: $gray-500;
   margin: 0;
   .breadcrumb-item a {
     text-decoration: none;
-    color: $gray-500;
+    color: $color;
     &:hover {
-      color: $gray-600;
+      color: darken($color, 20%);
     }
   }
   .breadcrumb-item + .breadcrumb-item::before {
-    color: $gray-500;
+    color: $color;
   }
 }
 
@@ -164,17 +111,6 @@
 }
 
 /**
-  progress
- */
-.vu-progress {
-  height: 1rem;
-  //.progress-bar {
-  //  text-align: right;
-  //  padding-right: .3rem;
-  //}
-}
-
-/**
   steps
  */
 .vu-step {
@@ -221,12 +157,6 @@
       }
     }
   }
-  //> .nav {
-  //
-  //  .nav-item {
-
-  //  }
-  //}
 }
 
 /**
