@@ -2,6 +2,7 @@ import './styles/index.scss';
 
 import * as components from './components';
 import * as directives from './directives';
+import * as services from './services';
 
 const Gvu = {
   install(Vue, options = {}) {
@@ -24,14 +25,14 @@ const Gvu = {
     });
 
     // services
-    // Vue.prototype.$vu = {};
-    // Object.keys(services).forEach(key => {
-    //   const service = services[key];
-    //   Object.keys(service).forEach((serviceKey) => {
-    //     let _key = options.prefix ? options.prefix + '_' + serviceKey : serviceKey;
-    //     Vue.prototype.$vu[_key] = service[serviceKey];
-    //   });
-    // });
+    Vue.prototype.$vu = {};
+    Object.keys(services).forEach((key) => {
+      const service = services[key];
+      Object.keys(service).forEach((serviceKey) => {
+        const _key = options.prefix ? `${options.prefix}_${serviceKey}` : serviceKey;
+        Vue.prototype.$vu[_key] = service[serviceKey];
+      });
+    });
   },
 };
 

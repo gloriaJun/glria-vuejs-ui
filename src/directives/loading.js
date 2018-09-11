@@ -16,7 +16,6 @@ function toggleLoading(el, binding) {
   }
 }
 
-
 /**
  * export directive
  */

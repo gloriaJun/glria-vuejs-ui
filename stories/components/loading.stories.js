@@ -61,11 +61,6 @@ storiesOf('Components|Loading', module)
     const fullscreen = boolean('full screen', false);
 
     return ({
-      data() {
-        return {
-          loading: false,
-        }
-      },
       template: `
       <div>
         <vu-button @click="showLoading">Show Loading</vu-button>
@@ -76,6 +71,10 @@ storiesOf('Components|Loading', module)
       `,
       methods: {
         showLoading() {
+          const loading = this.$vu.loading();
+          setTimeout(() => {
+            loading.close();
+          }, 2000);
         },
       },
     });
