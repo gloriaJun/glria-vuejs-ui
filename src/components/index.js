@@ -23,16 +23,10 @@ export default {
 
 // /** Others **/
 // export { default as VuFooter } from './Footer';
-// export { default as VuLoading } from './Loading';
-// export { default as VuProgress } from './Progress';
 //
 // /** Media **/
 // export { default as VuImage } from './Image';
 // export { default as VuMjpeg } from './Mjpeg';
-//
-// /** Navigation **/
-// export { default as VuMenus } from './Menus';
-// export { default as VuNavbar } from './Navbar';
 //
 // /** Popup **/
 // export { default as VuDialog } from './Dialog';

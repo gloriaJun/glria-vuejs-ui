@@ -1,6 +1,7 @@
 <template>
   <div
     v-if="show"
+    :class="{'is-full-screen': isFullScreen}"
     class="vu-loading">
     <div class="loading-spinner">
       <vu-icon
@@ -29,6 +30,10 @@ export default {
      */
     show: Boolean,
     /**
+     * is full screen loading
+     */
+    isFullScreen: Boolean,
+    /**
      * loading message
      */
     text: String,
@@ -53,8 +58,10 @@ export default {
 
 <style lang="scss" scoped>
 .vu-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  z-index: 2000;
   background-color: rgba(0, 0, 0, 0.6);
   margin: 0;
   top: 0;
@@ -62,16 +69,18 @@ export default {
   bottom: 0;
   left: 0;
   transition: opacity .3s;
+  z-index: 2000;
+
+  &.is-full-screen {
+    position: fixed !important;
+  }
 
   .loading-spinner {
-    top: 50%;
-    margin-top: -3em;
     width: 100%;
     text-align: center;
-    position: absolute;
 
     .loading-icon {
-      font-size: 2.5em;
+      font-size: 2em;
     }
     .loading-text {
       margin: 3px 0;

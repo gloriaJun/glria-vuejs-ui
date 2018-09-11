@@ -1,10 +1,10 @@
 import './styles/index.scss';
 
 import * as components from './components';
+import * as directives from './directives';
 
 const Gvu = {
-  // install(Vue, options = {}) {
-  install(Vue) {
+  install(Vue, options = {}) {
     // plugin
     // Vue.use(VeeValidate, {
     //   events: 'input|change|blur',
@@ -17,11 +17,11 @@ const Gvu = {
     });
 
     // directives
-    // Object.keys(directives).forEach(key => {
-    //   let _key = key.replace(/^Vu/, '').toLocaleLowerCase();
-    //   _key = options.prefix ? options.prefix + _key : _key;
-    //   Vue.directive(_key, directives[key]);
-    // });
+    Object.keys(directives).forEach((key) => {
+      let _key = key.replace(/^Vu/, '').toLocaleLowerCase();
+      _key = options.prefix ? options.prefix + _key : _key;
+      Vue.directive(_key, directives[key]);
+    });
 
     // services
     // Vue.prototype.$vu = {};
