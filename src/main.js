@@ -1,10 +1,11 @@
 import './styles/index.scss';
 
 import * as components from './components';
+import * as directives from './directives';
+import * as services from './services';
 
 const Gvu = {
-  // install(Vue, options = {}) {
-  install(Vue) {
+  install(Vue, options = {}) {
     // plugin
     // Vue.use(VeeValidate, {
     //   events: 'input|change|blur',
@@ -17,21 +18,21 @@ const Gvu = {
     });
 
     // directives
-    // Object.keys(directives).forEach(key => {
-    //   let _key = key.replace(/^Vu/, '').toLocaleLowerCase();
-    //   _key = options.prefix ? options.prefix + _key : _key;
-    //   Vue.directive(_key, directives[key]);
-    // });
+    Object.keys(directives).forEach((key) => {
+      let _key = key.replace(/^Vu/, '').toLocaleLowerCase();
+      _key = options.prefix ? options.prefix + _key : _key;
+      Vue.directive(_key, directives[key]);
+    });
 
     // services
-    // Vue.prototype.$vu = {};
-    // Object.keys(services).forEach(key => {
-    //   const service = services[key];
-    //   Object.keys(service).forEach((serviceKey) => {
-    //     let _key = options.prefix ? options.prefix + '_' + serviceKey : serviceKey;
-    //     Vue.prototype.$vu[_key] = service[serviceKey];
-    //   });
-    // });
+    Vue.prototype.$vu = {};
+    Object.keys(services).forEach((key) => {
+      const service = services[key];
+      Object.keys(service).forEach((serviceKey) => {
+        const _key = options.prefix ? `${options.prefix}_${serviceKey}` : serviceKey;
+        Vue.prototype.$vu[_key] = service[serviceKey];
+      });
+    });
   },
 };
 

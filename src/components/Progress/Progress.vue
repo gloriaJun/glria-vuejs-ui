@@ -60,3 +60,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-progress {
+  height: 1rem;
+
+  //.progress-bar {
+  //  text-align: right;
+  //  padding-right: .3rem;
+  //}
+}
+</style>

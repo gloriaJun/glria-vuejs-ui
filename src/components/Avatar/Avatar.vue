@@ -76,3 +76,23 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &, img {
+    border-radius: 50% !important;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

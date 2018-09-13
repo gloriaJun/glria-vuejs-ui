@@ -56,3 +56,27 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-badge {
+  position: relative;
+  display: inline-block;
+
+  .vu-tag {
+    position: absolute;
+    &.top-right { transform: translateY(-50%) translateX(100%); }
+    &.top-left { transform: translateY(-50%) translateX(-100%); }
+
+    &:not(.overlap) {
+      top: 0;
+      &.top-right { right: 0 };
+      &.top-left { left: 0 };
+    }
+    &.overlap {
+      top: 3px;
+      &.top-right { right: 11px; };
+      &.top-left { left: 11px; };
+    }
+  }
+}
+</style>
