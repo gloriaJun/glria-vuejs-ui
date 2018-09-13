@@ -3,7 +3,7 @@
 
 ### Basic
 ###### normal
-```jsx
+```vue
 <div>
     <vu-button>primary</vu-button>
     <vu-button color="secondary">secondary</vu-button>
@@ -18,7 +18,7 @@
 ```
 
 ###### disabled
-```jsx
+```vue
 <div>
     <vu-button disabled>primary</vu-button>
     <vu-button color="secondary" disabled>secondary</vu-button>
@@ -34,7 +34,7 @@
 
 
 ### Button Type
-```jsx
+```vue
 <div>
   <vu-button type="button">Button (default)</vu-button>
   <vu-button type="submit">Submit</vu-button>
@@ -45,7 +45,7 @@
 
 ### Outline
 ###### normal
-```jsx
+```vue
 <div>
     <vu-button outline>primary</vu-button>
     <vu-button color="secondary" outline>secondary</vu-button>
@@ -59,7 +59,7 @@
 ```
 
 ###### disabled
-```jsx
+```vue
 <div>
     <vu-button outline disabled>primary</vu-button>
     <vu-button color="secondary" outline disabled>secondary</vu-button>
@@ -73,7 +73,7 @@
 ```
 
 ### Size
-```jsx
+```vue
 <div>
   <div>
     <vu-button size="sm">Small Size</vu-button>
@@ -90,7 +90,7 @@
 
 ### Style
 ###### round
-```jsx
+```vue
 <div>
     <vu-button round>primary</vu-button>
     <vu-button color="secondary" round>secondary</vu-button>
@@ -104,7 +104,7 @@
 ```
 
 ###### circle 
-```jsx
+```vue
 <div>
     <vu-button circle><vu-icon icon="user"></vu-icon></vu-button>
     <vu-button color="secondary" circle>
@@ -133,7 +133,7 @@
 
 
 ### with icon
-```jsx
+```vue
 <div>
   <vu-button>
     <vu-icon icon="user"></vu-icon>User Add

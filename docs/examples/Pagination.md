@@ -63,25 +63,25 @@
 
 ### Border
 ```vue
-<vu-pagination total=138 border></vu-pagination>
+<vu-pagination :total="138" border></vu-pagination>
 ```
 
 ### Size
 ##### Small
 ```vue
-<vu-pagination total=38 size="sm"></vu-pagination>
+<vu-pagination :total="38" size="sm"></vu-pagination>
 ```
 ##### Large 
 ```vue
-<vu-pagination total=38 size="lg"></vu-pagination>
+<vu-pagination :total="38" size="lg"></vu-pagination>
 ```
 
 ### Align
 ##### Center
 ```vue
-<vu-pagination total=38 align="center"></vu-pagination>
+<vu-pagination :total="38" align="center"></vu-pagination>
 ```
 ##### Right
 ```vue
-<vu-pagination total=38 align="right"></vu-pagination>
+<vu-pagination :total="38" align="right"></vu-pagination>
 ```

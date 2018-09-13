@@ -3,7 +3,8 @@
 
 ### Basic
 ```vue
-<div>
+<template>
+  <div>
     <vu-alert color="primary">A simple primary alert</vu-alert>
     <vu-alert color="secondary">A simple secondary alert</vu-alert>
     <vu-alert color="info">A simple info alert</vu-alert>
@@ -12,7 +13,14 @@
     <vu-alert color="danger">A simple danger alert</vu-alert>
     <vu-alert color="light">A simple light alert</vu-alert>
     <vu-alert color="dark">A simple dark alert</vu-alert>
-</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Example',
+};
+</script>
 ```
 
 ### closable
@@ -27,6 +35,7 @@
 
 <script>
 export default {
+  name: 'Example',
   methods: {
     alertClose() {
       console.log('close alert');
@@ -38,7 +47,8 @@ export default {
 
 ### icon 
 ```vue
-<div>
+<template>
+  <div>
     <vu-alert color="info" show-icon>A simple alert</vu-alert>
     <vu-alert color="success" show-icon>A simple alert</vu-alert>
     <vu-alert color="warning" show-icon>A simple alert</vu-alert>
@@ -59,5 +69,12 @@ export default {
       Aww yeah, you successfully read this important alert message. 
       This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
     </vu-alert>
-</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Example',
+};
+</script>
 ```

@@ -20,7 +20,7 @@ module.exports = {
         './src/components/Tag/Tag.vue',
       ],
       sections: [
-        { name: 'Buttons', components: './src/components/Button*/*.vue' },
+        { name: 'Buttons', components: './src/components/Button/*.vue' },
         { name: 'Card', components: 'src/components/Card/*.vue' },
         { name: 'List', components: 'src/components/List/*.vue' },
         { name: 'Nav', components: 'src/components/Nav/*.vue' },
@@ -52,8 +52,9 @@ module.exports = {
     }
   },
   require: [
-    path.join(__dirname, 'src/styles/index.scss'),
     path.join(__dirname, 'src/main.js'),
+    // path.join(__dirname, 'docs/styleguide.js'),
+    path.join(__dirname, 'src/styles/index.scss'),
   ],
   usageMode: 'expand',
   exampleMode: 'collapse',

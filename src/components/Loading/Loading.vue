@@ -47,15 +47,14 @@ export default {
       active: this.show,
     };
   },
-  computed: {
-    classes() {
-      return [
-      ];
+  watch: {
+    show(value) {
+      this.active = value;
     },
   },
   mounted() {
     if (!this.programmatic) {
-      this.$parent.$el.style.position = 'relative';
+      this.$el.parentElement.style.position = 'relative';
     }
   },
   methods: {

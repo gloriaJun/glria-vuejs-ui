@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VuButton from '../Button/Button.vue';
+import VuButton from './Button.vue';
 import sizeUtility from '../../utils/size';
 
 /**
