@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="show"
+    v-if="active"
     :class="{'is-full-screen': isFullScreen}"
     class="vu-loading">
     <div class="loading-spinner">
@@ -28,7 +28,10 @@ export default {
     /**
      * is show loading
      */
-    show: Boolean,
+    show: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * is full screen loading
      */
@@ -37,8 +40,12 @@ export default {
      * loading message
      */
     text: String,
-    directive: Boolean,
-    service: Boolean,
+    programmatic: Boolean,
+  },
+  data() {
+    return {
+      active: this.show,
+    };
   },
   computed: {
     classes() {
@@ -47,11 +54,14 @@ export default {
     },
   },
   mounted() {
-    if (!this.directive && !this.service) {
+    if (!this.programmatic) {
       this.$parent.$el.style.position = 'relative';
     }
   },
   methods: {
+    close() {
+      this.active = false;
+    },
   },
 };
 </script>

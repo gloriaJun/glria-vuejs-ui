@@ -65,13 +65,17 @@ storiesOf('Components|Loading', module)
       <div>
         <vu-button @click="showLoading">Show Loading</vu-button>
         <div
+          ref="box"
           class="border border-danger"
           style="height: 200px;"></div>
       </div>
       `,
       methods: {
         showLoading() {
-          const loading = this.$vu.loading();
+          const loading = this.$vu.loading({
+            el: fullscreen ? null : this.$refs.box,
+            text: loadingText,
+          });
           setTimeout(() => {
             loading.close();
           }, 2000);

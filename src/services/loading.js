@@ -1,17 +1,26 @@
 import Vue from 'vue';
 import VuLoading from '../components/Loading/Loading.vue';
 
-const Mask = Vue.extend(VuLoading);
-
-const loading = (params) => {
-  const propsData = Object.assign({ show: true }, params);
-
-  const instance = new Mask({
+const loading = (param) => {
+  const Component = Vue.extend(VuLoading);
+  const component = new Component({
     el: document.createElement('div'),
-    propsData,
+    propsData: {
+      show: true,
+      programmatic: true,
+      text: param.text,
+    },
   });
-  instance.vm = instance.$mount();
-  document.body.appendChild(instance.vm.$el);
+
+  if (param && param.el) {
+    const $el = param.el;
+    $el.style.position = 'relative';
+    $el.appendChild(component.$el);
+  } else {
+    document.body.appendChild(component.$el);
+  }
+
+  return component;
 };
 
 export default { loading };
