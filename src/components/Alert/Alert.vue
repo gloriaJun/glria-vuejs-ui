@@ -29,9 +29,6 @@
 <script>
 import messageMixin from '../../utils/messageMixin';
 
-/**
- * @example ../../../docs/examples/Alert.md
- */
 export default {
   name: 'VuAlert',
   mixins: [messageMixin],

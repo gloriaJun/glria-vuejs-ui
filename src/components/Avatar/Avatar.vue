@@ -57,10 +57,6 @@ export default {
     },
   },
   computed: {
-    classes() {
-      return [
-      ];
-    },
     style() {
       return {
         width: `${this.size}px`,
@@ -71,8 +67,6 @@ export default {
         fontSize: `${this.size / 2}px`,
       };
     },
-  },
-  methods: {
   },
 };
 </script>
