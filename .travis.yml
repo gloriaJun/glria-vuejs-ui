@@ -44,6 +44,6 @@ notifications:
   email: false
   slack:
     rooms:
-      - secure: "U7EWRn7eVj9KRdDUF2//DJTGET16qRJt518f6lGnUEYG0HsgF5eb2P/jXEJ5PdvVwrDaazYQSdvDQ2VIl8ZMm/Cqsv8KbnTqEqd4idpM7vC5pvv7/k12wCck5MSxnH5XLcjNKaptompTDKPjtRRFx+9rBXTvH/H3YI57sH+jvkxb+a5/9UfzjjScs5y8wQUVrTYyQUizjBpqVS4ax7jtaP6CNyo0a4mmpB2wTKVAlCfqjhX1FSwCrGoFN+cRGSfolIdfhKiw0/PNCxz707XykR3TSq5WMol2amgcwixaqLwNcw32AYX/zMzU3pTE3bn0XkYg27sb6Io0BBvz466fKIRRoYEgjiXVuSKJZtvVJI06qWAaMOiVJb8RdkbdRJw0OxnsJuKBFT4HYauJZ19CgejOTFMV/z3WcArXIH4OwQv75CJM7A+cLNCcNU6IhoA/fFYuwifpBBOLegE8zhHVdjoLBM4KtQNEgV64JKQaz/CkJcxYBr4Wc777ryDBjsCMu8OaaG5u4ZDqzZS+6GjgneclmqybRCUyuKfAmWHdul9oF4f1RtLCNGwMtfX3Yhs6s4pLaNiTRPevN9yIkkzqYEz4ZYB0zRfR1GcSPE2Km6YPXDRSoqL6f3DWje8z7wMcz/9q1NxJwJyvdiz6H0X3oDwF3LnuFg8xCr/guPPTfis="
+      - glriaroom:GJpK4bqmhqF9CtV1l4qVSp6Q#devops
     on_success: change # default : always
     on_failure: always # default : always
