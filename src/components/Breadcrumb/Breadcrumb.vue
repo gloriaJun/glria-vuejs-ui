@@ -18,9 +18,6 @@
 </template>
 
 <script>
-/**
- * @example ../../../docs/examples/Breadcrumb.md
- */
 export default {
   name: 'VuBreadcrumb',
   props: {

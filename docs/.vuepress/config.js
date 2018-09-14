@@ -16,8 +16,8 @@ module.exports = {
         children: [
           '/components/Alert',
           '/components/Avatar',
-          // '/components/Badge',
-          // '/components/Breadcrumb',
+          '/components/Badge',
+          '/components/Breadcrumb',
         ],
       },
     ],

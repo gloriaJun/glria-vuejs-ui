@@ -13,9 +13,6 @@
 </template>
 
 <script>
-/**
- * @example ../../../docs/examples/Avatar.md
- */
 export default {
   name: 'VuAvatar',
   props: {
