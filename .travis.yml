@@ -1,43 +1,39 @@
 language: node_js
 node_js:
 - 10
-
-# Install specific version
 before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.4
 - export PATH="$HOME/.yarn/bin:$PATH"
-
 install:
 - yarn install
-
 branches:
   only:
-    - master
-
-# $HOME/.cache/yarn
+  - master
 cache:
   yarn: true
-
 jobs:
   include:
-    - stage: npm publish
-      before_script:
-        - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      script:
-        - yarn build
-        - npm publish
-    - stage: document
-      script:
-        - yarn styleguide:build
-      deploy:
-        provider: pages
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-        keep-history: true
-        local-dir: dist-doc
-        on:
-          branch: master
-        target-branch: gh-pages
-
+  - stage: npm publish
+    before_script:
+    - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+    script:
+    - yarn build
+    - npm publish
+  - stage: document
+    script:
+    - yarn styleguide:build
+    deploy:
+      provider: pages
+      skip-cleanup: true
+      github-token: "$GITHUB_TOKEN"
+      keep-history: true
+      local-dir: dist-doc
+      on:
+        branch: master
+      target-branch: gh-pages
 notifications:
-  slack: glriaroom:$SLACK_TOKEN
+  slack:
+    rooms:
+      secure: cvns9zX95f8n2pLyhyLWNOWvqR3zAm8GUjiIlsvPuP31QU+hzFk/g6jQ19sIzKWJdYBuk/IvROnNupx3rNh9c6H5BzZap8ygzCMjKoRtPlIyLJDkCs2DG3xgMB3K0c0xQFUe8F30KiEajDK2HGqzfOITqI1gS+/AUlRz8mWTC310nJjZscrdyo0YiFNx20s+xBDxqVXTeJE2LNFHbhG4qnXwFCVwfHrXvmaZhuWgG6P4UD2gspgL76eQDQmFQbTMVmcq406fORUFtkbHUXm2EVLirUws63uVMgOdzOuREsUBMpu7zGPO4qOmhUSDy5U4fACnsRC5J2RftnEk9y1gSS1rZjjg14VC1HOPR9Q9iC7UX84K38IKF7JWVNPBqadJdq1xTRgdjQI+DVlnrZQKBjik18AJspVxGn+uhxZu8c5fscyH9tN7KSqtf1eNM1221wtb9yxrb2J0vTnUxvlG++iGb9/mQREcwmLvFXzj6pPHj0Dvl3zXPJRzPzm35X9fBaPfKZ2AwleqnrB7CkVR3LZFFxsBK5Sn62M8jNAzVT7hqkZXXWCUGtCTFKITdZ23HHTJaVmNpww4V6GRUHEsyozs2Fb30N5lFHvFYHWryb2hgLPZoBqJKnH//I+WmbpTlAovQBwemfrkZdw+dAkVO9KARuZ/XPyKdtFG0XuLXc8=
+    on_success: always  # change: send a notification when the build status changes.
+    on_failure: always  # always: always send a notification.
