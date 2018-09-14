@@ -38,3 +38,6 @@ jobs:
         on:
           branch: master
         target-branch: gh-pages
+
+notifications:
+  slack: glriaroom:$SLACK_TOKEN
