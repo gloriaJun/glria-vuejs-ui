@@ -19,9 +19,6 @@
 </template>
 
 <script>
-/**
- * @example ../../../docs/examples/Loading.md
- */
 export default {
   name: 'VuLoading',
   props: {

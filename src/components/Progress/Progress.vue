@@ -19,9 +19,6 @@
 <script>
 import colorUtility from '../../utils/color';
 
-/**
- * @example ../../../docs/examples/Progress.md
- */
 export default {
   name: 'VuProgress',
   props: {
@@ -55,8 +52,6 @@ export default {
         { 'progress-bar-striped': Boolean(this.striped) },
       ];
     },
-  },
-  methods: {
   },
 };
 </script>
