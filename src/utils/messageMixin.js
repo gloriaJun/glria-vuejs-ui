@@ -6,7 +6,7 @@ import colorUtility from './color';
 export default {
   props: {
     /**
-     * The color for the button.
+     * Color of the alert
      */
     color: {
       type: String,

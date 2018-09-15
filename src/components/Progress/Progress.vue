@@ -19,9 +19,6 @@
 <script>
 import colorUtility from '../../utils/color';
 
-/**
- * @example ../../../docs/examples/Progress.md
- */
 export default {
   name: 'VuProgress',
   props: {
@@ -56,7 +53,16 @@ export default {
       ];
     },
   },
-  methods: {
-  },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-progress {
+  height: 1rem;
+
+  //.progress-bar {
+  //  text-align: right;
+  //  padding-right: .3rem;
+  //}
+}
+</style>

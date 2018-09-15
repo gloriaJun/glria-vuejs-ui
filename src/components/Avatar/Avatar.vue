@@ -13,9 +13,6 @@
 </template>
 
 <script>
-/**
- * @example ../../../docs/examples/Avatar.md
- */
 export default {
   name: 'VuAvatar',
   props: {
@@ -57,10 +54,6 @@ export default {
     },
   },
   computed: {
-    classes() {
-      return [
-      ];
-    },
     style() {
       return {
         width: `${this.size}px`,
@@ -72,7 +65,25 @@ export default {
       };
     },
   },
-  methods: {
-  },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &, img {
+    border-radius: 50% !important;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

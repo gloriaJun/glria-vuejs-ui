@@ -18,9 +18,6 @@
 <script>
 import colorUtility from '../../utils/color';
 
-/**
- * @example ../../../docs/examples/Tag.md
- */
 export default {
   name: 'VuTag',
   props: {
@@ -33,25 +30,23 @@ export default {
       validator: value => colorUtility.isColor(value),
     },
     /**
-     * round button style
+     * round tag style
      */
-    round: {
-      type: Boolean,
-      default: false,
-    },
+    round: Boolean,
+    /**
+     * outline tag style
+     */
+    outline: Boolean,
     /**
      * link
      */
-    link: {
-      type: Boolean,
-      default: false,
-    },
+    link: Boolean,
     closable: Boolean,
   },
   computed: {
     classes() {
       return [
-        `badge-${this.color}`,
+        this.outline ? `outline-${this.color}` : `badge-${this.color}`,
         { 'badge-pill': this.round },
       ];
     },
@@ -59,7 +54,6 @@ export default {
   methods: {
     /**
      * @event click
-     * @type undefined
      * @description if link is true,
      */
     handleClick() {

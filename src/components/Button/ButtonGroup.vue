@@ -7,12 +7,9 @@
 </template>
 
 <script>
-import VuButton from '../Button/Button.vue';
+import VuButton from './Button.vue';
 import sizeUtility from '../../utils/size';
 
-/**
- * @example ../../../docs/examples/ButtonGroup.md
- */
 export default {
   name: 'VuButtonGroup',
   props: {
@@ -35,8 +32,6 @@ export default {
         { [`btn-group-${this.size}`]: Boolean(this.size) },
       ];
     },
-  },
-  methods: {
   },
 };
 </script>

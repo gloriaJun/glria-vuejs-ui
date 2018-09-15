@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Components|Navbar', module)
   .addDecorator(VueInfoAddon)
@@ -40,17 +41,20 @@ storiesOf('Components|Navbar', module)
       template: `
         <vu-navbar brand-name="BrandName">
           <vu-navbar-nav>
-            <vu-nav-item>Home</vu-nav-item>
+            <vu-nav-item @click="onClick('home')">Home</vu-nav-item>
             <vu-nav-item>Features</vu-nav-item>
             <vu-nav-item dropdown>
               Dropdown
               <template slot="dropdown-menu">
                 <vu-dropdown-item>Menu1</vu-dropdown-item>
-                <vu-dropdown-item>Menu2</vu-dropdown-item>
+                <vu-dropdown-item @click="onClick('Menu2')">Menu2</vu-dropdown-item>
               </template>
             </vu-nav-item>
           </vu-navbar-nav>
         </vu-navbar>
       `,
+      methods: {
+        onClick: (item) => action('item click')(item),
+      },
     });
   })

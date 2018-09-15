@@ -29,9 +29,6 @@
 <script>
 import messageMixin from '../../utils/messageMixin';
 
-/**
- * @example ../../../docs/examples/Alert.md
- */
 export default {
   name: 'VuAlert',
   mixins: [messageMixin],
@@ -63,3 +60,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.vu-alert {
+  display: flex;
+  > .vu-icon { margin-right: .7rem; }
+  > .vu-button.close:hover { background-color: inherit; }
+}
+</style>

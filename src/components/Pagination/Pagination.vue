@@ -52,9 +52,6 @@
 import sizeUtility from '../../utils/size';
 import alignUtility from '../../utils/align';
 
-/**
- * @example ../../../docs/examples/Pagination.md
- */
 export default {
   name: 'VuPagination',
   components: {

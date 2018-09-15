@@ -7,9 +7,6 @@
 </template>
 
 <script>
-/**
- * @example ../../../docs/examples/Nav.md
- */
 export default {
   name: 'VuNav',
   props: {

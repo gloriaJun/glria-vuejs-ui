@@ -4,7 +4,6 @@
     class="vu-nav-item nav-item">
     <a
       v-bind="$attrs"
-      v-on="$listeners"
       :href="href"
       :class="classes"
       class="nav-link"

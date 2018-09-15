@@ -36,8 +36,8 @@ storiesOf('Components|List', module)
           <vu-list-item
             v-for="(item, index) in items"
             :key="index"
-            :color="index === 1 && '${color}'"
-            :href="${isLink} && '#'"
+            :color="index === 1 ? '${color}' : ''"
+            :href="${isLink} ? '#' : null"
             :button="${isButton}"
             :active="${active} && item.active"
             :disabled="${disabled} && item.disabled">

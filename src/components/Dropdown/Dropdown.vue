@@ -21,9 +21,6 @@
 </template>
 
 <script>
-/**
- * @example ../../../docs/examples/Dropdown.md
- */
 export default {
   name: 'VuDropdown',
   props: {

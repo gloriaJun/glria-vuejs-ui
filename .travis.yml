@@ -1,5 +1,4 @@
 language: node_js
-
 node_js:
 - 10
 
@@ -21,24 +20,24 @@ cache:
 
 jobs:
   include:
-  - stage: npm publish
-    before_script:
-    - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-    script:
-    - yarn build
-    - npm publish
-  - stage: document
-    script:
-    - yarn styleguide:build
-    deploy:
-      provider: pages
-      skip-cleanup: true
-      github-token: "$GITHUB_TOKEN"
-      keep-history: true
-      local-dir: dist-doc
-      on:
-        branch: master
-      target-branch: gh-pages
+    - stage: npm publish
+      before_script:
+        - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      script:
+        - yarn build
+        - npm publish
+    - stage: document
+      script:
+        - yarn docs:build
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep-history: true
+        local-dir: docs/.vuepress/dist
+        on:
+          branch: master
+        target-branch: gh-pages
 
 notifications:
   email: false
