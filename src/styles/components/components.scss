@@ -22,6 +22,10 @@
   button
  */
 .vu-button {
+  &:focus, &.focus {
+    outline: none;
+    box-shadow: none;
+  }
   &.btn-link { text-decoration: none; }
   .vu-icon:first-child { margin-right: .1875em; }
 

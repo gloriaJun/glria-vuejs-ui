@@ -11,9 +11,6 @@
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
 
-/**
- * @example ../../../docs/examples/Icon.md
- */
 export default {
   name: 'VuIcon',
   props: {
@@ -25,7 +22,7 @@ export default {
       validator: value => colorUtility.isColor(value),
     },
     /**
-     * The size for the button.
+     * The size for the icon.
      */
     size: {
       type: String,

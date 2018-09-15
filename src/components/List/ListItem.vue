@@ -16,7 +16,7 @@ export default {
   name: 'VuListItem',
   props: {
     /**
-     * The color for the button.
+     * The color for the list item.
      */
     color: {
       type: String,
@@ -52,3 +52,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+button.vu-list-item{
+  &:focus, &.focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+</style>
