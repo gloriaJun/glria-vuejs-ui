@@ -1,9 +1,6 @@
 # Progress 
 
 ## Examples
-### Full Example Code
-[![Edit Gvu-Progress](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/04965jrxyp?module=%2Fsrc%2FApp.vue)
-
 ### Basic
 <code-pen hash='MqqgRj'></code-pen>
 

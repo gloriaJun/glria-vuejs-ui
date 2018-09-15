@@ -31,7 +31,7 @@ module.exports = {
           '/components/Progress',
           // '/components/Steps',
           // '/components/Tabs',
-          // '/components/Tag',
+          '/components/Tag',
         ],
       },
     ],

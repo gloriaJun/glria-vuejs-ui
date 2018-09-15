@@ -18,9 +18,6 @@
 <script>
 import colorUtility from '../../utils/color';
 
-/**
- * @example ../../../docs/examples/Tag.md
- */
 export default {
   name: 'VuTag',
   props: {
@@ -43,10 +40,7 @@ export default {
     /**
      * link
      */
-    link: {
-      type: Boolean,
-      default: false,
-    },
+    link: Boolean,
     closable: Boolean,
   },
   computed: {
@@ -60,7 +54,6 @@ export default {
   methods: {
     /**
      * @event click
-     * @type undefined
      * @description if link is true,
      */
     handleClick() {
