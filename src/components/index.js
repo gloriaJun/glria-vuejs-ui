@@ -15,6 +15,8 @@ export { default as VuProgress } from './Progress';
 export { default as VuStep } from './Steps';
 export { default as VuTab } from './Tabs';
 export { default as VuTag } from './Tag';
+/* Form */
+export { default as VuCheckbox } from './Checkbox';
 
 // /** Others **/
 // export { default as VuFooter } from './Footer';
@@ -32,7 +34,6 @@ export { default as VuTag } from './Tag';
 // export { default as VuTree } from './Tree';
 //
 // /** Form **/
-// export { default as VuCheckbox } from './Checkbox';
 // export { default as VuDatePicker } from './DatePicker';
 // export { default as VuForm } from './Form';
 // export { default as VuFormField } from './Form';
