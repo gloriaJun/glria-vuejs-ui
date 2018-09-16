@@ -37,6 +37,13 @@ module.exports = {
           '/components/Tag',
         ],
       },
+      {
+        title: 'Components - Form',
+        collapsable: false,
+        children: [
+          '/components-form/Checkbox',
+        ],
+      },
     ],
   },
 };

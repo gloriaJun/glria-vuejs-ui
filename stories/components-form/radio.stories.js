@@ -6,7 +6,7 @@ import {
   text,
 } from '@storybook/addon-knobs';
 
-storiesOf('Components|Form/Radio', module)
+storiesOf('Components-Form|Radio', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const disabled = boolean('disabled', false);

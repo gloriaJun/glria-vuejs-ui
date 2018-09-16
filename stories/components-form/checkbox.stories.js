@@ -5,7 +5,7 @@ import {
   boolean,
 } from '@storybook/addon-knobs';
 
-storiesOf('Components|Form/Checkbox', module)
+storiesOf('Components-Form|Checkbox', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const disabled = boolean('disabled', false);
