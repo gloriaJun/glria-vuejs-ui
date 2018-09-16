@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/glria-vuejs-ui/',
   title: 'Gvu',
   description: 'GVu Components',
   themeConfig: {
