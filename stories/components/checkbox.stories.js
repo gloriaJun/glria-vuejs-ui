@@ -3,11 +3,7 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
-  text,
 } from '@storybook/addon-knobs';
-
-import { COLOR_TYPES } from '../constants';
 
 storiesOf('Components|Form/Checkbox', module)
   .addDecorator(VueInfoAddon)
@@ -38,6 +34,15 @@ storiesOf('Components|Form/Checkbox', module)
           @change="onChange">
           Gender : {{ checked2 }}
         </vu-checkbox>
+
+        <div style="margin-top: 2rem;">
+          <vu-checkbox>
+            <vu-icon icon="book"></vu-icon>&nbsp;Book
+          </vu-checkbox>
+          <vu-checkbox>
+            <vu-avatar src="https://vuematerial.io/assets/examples/avatar.png"></vu-avatar>
+          </vu-checkbox>
+        </div>
       </div>
       `,
       methods: {
