@@ -26,9 +26,7 @@
 
 <script>
 import SlotMixin from '../../utils/slotMixin';
-/**
- * @example ../../../docs/examples/Navbar.md
- */
+
 export default {
   name: 'VuNavbar',
   mixins: [SlotMixin],
@@ -49,12 +47,6 @@ export default {
     return {
       show: false,
     };
-  },
-  computed: {
-    classes() {
-      return [
-      ];
-    },
   },
 };
 </script>

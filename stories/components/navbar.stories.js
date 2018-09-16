@@ -6,22 +6,13 @@ storiesOf('Components|Navbar', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     return ({
-      data () {
-        return {
-        }
-      },
       template: `
-        <vu-navbar brand-name="BrandName">
-        </vu-navbar>
+        <vu-navbar brand-name="BrandName"></vu-navbar>
       `,
     });
   })
   .add('brand with image', () => {
     return ({
-      data () {
-        return {
-        }
-      },
       template: `
         <vu-navbar>
           <template slot="brand">
@@ -34,10 +25,6 @@ storiesOf('Components|Navbar', module)
   })
   .add('collapse menu', () => {
     return ({
-      data () {
-        return {
-        }
-      },
       template: `
         <vu-navbar brand-name="BrandName">
           <vu-navbar-nav>

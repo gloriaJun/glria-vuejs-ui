@@ -26,7 +26,7 @@ module.exports = {
           '/components/List',
           '/components/Loading',
           '/components/Nav',
-          // '/components/NavBar',
+          '/components/Navbar',
           '/components/Pagination',
           '/components/Progress',
           '/components/Steps',
