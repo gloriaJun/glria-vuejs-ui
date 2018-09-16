@@ -3,7 +3,7 @@
     v-show="isActive"
     :class="{'show active': isActive}"
     class="vu-step-item tab-pane fade">
-    <slot></slot>
+    <slot/>
   </section>
 </template>
 

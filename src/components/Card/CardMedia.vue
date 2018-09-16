@@ -1,8 +1,8 @@
 <template>
   <img
-      :src="src"
-      :alt="alt"
-      class="vu-card-media">
+    :src="src"
+    :alt="alt"
+    class="vu-card-media">
 </template>
 
 <script>

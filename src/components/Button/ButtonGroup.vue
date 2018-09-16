@@ -1,8 +1,8 @@
 <template>
   <div
-      :class="elClasses"
-      class="vu-button-group">
-    <slot></slot>
+    :class="elClasses"
+    class="vu-button-group">
+    <slot/>
   </div>
 </template>
 
@@ -12,6 +12,9 @@ import sizeUtility from '../../utils/size';
 
 export default {
   name: 'VuButtonGroup',
+  components: {
+    VuButton,
+  },
   props: {
     size: {
       type: String,
@@ -21,9 +24,6 @@ export default {
      * if button vertical stacked
      */
     vertical: Boolean,
-  },
-  components: {
-    VuButton,
   },
   computed: {
     elClasses() {

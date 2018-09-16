@@ -8,13 +8,8 @@
 </template>
 
 <script>
-import VuCheckbox from './Checkbox.vue';
-
 export default {
   name: 'VuCheckboxGroup',
-  components: {
-    VuCheckbox,
-  },
   props: {
     stacked: Boolean,
   },

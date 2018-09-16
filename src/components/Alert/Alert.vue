@@ -7,19 +7,19 @@
     <vu-icon
       v-if="hasIcon"
       :icon="iconName"
-      size="lg"></vu-icon>
+      size="lg"/>
 
     <div class="alert-content">
       <h4
         v-if="title"
         class="alert-heading">{{ title }}</h4>
-      <slot></slot>
+      <slot/>
     </div>
 
     <vu-button
-        v-if="closable"
-        class="close"
-        @click="handleClose">
+      v-if="closable"
+      class="close"
+      @click="handleClose">
       <span>&times;</span>
     </vu-button>
 

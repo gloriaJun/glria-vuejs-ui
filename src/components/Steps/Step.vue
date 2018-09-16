@@ -14,32 +14,32 @@
             <template v-if="index >= active">
               <vu-icon
                 v-if="step.icon"
-                :icon="step.icon"></vu-icon>
+                :icon="step.icon"/>
               <span v-else>
                 {{ index + 1 }}
               </span>
             </template>
             <vu-icon
               v-else
-              icon="check"></vu-icon>
+              icon="check"/>
           </div>
           <div
             v-if="step.title"
             class="step-item-content">
             <div class="step-item-title">{{ step.title }}</div>
-            <div class="step-item-description">{{ step.description}}</div>
+            <div class="step-item-description">{{ step.description }}</div>
           </div>
         </li>
 
         <hr
-            v-if="steps.length - 1 > index"
-            :key="index"
-            class="liner">
+          v-if="steps.length - 1 > index"
+          :key="index"
+          class="liner">
       </template>
     </ul>
 
     <div class="step-content border p-3 bg-white rounded">
-      <slot></slot>
+      <slot/>
     </div>
   </div>
 </template>

@@ -6,7 +6,7 @@
     :class="elClasses"
     class="vu-button btn"
     @click="onClick">
-    <slot></slot>
+    <slot/>
   </component>
 </template>
 

@@ -11,7 +11,7 @@
           v-if="tab.$slots.label"
           :component="tab"
           tag="span"
-          name="label"></vu-slot>
+          name="label"/>
         <template v-else>
           {{ tab.label }}
         </template>
@@ -19,7 +19,7 @@
     </vu-nav>
 
     <div class="tab-content">
-      <slot></slot>
+      <slot/>
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@
       v-if="closable"
       icon="times-circle"
       class="closable"
-      @click.stop.prevent="handleClose"></vu-icon>
+      @click.stop.prevent="handleClose"/>
   </component>
 </template>
 

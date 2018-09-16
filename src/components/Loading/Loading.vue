@@ -8,7 +8,7 @@
         color="primary"
         icon="spinner"
         animation="spin"
-        class="loading-icon"></vu-icon>
+        class="loading-icon"/>
       <div
         v-if="text"
         class="loading-text text-primary">

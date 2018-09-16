@@ -1,6 +1,6 @@
 <template>
   <div class="vu-list list-group">
-    <slot></slot>
+    <slot/>
   </div>
 </template>
 

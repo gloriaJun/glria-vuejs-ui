@@ -5,7 +5,7 @@
       :href="brandLink"
       class="navbar-brand">
       <slot name="brand">
-        <span v-html="brandName"></span>
+        <span v-html="brandName"/>
       </slot>
     </a>
 
@@ -13,12 +13,12 @@
       <vu-button
         class="navbar-toggler"
         @click="show = !show">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"/>
       </vu-button>
       <div
         :class="{ show: show }"
         class="collapse navbar-collapse">
-        <slot></slot>
+        <slot/>
       </div>
     </template>
   </nav>
