@@ -4,10 +4,11 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     '@vue/airbnb',
   ],
   rules: {
+    "vue/require-default-prop": 'off',
     "no-param-reassign": [2, { "props": false }],
     "no-underscore-dangle": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
