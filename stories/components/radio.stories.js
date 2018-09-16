@@ -3,47 +3,43 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
+  text,
 } from '@storybook/addon-knobs';
 
 storiesOf('Components|Form/Radio', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    // const disabled = boolean('disabled', false);
-
-    return ({
-      data() {
-        return {
-          checked: true,
-        }
-      },
-      template: `
-      <div>
-        <vu-radio></vu-radio>
-      </div>
-      `,
-      methods: {
-        onChange: (value) => action('change')(value),
-      }
-    });
-  })
-  .add('group', () => {
+    const disabled = boolean('disabled', false);
     const stacked = boolean('stacked', false);
+    const value = text('value', 'male');
 
     return ({
       data() {
         return {
-          checked: [],
+          checked: value,
           items: [
-            {text: 'Red', value: 'Red'},
-            {text: 'Green', value: 'Green'},
-            {text: 'Blue', value: 'Blue'},
-            {text: 'Pink', value: 'Pink'}
+            { text: 'Male', value: 'male' },
+            { text: 'FeMale', value: 'female' },
           ],
         }
       },
       template: `
       <div>
+         <h5>Selected : {{ checked }}</h5>
+        <vu-radio-group
+          v-model="checked"
+          :stacked="${stacked}">
+          <vu-radio
+            v-for="(item, index) in items"
+            :key="index"
+            :checked-value="item.value"
+            :disabled="${disabled}">{{ item.text }}</vu-radio>
+        </vu-radio-group>
       </div>
+
       `,
+      methods: {
+        onChange: (value) => action('change')(value),
+      }
     });
   })
