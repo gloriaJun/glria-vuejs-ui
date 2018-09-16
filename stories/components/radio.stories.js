@@ -18,14 +18,14 @@ storiesOf('Components|Form/Radio', module)
         return {
           checked: value,
           items: [
-            { text: 'Male', value: 'male' },
-            { text: 'FeMale', value: 'female' },
+            { label: 'Male', value: 'male' },
+            { label: 'FeMale', value: 'female', disabled: disabled },
           ],
         }
       },
       template: `
       <div>
-         <h5>Selected : {{ checked }}</h5>
+        <h5>Selected : {{ checked }}</h5>
         <vu-radio-group
           v-model="checked"
           :stacked="${stacked}">
@@ -33,8 +33,14 @@ storiesOf('Components|Form/Radio', module)
             v-for="(item, index) in items"
             :key="index"
             :checked-value="item.value"
-            :disabled="${disabled}">{{ item.text }}</vu-radio>
+            :disabled="${disabled}">{{ item.label }}</vu-radio>
         </vu-radio-group>
+        
+        <h6 style="margin-top: 2rem;">using by options</h6>
+        <vu-radio-group
+          v-model="checked"
+          :options="items"
+          :stacked="${stacked}"></vu-radio-group>
       </div>
 
       `,
