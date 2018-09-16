@@ -1,7 +1,7 @@
 import VuCheckbox from './Checkbox.vue';
-// import VuButtonGroup from './ButtonGroup.vue';
+import VuCheckboxGroup from './CheckboxGroup.vue';
 
 export default (Vue) => {
   Vue.component(VuCheckbox.name, VuCheckbox);
-  // Vue.component(VuButtonGroup.name, VuButtonGroup);
+  Vue.component(VuCheckboxGroup.name, VuCheckboxGroup);
 };
