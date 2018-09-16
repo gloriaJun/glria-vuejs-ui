@@ -1,4 +1,4 @@
-# Loading
+# Pagination
 
 ## Examples
 ### Basic
