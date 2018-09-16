@@ -47,9 +47,6 @@
 <script>
 import VuSlot from '../../utils/SlotComponent';
 
-/**
- * @example ../../../docs/examples/Steps.md
- */
 export default {
   name: 'VuStep',
   components: {

@@ -27,9 +27,6 @@
 <script>
 import VuSlot from '../../utils/SlotComponent';
 
-/**
- * @example ../../../docs/examples/Tabs.md
- */
 export default {
   name: 'VuTab',
   components: {
