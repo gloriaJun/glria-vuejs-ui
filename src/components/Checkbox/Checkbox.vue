@@ -63,6 +63,9 @@ export default {
     currentValue(newVal) {
       this.$emit('input', newVal);
     },
+    indeterminate(newVal) {
+      this.setIndeterminate(newVal);
+    },
   },
   mounted() {
     this.setIndeterminate(this.indeterminate);

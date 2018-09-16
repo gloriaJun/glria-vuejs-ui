@@ -74,3 +74,45 @@ storiesOf('Components|Form/Checkbox', module)
       `,
     });
   })
+  .add('all check', () => {
+    return ({
+      data() {
+        return {
+          checkedAll: false,
+          indeterminate: false,
+          checked: [],
+          items: ['Red', 'Green', 'Blue'],
+        }
+      },
+      template: `
+      <div>
+        <h5>Selected : {{ checked }}</h5>
+        <vu-checkbox
+          v-model="checkedAll"
+          :indeterminate="indeterminate"
+          @change="onChangeCheckAll">All</vu-checkbox>
+        <vu-checkbox-group stacked>
+          <vu-checkbox
+            v-for="(item, index) in items"
+            :key="index"
+            v-model="checked"
+            :checked-value="item">{{ item }}</vu-checkbox>
+        </vu-checkbox-group>
+      </div>
+      `,
+      watch: {
+        checked(value) {
+          const checkedCount = value.length;
+          const arrayCount = this.items.length;
+          this.checkedAll = checkedCount === arrayCount;
+          this.indeterminate = checkedCount > 0 && checkedCount < arrayCount;
+        },
+      },
+      methods: {
+        onChangeCheckAll(value) {
+          this.checked = value ? this.items : [];
+          this.indeterminate = false;
+        },
+      },
+    });
+  })
