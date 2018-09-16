@@ -3,6 +3,8 @@ module.exports = {
   title: 'Gvu',
   description: 'GVu Components',
   themeConfig: {
+    repo: 'gloriaJun/glria-vuejs-ui',
+    docsDir: 'docs',
     sidebar: [
       {
         title: 'Content',
