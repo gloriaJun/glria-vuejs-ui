@@ -35,4 +35,12 @@ export default {
       return this.$parent && this.$parent.isGroup;
     },
   },
+  watch: {
+    value(newVal) {
+      this.currentValue = newVal;
+    },
+    currentValue(newVal) {
+      this.$emit('input', newVal);
+    },
+  },
 };

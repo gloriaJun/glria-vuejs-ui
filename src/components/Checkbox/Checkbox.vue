@@ -4,7 +4,7 @@
     class="vu-checkbox custom-checkbox custom-control">
     <input
       ref="checkbox"
-      v-model="currentValue"
+      v-model="currentChecked"
       :id="formId"
       :value="checkedValue"
       :true-value="checkedValue"
@@ -22,47 +22,19 @@
 </template>
 
 <script>
-import uuid from '../../utils/uuid';
+import FormRadioCheckMixin from '../../utils/formRadioCheckMixin';
 
 export default {
   name: 'VuCheckbox',
+  mixins: [FormRadioCheckMixin],
   props: {
-    id: String,
-    value: [Boolean, Number, String, Array, Object],
-    checkedValue: {
-      type: [Boolean, Number, String, Array, Object],
-      default: true,
-    },
     unCheckedValue: {
       type: [Boolean, Number, String, Array, Object],
       default: false,
     },
-    disabled: Boolean,
     indeterminate: Boolean,
   },
-  data() {
-    return {
-      formId: this.id || uuid(),
-      currentValue: this.value,
-    };
-  },
-  computed: {
-    classes() {
-      return [
-        { 'custom-control-inline': !(this.hasParent && this.$parent.stacked) },
-      ];
-    },
-    hasParent() {
-      return this.$parent && this.$parent.isGroup;
-    },
-  },
   watch: {
-    value(newVal) {
-      this.currentValue = newVal;
-    },
-    currentValue(newVal) {
-      this.$emit('input', newVal);
-    },
     indeterminate(newVal) {
       this.setIndeterminate(newVal);
     },
@@ -77,6 +49,9 @@ export default {
      */
     handleChange({ target: { checked } }) {
       this.$emit('change', checked ? this.checkedValue : this.unCheckedValue);
+      if (this.hasParent) {
+        this.$parent.$emit('change', this.currentValue);
+      }
     },
     setIndeterminate(state) {
       this.$refs.checkbox.indeterminate = state;

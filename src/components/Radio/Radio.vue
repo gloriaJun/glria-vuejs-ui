@@ -24,14 +24,6 @@ import FormRadioCheckMixin from '../../utils/formRadioCheckMixin';
 export default {
   name: 'VuRadio',
   mixins: [FormRadioCheckMixin],
-  watch: {
-    value(newVal) {
-      this.currentValue = newVal;
-    },
-    currentValue(newVal) {
-      this.$emit('input', newVal);
-    },
-  },
   methods: {
     /**
      * @event change
