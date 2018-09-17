@@ -41,7 +41,8 @@ module.exports = {
         title: 'Components - Form',
         collapsable: false,
         children: [
-          '/components-form/Checkbox',
+          // '/components-form/Checkbox',
+          // '/components-form/Radio',
         ],
       },
     ],

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import VuCheckbox from './Checkbox.vue';
+import VuCheckbox from '../Checkbox/Checkbox.vue';
 import formOptionMixin from '../../utils/formOptionMixin';
 
 export default {
