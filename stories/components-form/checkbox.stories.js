@@ -30,7 +30,7 @@ storiesOf('Components-Form|Checkbox', module)
         <vu-checkbox
           v-model="checked2"
           checked-value="male"
-          un-checked-value="female"
+          unchecked-value="female"
           @change="onChange">
           Gender : {{ checked2 }}
         </vu-checkbox>
