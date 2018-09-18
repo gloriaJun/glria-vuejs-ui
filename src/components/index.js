@@ -18,6 +18,7 @@ export { default as VuTag } from './Tag';
 /* Form */
 export { default as VuCheckbox } from './Checkbox';
 export { default as VuRadio } from './Radio';
+export { default as VuSlider } from './Slider';
 
 // /** Others **/
 // export { default as VuFooter } from './Footer';
