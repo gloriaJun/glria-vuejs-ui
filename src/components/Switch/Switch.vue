@@ -77,6 +77,7 @@ export default {
   position: relative;
   height: 1.5rem;
   width: 3.25rem;
+  font-size: 0.6em;
   border-radius: 1.5rem;
   padding: 0;
 
@@ -94,7 +95,6 @@ export default {
   .label {
     line-height: 1.5rem;
     width: 100%;
-    font-size: 0.6em;
     position: absolute;
     bottom: 0;
     text-transform: capitalize;
