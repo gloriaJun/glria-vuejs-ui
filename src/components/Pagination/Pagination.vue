@@ -58,7 +58,6 @@ export default {
   },
   props: {
     /**
-     * @model
      * current page number
      */
     value: {
@@ -163,7 +162,6 @@ export default {
     },
     current(value) {
       this.$emit('change', value);
-      this.$emit('input', value);
       this.$emit('update', value);
     },
     perPage() {

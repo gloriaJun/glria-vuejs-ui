@@ -20,23 +20,15 @@ storiesOf('Components|Pagination', module)
     const align = select('align', ALIGNMENT, ALIGNMENT.LEFT);
 
     return ({
-      data() {
-        return {
-          current: current,
-        }
-      },
       template: `
-      <div>
-        <h5>Current Page : {{ current }}</h5>
-        <vu-pagination
-          v-model="current" 
-          :border="${border}"
-          :total="${total}"
-          :per-page="${parseInt(perPage)}"
-          size="${size}"
-          align="${align}"
-          @page-change="onChange"></vu-pagination>
-      </div>
+      <vu-pagination
+        :value ="${current}" 
+        :border="${border}"
+        :total="${total}"
+        :per-page="${parseInt(perPage)}"
+        size="${size}"
+        align="${align}"
+        @page-change="onChange"></vu-pagination>
       `,
       methods: {
         onChange: (current) => action('click page')(current),
