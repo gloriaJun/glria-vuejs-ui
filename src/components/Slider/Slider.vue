@@ -4,16 +4,15 @@
     class="vu-slider">
     <input
       v-model="value"
-      type="range"
-      class="custom-range">
-    <div class="bar-container">
-      <div
-        :style="{left: `${value}%`}"
-        class="circle"/>
+      type="range">
+    <div class="range-track">
       <div
         :style="{width: `${value}%`}"
-        class="progress"/>
+        class="range-track-fill"/>
     </div>
+    <div
+      :style="{left: `${value}%`}"
+      class="range-thumb"/>
   </div>
 </template>
 
@@ -55,35 +54,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.vu-slider {
-  &.disabled {
-    color: #868e96;
-    opacity: 0.65;
-  }
-  input[type=range] {
-    opacity: 0;
-  }
-  .bar-container {
-    height: 6px;
-    position: relative;
-    display: block;
-    border-radius: 15px;
-    background-color: #dee2e6;
-
-    > .circle {
-      position: absolute;
-      top: -5px;
-      width: 1rem;
-      height: 1rem;
-      border-radius: 1.125rem;
-      background: #fff;
-      box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
-      transform: translateX(-50%);
-      transition: all .25s ease;
-      cursor: pointer;
-    }
-  }
-}
-</style>

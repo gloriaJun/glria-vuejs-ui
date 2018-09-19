@@ -16,10 +16,59 @@
   slider
  */
 .vu-slider {
+  $track-height: $custom-range-track-height;
+  $track-bg: $custom-range-track-bg;
+
+  $thumb-height: $custom-range-thumb-width;
+  $thumb-bg: $component-active-bg;
+  //$custom-range-thumb-box-shadow
+  //$custom-range-thumb-active-bg
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input[type=range] {
+    opacity: 0;
+  }
+
+  &.disabled {
+    color: $input-disabled-bg;
+    opacity: 0.65;
+  }
+
+  .range-track {
+    position: absolute;
+    height: $track-height;
+    border-radius: 1rem;
+    background-color: $track-bg;
+    left: 0;
+    width: 100%;
+
+    .range-track-fill {
+      height: inherit;
+      border-radius: 1rem;
+    }
+  }
+  .range-thumb {
+    position: absolute;
+    top: 2px;
+    width: $thumb-height;
+    height: $thumb-height;
+    border-radius: 1rem;
+    box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
+    background: #fff;
+    transform: translateX(-50%);
+    transition: all .25s ease;
+    cursor: pointer;
+  }
+
   /* by color */
   @each $color, $value in $theme-colors {
     &.slider-#{$color} {
-      .progress {
+      .range-track > .range-track-fill {
         background-color: $value;
         border-color: $value;
       }
