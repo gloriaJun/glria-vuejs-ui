@@ -3,7 +3,7 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
+  selectV2,
   text,
 } from '@storybook/addon-knobs';
 
@@ -15,7 +15,7 @@ storiesOf('Components|Card', module)
     const title = text('title', 'Card Title');
     const subtitle = text('subtitle', 'subtitle');
     const showAction = boolean('showAction', false);
-    const position = select('align', ['left', 'center', 'right'], 'left');
+    const position = selectV2('align', ['left', 'center', 'right'], 'left');
 
     return ({
       template: `
@@ -34,7 +34,7 @@ storiesOf('Components|Card', module)
     });
   })
   .add('header & footer', () => {
-    const position = select('align', ['left', 'center', 'right'], 'left');
+    const position = selectV2('align', ['left', 'center', 'right'], 'left');
 
     return ({
       template: `
@@ -51,7 +51,7 @@ storiesOf('Components|Card', module)
     });
   })
  .add('image card', () => {
-    const position = select('position', ['top', 'bottom'], 'top');
+    const position = selectV2('position', ['top', 'bottom'], 'top');
     const imgSrc = text('image src', 'https://picsum.photos/600/300/?image=25');
 
     return ({
