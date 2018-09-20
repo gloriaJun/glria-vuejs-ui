@@ -1,34 +1,74 @@
 <template>
   <div class="vu-input">
-    <label
-      v-if="label"
-      :for="formId">
-      {{ label }}
-    </label>
+    <input
+      :type="type"
+      :id="id"
+      :value="currentValue"
+      :placeholder="placeholder"
+      :readonly="readonly"
+      :class="inputClasses"
+      v-on="listeners">
   </div>
 </template>
 
 <script>
-import uuid from '../../utils/uuid';
+import sizeUtility from '../../utils/size';
+
+// Valid supported input types
+const TYPES = [
+  'text',
+  'password',
+  'email',
+  'number',
+  'url',
+  'tel',
+  'search',
+  'range',
+  'color',
+  'date',
+  'time',
+  'month',
+  'week',
+];
 
 export default {
   name: 'VuInput',
   props: {
     id: String,
-    value: [Boolean, Number, String, Array, Object],
+    value: [String, Number],
+    size: {
+      type: String,
+      validator: value => sizeUtility.isSizes(value),
+    },
     disabled: Boolean,
+    readonly: Boolean,
+    type: {
+      type: String,
+      default: 'text',
+      validator: value => TYPES.indexOf(value) > -1,
+    },
     label: String,
+    placeholder: String,
+    helpText: String,
+    plaintext: Boolean,
   },
   data() {
     return {
-      formId: this.id || uuid(),
       currentValue: this.value,
     };
   },
   computed: {
-    classes() {
+    inputClasses() {
       return [
+        `form-control${this.plaintext ? '-plaintext' : ''}`,
+        { [`form-control-${this.size}`]: Boolean(this.size) },
       ];
+    },
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: event => this.handleInput(event),
+      };
     },
   },
   watch: {
@@ -40,6 +80,13 @@ export default {
     },
   },
   methods: {
+    /**
+     * @event when input
+     * @param event
+     */
+    handleInput(event) {
+      this.currentValue = event.target.value;
+    },
   },
 };
 </script>

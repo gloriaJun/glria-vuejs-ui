@@ -1,26 +1,39 @@
 import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info';
 // import { action } from '@storybook/addon-actions';
-// import {
-//   boolean,
-// } from '@storybook/addon-knobs';
+import {
+  selectV2,
+  boolean,
+} from '@storybook/addon-knobs';
+
+import { SIZES, INPUT_TYPES } from '../constants';
 
 storiesOf('Components-Form|Input', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    // const disabled = boolean('disabled', false);
+    const type = selectV2('type', INPUT_TYPES, 'text');
+    const size = selectV2('size', SIZES, '');
+    const readonly = boolean('readonly', false);
+    const disabled = boolean('disabled', false);
+    const plaintext = boolean('plaintext', false);
 
     return ({
       data() {
         return {
-          value: null,
+          value: plaintext ? 'It\'s Plain Text' : null,
         }
       },
       template: `
       <div>
         <h5>Input Value: {{ value }}</h5>
         <vu-input
-          v-model="value"></vu-input>
+          v-model="value"
+          type="${type}"
+          :readonly="${readonly}"
+          :disabled="${disabled}"
+          :plaintext="${plaintext}"
+          size="${size}"
+          placeholder="Please Input"></vu-input>
       </div>
       `,
     });

@@ -6,6 +6,25 @@
   pointer-events: none;
 }
 
+/**
+  form control
+ */
+.custom-control-input {
+  &:focus, &.focus {
+    & ~ .custom-control-label::before {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.form-control {
+  &:focus, &.focus {
+    outline: none;
+    box-shadow:none;
+  }
+}
+
 // input
 input {
   &:invalid, &:required {
