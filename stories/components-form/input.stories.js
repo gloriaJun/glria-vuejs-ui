@@ -6,13 +6,15 @@ import {
   boolean,
 } from '@storybook/addon-knobs';
 
-import { SIZES, INPUT_TYPES } from '../constants';
+import { STATUS_TYPES, SIZES, INPUT_TYPES } from '../constants';
 
 storiesOf('Components-Form|Input', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const type = selectV2('type', INPUT_TYPES, 'text');
+    const status = selectV2('status', {default: '', ...STATUS_TYPES}, '');
     const size = selectV2('size', SIZES, '');
+    const round = boolean('round', false);
     const readonly = boolean('readonly', false);
     const disabled = boolean('disabled', false);
     const plaintext = boolean('plaintext', false);
@@ -29,6 +31,8 @@ storiesOf('Components-Form|Input', module)
         <vu-input
           v-model="value"
           type="${type}"
+          status="${status}"
+          :round="${round}"
           :readonly="${readonly}"
           :disabled="${disabled}"
           :plaintext="${plaintext}"

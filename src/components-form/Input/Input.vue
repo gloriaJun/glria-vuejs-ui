@@ -1,5 +1,7 @@
 <template>
-  <div class="vu-input">
+  <div
+    :class="classes"
+    class="vu-input vu-form-control">
     <input
       :type="type"
       :id="id"
@@ -12,6 +14,7 @@
 </template>
 
 <script>
+import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
 
 // Valid supported input types
@@ -36,12 +39,18 @@ export default {
   props: {
     id: String,
     value: [String, Number],
+    status: {
+      type: String,
+      default: '',
+      validator: value => colorUtility.isStatus(value),
+    },
     size: {
       type: String,
       validator: value => sizeUtility.isSizes(value),
     },
     disabled: Boolean,
     readonly: Boolean,
+    round: Boolean,
     type: {
       type: String,
       default: 'text',
@@ -58,6 +67,12 @@ export default {
     };
   },
   computed: {
+    classes() {
+      return [
+        { round: this.round },
+        { [`status-${this.status}`]: Boolean(this.status) },
+      ];
+    },
     inputClasses() {
       return [
         `form-control${this.plaintext ? '-plaintext' : ''}`,

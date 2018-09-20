@@ -1,0 +1,18 @@
+.vu-form-control {
+  // style
+  &.round {
+    .form-control {
+      border-radius: $vu-border-radius-md;
+    }
+  }
+
+  // status
+  /* by color */
+  @each $color, $value in $status-colors {
+    &.status-#{$color} {
+      .form-control {
+        border-color: $value;
+      }
+    }
+  } // end of color type
+}
