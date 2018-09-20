@@ -8,7 +8,7 @@
       v-model="currentValue"
       type="range">
     <div
-      ref="track"
+      ref="slider"
       class="range-track"
       @click="handleClickSlider">
       <div
@@ -79,13 +79,21 @@ export default {
     handleKeydownRight() {
       console.log('keydown right');
     },
-    handleClickSlider(event) {
-      const { track } = this.$refs;
-      const leftx = event.clientX - track.getBoundingClientRect().left;
-      console.log('click slider', event.clientX, track.getBoundingClientRect().left, leftx);
-    },
     handleDragStart() {
       console.log('drag start');
+    },
+    /**
+     * @event - when clicked slider bar
+     * @param event
+     */
+    handleClickSlider(event) {
+      const { slider } = this.$refs;
+      console.log(slider, event);
+      // const offset = event.clientX - slider.getBoundingClientRect().left;
+      // this.setThumbPosition((offset / slider.clientWidth) * 100);
+    },
+    setThumbPosition(percent) {
+      console.log('set position', percent);
     },
   },
 };
