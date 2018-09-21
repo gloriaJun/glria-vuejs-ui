@@ -2,6 +2,15 @@
   <div
     :class="classes"
     class="vu-input vu-form-control">
+
+    <div
+      v-if="hasSlot('prepend')"
+      class="input-group-prepend">
+      <span class="input-group-text">
+        <slot name="prepend"/>
+      </span>
+    </div>
+
     <input
       :type="type"
       :id="id"
@@ -10,12 +19,22 @@
       :readonly="readonly"
       :class="inputClasses"
       v-on="listeners">
+
+    <div
+      v-if="hasSlot('append')"
+      class="input-group-append">
+      <span class="input-group-text">
+        <slot name="append"/>
+      </span>
+    </div>
+
   </div>
 </template>
 
 <script>
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
+import slotMixin from '../../utils/slotMixin';
 
 // Valid supported input types
 const TYPES = [
@@ -36,6 +55,7 @@ const TYPES = [
 
 export default {
   name: 'VuInput',
+  mixins: [slotMixin],
   props: {
     id: String,
     value: [String, Number],
@@ -69,6 +89,8 @@ export default {
   computed: {
     classes() {
       return [
+        { 'input-group': this.isInputGroup },
+        { [`input-group-${this.size}`]: Boolean(this.size) },
         { round: this.round },
         { [`status-${this.status}`]: Boolean(this.status) },
       ];
@@ -84,6 +106,9 @@ export default {
         ...this.$listeners,
         input: event => this.handleInput(event),
       };
+    },
+    isInputGroup() {
+      return this.hasSlot('prepend') || this.hasSlot('append');
     },
   },
   watch: {

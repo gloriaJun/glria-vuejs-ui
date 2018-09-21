@@ -42,3 +42,31 @@ storiesOf('Components-Form|Input', module)
       `,
     });
   })
+  .add('prepend & append', () => {
+    const prepend = boolean('prepend', true);
+    const append = boolean('append', true);
+    const status = selectV2('status', {default: '', ...STATUS_TYPES}, '');
+    const size = selectV2('size', SIZES, '');
+    const round = boolean('round', false);
+    const readonly = boolean('readonly', false);
+    const disabled = boolean('disabled', false);
+    const plaintext = boolean('plaintext', false);
+
+    return ({
+      template: `
+      <div>
+        <vu-input
+          status="${status}"
+          :round="${round}"
+          :readonly="${readonly}"
+          :disabled="${disabled}"
+          :plaintext="${plaintext}"
+          size="${size}"
+          placeholder="Please Input">
+          <template v-if="${prepend}" slot="prepend">$</template>
+          <template v-if="${append}"  slot="append">.00</template>
+        </vu-input>
+      </div>
+      `,
+    });
+  })
