@@ -8,7 +8,7 @@
       v-model="currentValue"
       type="range">
     <div
-      ref="slider"
+      ref="track"
       class="range-track"
       @click="handleClickSlider">
       <div
@@ -38,15 +38,19 @@ export default {
       validator: value => colorUtility.isColor(value),
     },
     value: {
-      type: Number,
+      type: [Number, String, Array],
       default: 0,
     },
+    step: {
+      type: [Number, String],
+      default: 0.5,
+    },
     min: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     max: {
-      type: Number,
+      type: [Number, String],
       default: 100,
     },
     showValue: Boolean,
@@ -87,13 +91,25 @@ export default {
      * @param event
      */
     handleClickSlider(event) {
-      const { slider } = this.$refs;
-      console.log(slider, event);
-      // const offset = event.clientX - slider.getBoundingClientRect().left;
-      // this.setThumbPosition((offset / slider.clientWidth) * 100);
+      // get point of the track
+      const {
+        left: offsetLeft,
+        width: trackWidth,
+      } = this.$refs.track.getBoundingClientRect();
+      const offset = event.clientX - offsetLeft;
+      const percent = Math.round((offset / trackWidth) * 100);
+      const value = this.min + ((percent * (this.max - this.min)) / 100);
+      this.setPosition(value);
     },
-    setThumbPosition(percent) {
-      console.log('set position', percent);
+    /**
+     * set position of thumb
+     * @param position
+     */
+    setPosition(position) {
+      const stepLength = 100 / ((this.max - this.min) / this.step);
+      const steps = Math.round(position / stepLength);
+      const value = (steps * stepLength * (this.max - this.min) * 0.01) + this.min;
+      this.currentValue = parseFloat(value.toFixed(2));
     },
   },
 };
