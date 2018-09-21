@@ -83,8 +83,8 @@ export default {
     handleKeydownRight() {
       console.log('keydown right');
     },
-    handleDragStart() {
-      console.log('drag start');
+    handleDragStart(event) {
+      console.log('drag start', event, event.type);
     },
     /**
      * @event - when clicked slider bar
