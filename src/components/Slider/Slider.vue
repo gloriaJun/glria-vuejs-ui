@@ -84,7 +84,28 @@ export default {
       console.log('keydown right');
     },
     handleDragStart(event) {
-      console.log('drag start', event, event.type);
+      console.log('drag start', event, event.type, 'touches' in event, event.clientX);
+
+      // add event
+      document.addEventListener('touchmove', this.handleDragging);
+      document.addEventListener('mousemove', this.handleDragging);
+      document.addEventListener('mouseup', this.handleDragStop);
+      document.addEventListener('touchend', this.handleDragStop);
+      document.addEventListener('contextmenu', this.handleDragStop);
+    },
+    handleDragging(event) {
+      console.log('dragging', event, event.type, 'touches' in event, event.clientX);
+      this.handleClickSlider(event);
+    },
+    handleDragStop(event) {
+      console.log('drag stop', event, event.type, 'touches' in event, event.clientX);
+
+      // remove event
+      document.removeEventListener('touchmove', this.handleDragging);
+      document.removeEventListener('mousemove', this.handleDragging);
+      document.removeEventListener('mouseup', this.handleDragStop);
+      document.removeEventListener('touchend', this.handleDragStop);
+      document.removeEventListener('contextmenu', this.handleDragStop);
     },
     /**
      * @event - when clicked slider bar
@@ -98,7 +119,11 @@ export default {
       } = this.$refs.track.getBoundingClientRect();
       const offset = event.clientX - offsetLeft;
       const percent = Math.round((offset / trackWidth) * 100);
-      const value = this.min + ((percent * (this.max - this.min)) / 100);
+      let value = this.min + ((percent * (this.max - this.min)) / 100);
+
+      // if outside slider, set value to min or max
+      if (value > 100) value = 100;
+      else if (value < 0) value = 0;
       this.setPosition(value);
     },
     /**
