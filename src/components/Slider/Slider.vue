@@ -2,8 +2,7 @@
   <div
     :class="classes"
     class="vu-slider"
-    @keydown.left="handleKeydownLeft"
-    @keydown.right="handleKeydownRight">
+    @mousewheel.prevent="handleMoveMouseWheel">
     <input
       v-model="currentValue"
       type="range">
@@ -16,7 +15,7 @@
         class="range-track-fill"/>
     </div>
     <div
-      :style="{left: `${value}%`}"
+      :style="thumbStyle"
       class="range-thumb"
       @mousedown="handleDragStart"/>
   </div>
@@ -58,6 +57,7 @@ export default {
   data() {
     return {
       currentValue: this.value,
+      dragging: false,
     };
   },
   computed: {
@@ -66,6 +66,13 @@ export default {
         `slider-${this.color}`,
         { disabled: this.disabled },
       ];
+    },
+    thumbStyle() {
+      const style = { left: `${this.value}%` };
+      if (this.dragging) {
+        style.cursor = 'grabbing';
+      }
+      return style;
     },
   },
   watch: {
@@ -77,14 +84,16 @@ export default {
     },
   },
   methods: {
-    handleKeydownLeft() {
-      console.log('keydown left');
-    },
-    handleKeydownRight() {
-      console.log('keydown right');
+    handleMoveMouseWheel() {
+      console.log('mouse wheel move');
+      let value = this.currentValue - this.step;
+      // if (value > 100) value = 100;
+      // else if (value < 0) value = 0;
+      console.log(value);
     },
     handleDragStart(event) {
       console.log('drag start', event, event.type, 'touches' in event, event.clientX);
+      this.dragging = true;
 
       // add event
       document.addEventListener('touchmove', this.handleDragging);
@@ -99,6 +108,7 @@ export default {
     },
     handleDragStop(event) {
       console.log('drag stop', event, event.type, 'touches' in event, event.clientX);
+      this.dragging = false;
 
       // remove event
       document.removeEventListener('touchmove', this.handleDragging);
@@ -134,7 +144,10 @@ export default {
       const stepLength = 100 / ((this.max - this.min) / this.step);
       const steps = Math.round(position / stepLength);
       const value = (steps * stepLength * (this.max - this.min) * 0.01) + this.min;
-      this.currentValue = parseFloat(value.toFixed(2));
+
+      if (value !== this.currentValue) {
+        this.currentValue = parseFloat(value.toFixed(2));
+      }
     },
   },
 };
