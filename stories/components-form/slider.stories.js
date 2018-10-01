@@ -10,7 +10,6 @@ storiesOf('Components-Form|Slider', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const disabled = boolean('disabled', false);
-    // const stacked = boolean('stacked', false);
     const value = number('value', 20);
     const min = number('min', 0);
     const max = number('max', 100);
