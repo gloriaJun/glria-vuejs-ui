@@ -1,8 +1,7 @@
 <template>
   <div
     :class="classes"
-    class="vu-slider"
-    @mousewheel.prevent="handleMoveMouseWheel">
+    class="vu-slider">
     <input
       v-model="currentValue"
       type="range">
@@ -84,15 +83,7 @@ export default {
     },
   },
   methods: {
-    handleMoveMouseWheel() {
-      console.log('mouse wheel move');
-      let value = this.currentValue - this.step;
-      // if (value > 100) value = 100;
-      // else if (value < 0) value = 0;
-      console.log(value);
-    },
-    handleDragStart(event) {
-      console.log('drag start', event, event.type, 'touches' in event, event.clientX);
+    handleDragStart() {
       this.dragging = true;
 
       // add event
