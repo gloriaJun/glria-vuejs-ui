@@ -29,10 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  input[type=range] {
-    opacity: 0;
-  }
+  margin: 1rem 0;
 
   &.disabled {
     color: $input-disabled-bg;
@@ -42,7 +39,6 @@
   .range-track {
     position: absolute;
     height: $track-height;
-    border-radius: 1rem;
     background-color: $track-bg;
     left: 0;
     width: 100%;
@@ -58,17 +54,23 @@
     height: $thumb-height;
     border-radius: 1rem;
     box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
+    border: none;
     background: #fff;
     transform: translateX(-50%);
     cursor: pointer;
     &:hover {
       cursor: grab;
     }
+    &:active, &.active {
+      background: #fff !important;
+      box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.72);
+    }
   }
 
   .range-thumb, .range-track-fill {
-    &:not(.dragging) {
-      transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
+    transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
+    &.dragging {
+      transition: none;
     }
   }
 
