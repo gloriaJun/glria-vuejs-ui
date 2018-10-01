@@ -11,11 +11,11 @@
       @click="handleClickSlider">
       <div
         :style="{width: `${value}%`}"
-        class="range-track-fill"/>
+        :class="['range-track-fill', {dragging: dragging}]"/>
     </div>
     <div
       :style="thumbStyle"
-      class="range-thumb"
+      :class="['range-thumb', {dragging: dragging}]"
       @mousedown="handleDragStart"/>
   </div>
 </template>
@@ -39,17 +39,19 @@ export default {
       type: [Number, String, Array],
       default: 0,
     },
-    step: {
-      type: [Number, String],
-      default: 0.5,
-    },
+    // The minimum value of the slider
     min: {
       type: [Number, String],
       default: 0,
     },
+    // The maximum value of the slider
     max: {
       type: [Number, String],
       default: 100,
+    },
+    step: {
+      type: [Number, String],
+      default: 0.5,
     },
     showValue: Boolean,
   },
@@ -93,12 +95,7 @@ export default {
       document.addEventListener('touchend', this.handleDragStop);
       document.addEventListener('contextmenu', this.handleDragStop);
     },
-    handleDragging(event) {
-      console.log('dragging', event, event.type, 'touches' in event, event.clientX);
-      this.handleClickSlider(event);
-    },
-    handleDragStop(event) {
-      console.log('drag stop', event, event.type, 'touches' in event, event.clientX);
+    handleDragStop() {
       this.dragging = false;
 
       // remove event
@@ -107,6 +104,9 @@ export default {
       document.removeEventListener('mouseup', this.handleDragStop);
       document.removeEventListener('touchend', this.handleDragStop);
       document.removeEventListener('contextmenu', this.handleDragStop);
+    },
+    handleDragging(event) {
+      this.handleClickSlider(event);
     },
     /**
      * @event - when clicked slider bar

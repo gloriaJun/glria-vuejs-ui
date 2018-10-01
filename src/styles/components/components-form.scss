@@ -60,10 +60,15 @@
     box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
     background: #fff;
     transform: translateX(-50%);
-    transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
     cursor: pointer;
     &:hover {
       cursor: grab;
+    }
+  }
+
+  .range-thumb, .range-track-fill {
+    &:not(.dragging) {
+      transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
     }
   }
 
@@ -73,7 +78,6 @@
       .range-track > .range-track-fill {
         background-color: $value;
         border-color: $value;
-        transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
       }
     }
   } // end of color type

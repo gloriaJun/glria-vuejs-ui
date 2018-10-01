@@ -12,6 +12,8 @@ storiesOf('Components-Form|Slider', module)
     const disabled = boolean('disabled', false);
     // const stacked = boolean('stacked', false);
     const value = number('value', 20);
+    const min = number('min', 0);
+    const max = number('max', 100);
 
     return ({
       data() {
@@ -21,9 +23,11 @@ storiesOf('Components-Form|Slider', module)
       },
       template: `
       <div>
-        <h5>value : {{ value }}</h5>
+        <input type="number" min=0 max=100 v-model="value">
         <vu-slider
           v-model="value"
+          :min="${min}"
+          :max="${max}"
           :disabled="${disabled}"></vu-slider>
       </div>
 
