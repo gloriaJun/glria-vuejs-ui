@@ -31,9 +31,9 @@ storiesOf('Components-Form|Slider', module)
           color="${color}"
           :min="${min}"
           :max="${max}"
-          :disabled="${disabled}"></vu-slider>
+          :disabled="${disabled}"
+          @change="onChange"></vu-slider>
       </div>
-
       `,
       methods: {
         onChange: (value) => action('change')(value),

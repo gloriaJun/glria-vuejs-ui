@@ -13,7 +13,8 @@
     <vu-button
       :style="styleThumb(firstValue)"
       :class="['range-thumb', {dragging: dragging}]"
-      circle/>
+      circle
+      @mousedown="handleDragStart"/>
   </div>
 </template>
 
@@ -80,19 +81,31 @@ export default {
     },
   },
   watch: {
-    // firstValue(newVal) {
-    //   this.$emit('input', newVal);
-    // },
+    value(oldVal, newVal) {
+      this.drawPosition();
+
+      if (this.isRange) {
+        console.log('range');
+      } else if (parseFloat(oldVal) !== parseFloat(newVal)) {
+        this.$emit('change', this.firstValue);
+      }
+    },
+    firstValue(newVal) {
+      this.$emit('input', newVal);
+    },
   },
   mounted() {
-    if (this.isRange) {
-      console.log('range');
-    } else {
-      this.firstValue = (this.value === null) ?
-        this.min : Math.min(this.max, Math.max(this.min, this.value));
-    }
+    this.drawPosition();
   },
   methods: {
+    drawPosition() {
+      if (this.isRange) {
+        console.log('range');
+      } else {
+        this.firstValue = (this.value === null) ?
+          this.min : Math.min(this.max, Math.max(this.min, this.value));
+      }
+    },
     calcPosition(value) {
       return 100 * ((value - this.min) / (this.max - this.min));
     },
@@ -103,37 +116,61 @@ export default {
       }
       return style;
     },
+    handleDragStart() {
+      console.log('hh');
+      this.dragging = true;
+
+      // add event
+      document.addEventListener('touchmove', this.handleDragging);
+      document.addEventListener('mousemove', this.handleDragging);
+      document.addEventListener('mouseup', this.handleDragStop);
+      document.addEventListener('touchend', this.handleDragStop);
+      document.addEventListener('contextmenu', this.handleDragStop);
+    },
+    handleDragStop() {
+      this.dragging = false;
+
+      // remove event
+      document.removeEventListener('touchmove', this.handleDragging);
+      document.removeEventListener('mousemove', this.handleDragging);
+      document.removeEventListener('mouseup', this.handleDragStop);
+      document.removeEventListener('touchend', this.handleDragStop);
+      document.removeEventListener('contextmenu', this.handleDragStop);
+    },
+    handleDragging(event) {
+      this.setPosition(event);
+    },
     /**
      * @event - when clicked slider bar
      * @param event
      */
     handleClickSlider(event) {
+      this.setPosition(event);
+    },
+    /**
+     * set position from mouse location
+     * @param event
+     */
+    setPosition(event) {
       // get point of the track
       const {
         left: offsetLeft,
         width: trackWidth,
       } = this.$refs.track.getBoundingClientRect();
-      const offset = event.clientX - offsetLeft;
-      const percent = Math.round((offset / trackWidth) * 100);
-      const value = this.min + ((percent * (this.max - this.min)) / 100);
+      const pos = event.clientX - offsetLeft;
+      // get percent
+      const percent = Math.round((pos / trackWidth) * 100);
 
-      // if outside slider, set value to min or max
-      // if (value > this.max) value = this.max;
-      // else if (value < this.min) value = this.min;
-      this.setPosition(value);
-    },
-    /**
-     * set position of thumb
-     * @param position
-     */
-    setPosition(position) {
       const stepLength = 100 / ((this.max - this.min) / this.step);
-      const steps = Math.round(position / stepLength);
-      const value = (steps * stepLength * (this.max - this.min) * 0.01) + this.min;
+      const steps = Math.round(percent / stepLength);
+      let value = (steps * stepLength * (this.max - this.min) * 0.01) + this.min;
+      value = parseFloat(value.toFixed(2));
 
-      console.log(this.max, value);
-      // this.firstValue = parseFloat(value.toFixed(2));
-      this.$emit('input', parseFloat(value.toFixed(2)));
+      if (this.isRange) {
+        console.log('range');
+      } else {
+        this.firstValue = value;
+      }
     },
   },
 };
