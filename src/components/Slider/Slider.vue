@@ -9,6 +9,11 @@
       <div
         :style="styleTrack"
         :class="['range-track-fill', {dragging: dragging}]"/>
+      <span
+        v-for="(item, key) in steps"
+        :key="key"
+        :style="{left: `${item}%`}"
+        class="range-track-step"/>
     </div>
     <vu-button
       :style="styleThumb(firstValue)"
@@ -49,9 +54,11 @@ export default {
     },
     step: {
       type: [Number, String],
-      default: 0.5,
+      default: 10,
+      validator: value => parseFloat(value) > 0,
     },
     showValue: Boolean,
+    showStep: Boolean,
     showTooltip: Boolean,
   },
   data() {
@@ -78,6 +85,18 @@ export default {
           width: `${this.calcPosition(this.firstValue)}%`,
           left: '0%',
         };
+    },
+    steps() {
+      // if (!this.showStep || this.step === 0) return [];
+      const count = (this.max - this.min) / this.step;
+      const width = 100 * (this.step / (this.max - this.min));
+
+      const steps = [];
+      for (let i = 0; i <= count; i++) {
+        steps.push(i * width);
+      }
+
+      return steps;
     },
   },
   watch: {

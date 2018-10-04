@@ -48,6 +48,15 @@
       height: inherit;
       border-radius: 1rem;
     }
+
+    .range-track-step {
+      position: absolute;
+      background-color: #ffffff;
+      top: 0;
+      height: $track-height;
+      width: $track-height;
+      border-radius: 1rem;
+    }
   }
   .range-thumb {
     position: absolute;
