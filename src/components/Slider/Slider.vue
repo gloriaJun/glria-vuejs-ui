@@ -19,7 +19,13 @@
       :style="styleThumb(firstValue)"
       :class="['range-thumb', {dragging: dragging}]"
       circle
-      @mousedown="handleDragStart"/>
+      @mousedown="handleDragStart(0)"/>
+    <vu-button
+      v-if="isRange"
+      :style="styleThumb(secondValue)"
+      :class="['range-thumb', {dragging: dragging}]"
+      circle
+      @mousedown="handleDragStart(1)"/>
   </div>
 </template>
 
@@ -65,6 +71,7 @@ export default {
     return {
       firstValue: 0,
       secondValue: 0,
+      thumbIndex: 0,
       dragging: false,
     };
   },
@@ -80,7 +87,10 @@ export default {
     },
     styleTrack() {
       return this.isRange ?
-        {} :
+        {
+          width: `${100 * ((this.secondValue - this.firstValue) / (this.max - this.min))}%`,
+          left: `${this.calcPosition(this.firstValue)}%`,
+        } :
         {
           width: `${this.calcPosition(this.firstValue)}%`,
           left: '0%',
@@ -112,13 +122,18 @@ export default {
         this.$emit('change', this.firstValue);
       }
     },
-    // firstValue(newVal) {
-    //   if (this.isRange) {
-    //     console.log('range');
-    //   } else {
-    //     this.$emit('input', newVal);
-    //   }
-    // },
+    firstValue() {
+      if (!this.isRange) {
+        this.$emit('input', this.firstValue);
+      }
+    },
+    secondValue() {
+      if (this.isRange) {
+        const min = Math.min(this.firstValue, this.secondValue);
+        const max = Math.max(this.firstValue, this.secondValue);
+        this.$emit('input', [min, max]);
+      }
+    },
   },
   mounted() {
     if (this.min > this.max) {
@@ -129,11 +144,13 @@ export default {
   methods: {
     drawPosition() {
       if (this.isRange) {
-        console.log('range');
+        this.firstValue = Math.max(this.min, this.value[0]);
+        this.secondValue = Math.min(this.max, this.value[1]);
       } else {
         this.firstValue = (this.value === null) ?
           this.min : Math.min(this.max, Math.max(this.min, this.value));
       }
+      console.log('range', this.value, this.min, this.max, this.firstValue, this.secondValue);
     },
     calcPosition(value) {
       return 100 * ((value - this.min) / (this.max - this.min));
@@ -145,9 +162,9 @@ export default {
       }
       return style;
     },
-    handleDragStart() {
-      console.log('hh');
+    handleDragStart(index) {
       this.dragging = true;
+      this.thumbIndex = index;
 
       // add event
       document.addEventListener('touchmove', this.handleDragging);
@@ -195,17 +212,25 @@ export default {
       let value = (steps * stepLength * (this.max - this.min) * 0.01) + this.min;
       value = parseFloat(value.toFixed(2));
 
+      if (value < this.min) {
+        value = this.min;
+      } else if (value > this.max) {
+        value = this.max;
+      }
+
       if (this.isRange) {
-        console.log('range');
+        const {
+          value: oldValue,
+        } = this;
+        console.log('range', value, this.firstValue, this.secondValue);
+        const temp = Math.abs(oldValue[0] - value);
+        const temp2 = Math.abs(oldValue[1] - value);
+        console.log(temp, temp2, temp < temp2, temp < temp2 ? 0 : 1);
+
+        // if (this.thumbIndex === 0)
+        // this.firstValue =
       } else {
-        if (value < this.min) {
-          this.firstValue = this.min;
-        } else if (value > this.max) {
-          this.firstValue = this.max;
-        } else {
-          this.firstValue = value;
-        }
-        this.$emit('input', this.firstValue);
+        this.firstValue = value;
       }
     },
   },
