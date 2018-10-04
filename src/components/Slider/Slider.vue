@@ -112,9 +112,13 @@ export default {
         this.$emit('change', this.firstValue);
       }
     },
-    firstValue(newVal) {
-      this.$emit('input', newVal);
-    },
+    // firstValue(newVal) {
+    //   if (this.isRange) {
+    //     console.log('range');
+    //   } else {
+    //     this.$emit('input', newVal);
+    //   }
+    // },
   },
   mounted() {
     if (this.min > this.max) {
@@ -194,7 +198,14 @@ export default {
       if (this.isRange) {
         console.log('range');
       } else {
-        this.firstValue = value;
+        if (value < this.min) {
+          this.firstValue = this.min;
+        } else if (value > this.max) {
+          this.firstValue = this.max;
+        } else {
+          this.firstValue = value;
+        }
+        this.$emit('input', this.firstValue);
       }
     },
   },

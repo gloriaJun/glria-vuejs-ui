@@ -51,10 +51,11 @@
 
     .range-track-step {
       position: absolute;
-      background-color: darken($track-bg, 12%);
+      background-color: darken($track-bg, 20%);
       top: 0;
       height: $track-height;
-      width: .25rem;
+      width: .15rem;
+      transform: translateX(-50%);
     }
   }
   .range-thumb {
