@@ -12,6 +12,7 @@ storiesOf('Components-Form|Slider', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const color = select('color', COLOR_TYPES, 'primary');
+    const showStep = boolean('show step', false);
     const disabled = boolean('disabled', false);
     const value = number('value', 20);
     const min = number('min', 0);
@@ -31,6 +32,7 @@ storiesOf('Components-Form|Slider', module)
           color="${color}"
           :min="${min}"
           :max="${max}"
+          :showStep="${showStep}"
           :disabled="${disabled}"
           @change="onChange"></vu-slider>
       </div>

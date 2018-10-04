@@ -54,7 +54,7 @@ export default {
     },
     step: {
       type: [Number, String],
-      default: 10,
+      default: 1,
       validator: value => parseFloat(value) > 0,
     },
     showValue: Boolean,
@@ -87,13 +87,16 @@ export default {
         };
     },
     steps() {
-      // if (!this.showStep || this.step === 0) return [];
+      if (!this.showStep || this.step === 0) return [];
       const count = (this.max - this.min) / this.step;
       const width = 100 * (this.step / (this.max - this.min));
 
       const steps = [];
-      for (let i = 0; i <= count; i++) {
-        steps.push(i * width);
+      for (let i = 1; i < count; i++) {
+        const value = i * width;
+        if (this.calcPosition(this.firstValue) <= value) {
+          steps.push(value);
+        }
       }
 
       return steps;
@@ -114,6 +117,9 @@ export default {
     },
   },
   mounted() {
+    if (this.min > this.max) {
+      console.warn('[Slider] min value should be bigger than max value');
+    }
     this.drawPosition();
   },
   methods: {
