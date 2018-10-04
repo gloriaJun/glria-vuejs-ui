@@ -222,10 +222,19 @@ export default {
         const {
           value: oldValue,
         } = this;
-        console.log('range', value, this.firstValue, this.secondValue);
-        const temp = Math.abs(oldValue[0] - value);
-        const temp2 = Math.abs(oldValue[1] - value);
-        console.log(temp, temp2, temp < temp2, temp < temp2 ? 0 : 1);
+
+        if (this.dragging) {
+          console.log('range', value, this.firstValue, this.secondValue, this.thumbIndex, this.dragging);
+        } else {
+          const temp = Math.abs(oldValue[0] - value);
+          const temp2 = Math.abs(oldValue[1] - value);
+          console.log(value, temp, temp2, temp < temp2, temp < temp2 ? 0 : 1);
+          if (temp < temp2) {
+            this.firstValue = value;
+          } else {
+            this.secondValue = value;
+          }
+        }
 
         // if (this.thumbIndex === 0)
         // this.firstValue =
