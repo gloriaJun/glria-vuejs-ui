@@ -29,6 +29,7 @@ storiesOf('Components-Form|Slider', module)
       template: `
       <div>
         <input type="number" min=0 max=100 v-model="value">
+        <div>Value : <strong>{{ value }}</strong></div>
         <vu-slider
           v-model="value"
           color="${color}"

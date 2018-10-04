@@ -16,13 +16,13 @@
         class="range-track-step"/>
     </div>
     <vu-button
-      :style="styleThumb(firstValue)"
+      :style="styleThumb(0)"
       :class="['range-thumb', {dragging: dragging}]"
       circle
       @mousedown="handleDragStart(0)"/>
     <vu-button
       v-if="isRange"
-      :style="styleThumb(secondValue)"
+      :style="styleThumb(1)"
       :class="['range-thumb', {dragging: dragging}]"
       circle
       @mousedown="handleDragStart(1)"/>
@@ -71,6 +71,7 @@ export default {
     return {
       firstValue: 0,
       secondValue: 0,
+      currentValue: 0,
       thumbIndex: 0,
       dragging: false,
     };
@@ -88,11 +89,11 @@ export default {
     styleTrack() {
       return this.isRange ?
         {
-          width: `${100 * ((this.secondValue - this.firstValue) / (this.max - this.min))}%`,
-          left: `${this.calcPosition(this.firstValue)}%`,
+          width: `${100 * ((this.currentValue[1] - this.currentValue[0]) / (this.max - this.min))}%`,
+          left: `${this.calcPosition(this.currentValue[0])}%`,
         } :
         {
-          width: `${this.calcPosition(this.firstValue)}%`,
+          width: `${this.calcPosition(this.currentValue)}%`,
           left: '0%',
         };
     },
@@ -104,7 +105,7 @@ export default {
       const steps = [];
       for (let i = 1; i < count; i++) {
         const value = i * width;
-        if (this.calcPosition(this.firstValue) <= value) {
+        if (this.calcPosition(this.currentValue) <= value) {
           steps.push(value);
         }
       }
@@ -113,49 +114,52 @@ export default {
     },
   },
   watch: {
-    value(oldVal, newVal) {
-      this.drawPosition();
-
-      if (this.isRange) {
-        console.log('range');
-      } else if (parseFloat(oldVal) !== parseFloat(newVal)) {
-        this.$emit('change', this.firstValue);
-      }
+    value(newVal, oldVal) {
+      this.setValues(newVal);
+      console.log('temp', oldVal, newVal, this.currentValue);
+      this.$emit('change', this.currentValue);
     },
-    firstValue() {
-      if (!this.isRange) {
-        this.$emit('input', this.firstValue);
-      }
-    },
-    secondValue() {
-      if (this.isRange) {
-        const min = Math.min(this.firstValue, this.secondValue);
-        const max = Math.max(this.firstValue, this.secondValue);
-        this.$emit('input', [min, max]);
-      }
-    },
+    // currentValue(newVal, oldVal) {
+    //   console.log(oldVal, newVal, '??');
+    //   // this.$emit('input', newVal);
+    // },
+    // value(oldVal, newVal) {
+    //   this.drawPosition();
+    //
+    //   if (this.isRange) {
+    //     const min = Math.min(this.firstValue, this.secondValue);
+    //     const max = Math.max(this.firstValue, this.secondValue);
+    //     // this.$emit('input', [min, max]);
+    //     this.$emit('change', [min, max]);
+    //   } else if (parseFloat(oldVal) !== parseFloat(newVal)) {
+    //     this.$emit('change', this.currentValue);
+    //   }
+    // },
+    // firstValue(oldVal, newVal) {
+    //   if (this.isRange && (oldVal !== newVal)) {
+    //     this.$emit('input', [this.firstValue, this.secondValue]);
+    //   } else {
+    //     this.$emit('input', this.firstValue);
+    //   }
+    // },
+    // secondValue(oldVal, newVal) {
+    //   if (this.isRange && (oldVal !== newVal)) {
+    //     this.$emit('input', [this.firstValue, this.secondValue]);
+    //   }
+    // },
   },
   mounted() {
     if (this.min > this.max) {
       console.warn('[Slider] min value should be bigger than max value');
     }
-    this.drawPosition();
+    this.setPosition(this.value);
   },
   methods: {
-    drawPosition() {
-      if (this.isRange) {
-        this.firstValue = Math.max(this.min, this.value[0]);
-        this.secondValue = Math.min(this.max, this.value[1]);
-      } else {
-        this.firstValue = (this.value === null) ?
-          this.min : Math.min(this.max, Math.max(this.min, this.value));
-      }
-      console.log('range', this.value, this.min, this.max, this.firstValue, this.secondValue);
-    },
     calcPosition(value) {
       return 100 * ((value - this.min) / (this.max - this.min));
     },
-    styleThumb(value) {
+    styleThumb(index) {
+      const value = this.isRange ? this.currentValue[index] : this.currentValue;
       const style = { left: `${this.calcPosition(value)}%` };
       if (this.dragging) {
         style.cursor = 'grabbing';
@@ -183,21 +187,25 @@ export default {
       document.removeEventListener('touchend', this.handleDragStop);
       document.removeEventListener('contextmenu', this.handleDragStop);
     },
+    /**
+     * @event - when dragging slider bar
+     * @param event
+     */
     handleDragging(event) {
-      this.setPosition(event);
+      this.getPosition(event);
     },
     /**
      * @event - when clicked slider bar
      * @param event
      */
     handleClickSlider(event) {
-      this.setPosition(event);
+      this.getPosition(event);
     },
     /**
      * set position from mouse location
      * @param event
      */
-    setPosition(event) {
+    getPosition(event) {
       // get point of the track
       const {
         left: offsetLeft,
@@ -212,34 +220,36 @@ export default {
       let value = (steps * stepLength * (this.max - this.min) * 0.01) + this.min;
       value = parseFloat(value.toFixed(2));
 
-      if (value < this.min) {
-        value = this.min;
-      } else if (value > this.max) {
-        value = this.max;
-      }
-
       if (this.isRange) {
         const {
           value: oldValue,
         } = this;
 
         if (this.dragging) {
-          console.log('range', value, this.firstValue, this.secondValue, this.thumbIndex, this.dragging);
+          console.log('range', value, this.currentValue, this.thumbIndex, this.dragging);
         } else {
-          const temp = Math.abs(oldValue[0] - value);
-          const temp2 = Math.abs(oldValue[1] - value);
-          console.log(value, temp, temp2, temp < temp2, temp < temp2 ? 0 : 1);
-          if (temp < temp2) {
-            this.firstValue = value;
-          } else {
-            this.secondValue = value;
-          }
+          this.thumbIndex = Math.abs(oldValue[0] - value) < Math.abs(oldValue[1] - value) ? 0 : 1;
         }
-
-        // if (this.thumbIndex === 0)
-        // this.firstValue =
+        oldValue[this.thumbIndex] = value;
+        this.setPosition(oldValue);
       } else {
-        this.firstValue = value;
+        this.setPosition(value);
+      }
+    },
+    setPosition(value) {
+      this.setValues(value);
+      this.$emit('input', this.currentValue);
+    },
+    setValues(value) {
+      const valueCheck = val =>
+        ((val === null) ? this.min : Math.min(this.max, Math.max(this.min, val)));
+
+      if (this.isRange) {
+        const first = valueCheck(value[0]);
+        const second = valueCheck(value[1]);
+        this.currentValue = [Math.min(first, second), Math.max(first, second)];
+      } else {
+        this.currentValue = valueCheck(value);
       }
     },
   },
