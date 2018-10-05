@@ -114,39 +114,10 @@ export default {
     },
   },
   watch: {
-    value(newVal, oldVal) {
+    value(newVal) {
       this.setValues(newVal);
-      console.log('temp', oldVal, newVal, this.currentValue);
       this.$emit('change', this.currentValue);
     },
-    // currentValue(newVal, oldVal) {
-    //   console.log(oldVal, newVal, '??');
-    //   // this.$emit('input', newVal);
-    // },
-    // value(oldVal, newVal) {
-    //   this.drawPosition();
-    //
-    //   if (this.isRange) {
-    //     const min = Math.min(this.firstValue, this.secondValue);
-    //     const max = Math.max(this.firstValue, this.secondValue);
-    //     // this.$emit('input', [min, max]);
-    //     this.$emit('change', [min, max]);
-    //   } else if (parseFloat(oldVal) !== parseFloat(newVal)) {
-    //     this.$emit('change', this.currentValue);
-    //   }
-    // },
-    // firstValue(oldVal, newVal) {
-    //   if (this.isRange && (oldVal !== newVal)) {
-    //     this.$emit('input', [this.firstValue, this.secondValue]);
-    //   } else {
-    //     this.$emit('input', this.firstValue);
-    //   }
-    // },
-    // secondValue(oldVal, newVal) {
-    //   if (this.isRange && (oldVal !== newVal)) {
-    //     this.$emit('input', [this.firstValue, this.secondValue]);
-    //   }
-    // },
   },
   mounted() {
     if (this.min > this.max) {
@@ -226,7 +197,11 @@ export default {
         } = this;
 
         if (this.dragging) {
-          console.log('range', value, this.currentValue, this.thumbIndex, this.dragging);
+          if (value < Math.min(this.currentValue[0], this.currentValue[1])) {
+            this.thumbIndex = 0;
+          } else if (value > Math.max(this.currentValue[0], this.currentValue[1])) {
+            this.thumbIndex = 1;
+          }
         } else {
           this.thumbIndex = Math.abs(oldValue[0] - value) < Math.abs(oldValue[1] - value) ? 0 : 1;
         }
@@ -237,7 +212,7 @@ export default {
       }
     },
     setPosition(value) {
-      this.setValues(value);
+      if (value !== this.currentValue) this.setValues(value);
       this.$emit('input', this.currentValue);
     },
     setValues(value) {
