@@ -8,7 +8,7 @@
       :id="formId"
       :value="checkedValue"
       :true-value="checkedValue"
-      :false-value="unCheckedValue"
+      :false-value="uncheckedValue"
       :disabled="disabled"
       type="checkbox"
       class="custom-control-input"
@@ -32,7 +32,7 @@ export default {
     FormRadioCheckMixin,
   ],
   props: {
-    unCheckedValue: {
+    uncheckedValue: {
       type: [Boolean, Number, String, Array, Object],
       default: false,
     },
@@ -52,7 +52,7 @@ export default {
      * @param event
      */
     handleChange({ target: { checked } }) {
-      this.$emit('change', checked ? this.checkedValue : this.unCheckedValue);
+      this.$emit('change', checked ? this.checkedValue : this.uncheckedValue);
       if (this.hasParent) {
         this.$parent.$emit('change', this.currentValue);
       }
