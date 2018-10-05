@@ -8,7 +8,6 @@ export default {
       type: [Boolean, Number, String, Array, Object],
       default: true,
     },
-    disabled: Boolean,
   },
   data() {
     return {
