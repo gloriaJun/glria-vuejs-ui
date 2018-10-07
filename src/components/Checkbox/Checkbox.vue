@@ -22,11 +22,15 @@
 </template>
 
 <script>
+import formMixin from '../../utils/formMixin';
 import FormRadioCheckMixin from '../../utils/formRadioCheckMixin';
 
 export default {
   name: 'VuCheckbox',
-  mixins: [FormRadioCheckMixin],
+  mixins: [
+    formMixin,
+    FormRadioCheckMixin,
+  ],
   props: {
     uncheckedValue: {
       type: [Boolean, Number, String, Array, Object],

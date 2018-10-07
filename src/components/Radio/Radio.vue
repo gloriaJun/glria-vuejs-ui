@@ -19,11 +19,15 @@
 </template>
 
 <script>
+import formMixin from '../../utils/formMixin';
 import FormRadioCheckMixin from '../../utils/formRadioCheckMixin';
 
 export default {
   name: 'VuRadio',
-  mixins: [FormRadioCheckMixin],
+  mixins: [
+    formMixin,
+    FormRadioCheckMixin,
+  ],
   methods: {
     /**
      * @event change

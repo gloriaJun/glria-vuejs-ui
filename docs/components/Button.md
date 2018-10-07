@@ -32,9 +32,3 @@
 | circle   | Boolean | false | no | |
 | disabled   | Boolean | false | no | |
 | href   | String | false | no | if button type is link |
-
-### Events
-| Event Name | Parameters | Description |
-| ------ | ----------- | ------ |:-----:|:-------------|
-| click   | event | when button clicked |
-
