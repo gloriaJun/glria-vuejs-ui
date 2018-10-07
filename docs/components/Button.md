@@ -17,7 +17,7 @@
 <code-pen hash='VGYvMa' :height="350"></code-pen>
 
 ### with icon
-<code-pen hash='mGjBPK' :height="150"></code-pen>
+<code-pen hash='xabRbp' :height="150"></code-pen>
 
 ## API
 ### Props
