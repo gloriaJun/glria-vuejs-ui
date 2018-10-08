@@ -2,8 +2,9 @@ import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
-  boolean,
-} from '@storybook/addon-knobs';
+  boolean, selectV2,
+} from '@storybook/addon-knobs'
+import { COLOR_TYPES, SIZES } from '../constants'
 
 storiesOf('Components-Form|Checkbox', module)
   .addDecorator(VueInfoAddon)
@@ -80,6 +81,37 @@ storiesOf('Components-Form|Checkbox', module)
           v-model="checked"
           :options="items"
           :stacked="${stacked}"></vu-checkbox-group>
+      </div>
+      `,
+    });
+  })
+  .add('button Style', () => {
+    const stacked = boolean('stacked', false);
+    const color = selectV2('color', COLOR_TYPES, 'primary')
+    const size = selectV2('size', SIZES, '')
+
+    return ({
+      data() {
+        return {
+          checked: ['Pink'],
+          items: [
+            {label: 'Red', value: 'Red'},
+            {label: 'Green', value: 'Green'},
+            {label: 'Blue', value: 'Blue'},
+            {label: 'Pink', value: 'Pink'}
+          ],
+        }
+      },
+      template: `
+      <div>
+        <h5>Selected : {{ checked }}</h5>
+        <vu-checkbox-group
+          v-model="checked"
+          :options="items"
+          :stacked="${stacked}"
+          color="${color}"
+          size="${size}"
+          buttonStyle/>
       </div>
       `,
     });

@@ -46,7 +46,6 @@ export default {
         `btn-${color}`,
         size ? `btn-${size}` : '',
         { disabled: this.isDisabled },
-        { active: this.currentChecked === this.checkedValue },
       ];
     },
   },

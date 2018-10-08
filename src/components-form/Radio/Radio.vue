@@ -4,6 +4,7 @@
     :class="classes"
     class="vu-radio vu-form-control custom-radio custom-control">
     <input
+      ref="radio"
       v-model="currentChecked"
       :id="formId"
       :value="checkedValue"
@@ -19,8 +20,9 @@
   </div>
   <label
     v-else
-    :class="buttonClasses">
+    :class="[buttonClasses, { active: currentChecked === checkedValue }]">
     <input
+      ref="radio"
       v-model="currentChecked"
       :value="checkedValue"
       type="radio"

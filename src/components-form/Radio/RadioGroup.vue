@@ -21,9 +21,6 @@ import VuRadio from './Radio.vue';
 import formOptionMixin from '../../utils/formOptionMixin';
 import formRadioCheckGroupMixin from '../../utils/formRadioCheckGroupMixin';
 
-import colorUtility from '../../utils/color';
-import sizeUtility from '../../utils/size';
-
 export default {
   name: 'VuRadioGroup',
   components: {
@@ -35,26 +32,6 @@ export default {
   ],
   props: {
     value: [Boolean, Number, String, Object],
-    color: {
-      type: String,
-      default: 'primary',
-      validator: value => colorUtility.isColor(value),
-    },
-    size: {
-      type: String,
-      validator: value => sizeUtility.isSizes(value),
-    },
-  },
-  computed: {
-    classes() {
-      return this.buttonStyle ?
-        [
-          'btn-group-toggle',
-          `btn-group${this.stacked ? '-vertical' : ''}`,
-        ] : [
-          { 'group-stacked': this.stacked },
-        ];
-    },
   },
 };
 </script>

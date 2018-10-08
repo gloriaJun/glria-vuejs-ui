@@ -1,5 +1,6 @@
 <template>
   <div
+    :class="classes"
     role="group"
     tabindex="-1"
     class="vu-checkbox-group">

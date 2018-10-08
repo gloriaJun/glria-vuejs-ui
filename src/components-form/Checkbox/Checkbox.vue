@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="!isButtonStyle"
     :class="classes"
     class="vu-checkbox vu-form-control custom-checkbox custom-control">
     <input
@@ -19,6 +20,17 @@
       <slot/>
     </label>
   </div>
+  <label
+    v-else
+    :class="[buttonClasses, { active: checked }]">
+    <input
+      ref="checkbox"
+      v-model="currentChecked"
+      :value="checkedValue"
+      type="checkbox"
+      @change="handleChange">
+    <slot/>
+  </label>
 </template>
 
 <script>
@@ -38,12 +50,18 @@ export default {
     },
     indeterminate: Boolean,
   },
+  data() {
+    return {
+      checked: false,
+    };
+  },
   watch: {
     indeterminate(newVal) {
       this.setIndeterminate(newVal);
     },
   },
   mounted() {
+    this.checked = this.$refs.checkbox && this.$refs.checkbox.checked;
     this.setIndeterminate(this.indeterminate);
   },
   methods: {
@@ -52,6 +70,7 @@ export default {
      * @param event
      */
     handleChange({ target: { checked } }) {
+      this.checked = checked;
       this.$emit('change', checked ? this.checkedValue : this.uncheckedValue);
       if (this.hasParent) {
         this.$parent.$emit('change', this.currentValue);
