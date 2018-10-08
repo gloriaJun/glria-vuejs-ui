@@ -18,32 +18,21 @@
 <script>
 import VuCheckbox from '../Checkbox/Checkbox.vue';
 import formOptionMixin from '../../utils/formOptionMixin';
+import formRadioCheckGroupMixin from '../../utils/formRadioCheckGroupMixin';
 
 export default {
   name: 'VuCheckboxGroup',
   components: {
     VuCheckbox,
   },
-  mixins: [formOptionMixin],
+  mixins: [
+    formOptionMixin,
+    formRadioCheckGroupMixin,
+  ],
   props: {
     value: {
       type: [Array, Object],
       default: () => [],
-    },
-    stacked: Boolean,
-  },
-  data() {
-    return {
-      isGroup: true,
-      currentValue: this.value,
-    };
-  },
-  watch: {
-    value(newVal) {
-      this.currentValue = newVal;
-    },
-    currentValue(newVal) {
-      this.$emit('input', newVal);
     },
   },
 };

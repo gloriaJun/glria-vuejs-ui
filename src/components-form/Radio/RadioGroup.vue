@@ -1,5 +1,6 @@
 <template>
   <div
+    :class="classes"
     role="group"
     tabindex="-1"
     class="vu-radio-group">
@@ -18,29 +19,31 @@
 <script>
 import VuRadio from './Radio.vue';
 import formOptionMixin from '../../utils/formOptionMixin';
+import formRadioCheckGroupMixin from '../../utils/formRadioCheckGroupMixin';
 
 export default {
   name: 'VuRadioGroup',
   components: {
     VuRadio,
   },
-  mixins: [formOptionMixin],
+  mixins: [
+    formOptionMixin,
+    formRadioCheckGroupMixin,
+  ],
   props: {
     value: [Boolean, Number, String, Object],
-    stacked: Boolean,
   },
   data() {
     return {
-      isGroup: true,
-      currentValue: this.value,
     };
   },
-  watch: {
-    value(newVal) {
-      this.currentValue = newVal;
-    },
-    currentValue(newVal) {
-      this.$emit('input', newVal);
+  computed: {
+    classes() {
+      return this.buttonStyle ?
+        [
+          'btn-group',
+          'btn-group-toggle',
+        ] : [];
     },
   },
 };
