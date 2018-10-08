@@ -1,12 +1,13 @@
 <template>
   <div
+    v-if="!isButtonStyle"
     :class="classes"
     class="vu-radio vu-form-control custom-radio custom-control">
     <input
       v-model="currentChecked"
       :id="formId"
       :value="checkedValue"
-      :disabled="disabled"
+      :disabled="isDisabled"
       type="radio"
       class="custom-control-input"
       @change="handleChange">
@@ -16,6 +17,16 @@
       <slot/>
     </label>
   </div>
+  <label
+    v-else
+    :class="buttonClasses">
+    <input
+      v-model="currentChecked"
+      :value="checkedValue"
+      type="radio"
+      @change="handleChange">
+    <slot/>
+  </label>
 </template>
 
 <script>

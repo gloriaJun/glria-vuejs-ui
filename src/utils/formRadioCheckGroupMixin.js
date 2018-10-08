@@ -1,5 +1,6 @@
 export default {
   props: {
+    disabled: Boolean,
     stacked: Boolean,
     buttonStyle: Boolean,
   },

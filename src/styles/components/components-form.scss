@@ -51,8 +51,8 @@
 }
 
 /**
-    slider
-   */
+  slider
+*/
 .vu-slider {
   $track-height: $custom-range-track-height;
   $track-bg: $custom-range-track-bg;
@@ -133,3 +133,26 @@
     }
   } // end of color type
 } // end of slider
+
+/**
+  radio & checkbox group
+*/
+.vu-radio-group.btn-group-toggle {
+  .btn {
+    background-color: $white;
+    color: $input-color;
+  }
+
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      &:focus, &:hover {
+        background-color: $white;
+        color: $value;
+      }
+      &.active {
+        background-color: $value;
+        color: $white;
+      }
+    }
+  } // end of color type
+}
