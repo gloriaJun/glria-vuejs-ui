@@ -1,6 +1,6 @@
 <template>
   <ul class="vu-navbar-nav navbar-nav mr-auto">
-    <slot></slot>
+    <slot/>
   </ul>
 </template>
 

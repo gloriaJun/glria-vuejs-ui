@@ -17,7 +17,7 @@
 <code-pen hash='VGYvMa' :height="350"></code-pen>
 
 ### with icon
-<code-pen hash='mGjBPK' :height="150"></code-pen>
+<code-pen hash='xabRbp' :height="150"></code-pen>
 
 ## API
 ### Props
@@ -32,9 +32,3 @@
 | circle   | Boolean | false | no | |
 | disabled   | Boolean | false | no | |
 | href   | String | false | no | if button type is link |
-
-### Events
-| Event Name | Parameters | Description |
-| ------ | ----------- | ------ |:-----:|:-------------|
-| click   | event | when button clicked |
-

@@ -34,3 +34,19 @@ export const SIZES = Object.freeze({
   LARGE: 'lg',
   SMALL: 'sm',
 });
+
+export const INPUT_TYPES = [
+  'text',
+  'password',
+  'email',
+  'number',
+  'url',
+  'tel',
+  'search',
+  'range',
+  'color',
+  'date',
+  'time',
+  'month',
+  'week',
+];

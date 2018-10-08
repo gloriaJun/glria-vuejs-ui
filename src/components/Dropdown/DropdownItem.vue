@@ -4,7 +4,7 @@
     :class="classes"
     class="vu-dropdown-item dropdown-item"
     @click.stop.prevent="handleClickMenu">
-    <slot></slot>
+    <slot/>
   </a>
 </template>
 

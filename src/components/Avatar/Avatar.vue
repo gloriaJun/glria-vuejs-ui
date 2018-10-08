@@ -8,7 +8,7 @@
     <span v-else-if="text">{{ text }}</span>
     <vu-icon
       v-else
-      :icon="icon"></vu-icon>
+      :icon="icon"/>
   </div>
 </template>
 

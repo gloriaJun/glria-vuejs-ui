@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+/**
+  form control
+ */
+.vu-form-control {
+  // disabled
+  .form-control {
+    &:disabled, &[readonly] {
+      background-color: lighten($input-disabled-bg, 5%);
+      color: lighten($input-color, 10%);
+      pointer-events: none;
+    }
+  }
+
+  .custom-control-input {
+    &:focus, &.focus {
+      & ~ .custom-control-label::before {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // style
+  &.round {
+    $radius: $vu-border-radius-md;
+
+    > .input-group-prepend:first-child > .input-group-text,
+    > .form-control:first-child {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    > .input-group-append:last-child > .input-group-text,
+    > .form-control:last-child {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+  }
+
+  // status
+  /* by color */
+  @each $color, $value in $status-colors {
+    &.status-#{$color} {
+      .form-control {
+        border-color: $value;
+      }
+    }
+  }
+}
+
+/**
+  slider
+*/
+.vu-slider {
+  $track-height: $custom-range-track-height;
+  $track-bg: $custom-range-track-bg;
+
+  $thumb-height: $custom-range-thumb-width;
+  $thumb-bg: $component-active-bg;
+  //$custom-range-thumb-box-shadow
+  //$custom-range-thumb-active-bg
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+
+  &.disabled {
+    color: $input-disabled-bg;
+    opacity: 0.65;
+  }
+
+  .range-track {
+    position: absolute;
+    height: $track-height;
+    background-color: $track-bg;
+    border-radius: 1rem;
+    left: 0;
+    width: 100%;
+
+    .range-track-fill {
+      position: absolute;
+      height: inherit;
+      border-radius: 1rem;
+    }
+
+    .range-track-step {
+      position: absolute;
+      background-color: darken($track-bg, 20%);
+      top: 0;
+      height: $track-height;
+      width: .15rem;
+      transform: translateX(-50%);
+    }
+  }
+  .range-thumb {
+    position: absolute;
+    width: $thumb-height;
+    height: $thumb-height;
+    border-radius: 1rem;
+    box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
+    border: none;
+    background: #fff;
+    transform: translateX(-50%);
+    cursor: pointer;
+    &:hover {
+      cursor: grab;
+    }
+    &:active, &.active {
+      background: #fff !important;
+      box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.72);
+    }
+  }
+
+  .range-thumb, .range-track-fill {
+    transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
+    &.dragging {
+      transition: none;
+    }
+  }
+
+  /* by color */
+  @each $color, $value in $theme-colors {
+    &.slider-#{$color} {
+      .range-track > .range-track-fill {
+        background-color: $value;
+        border-color: $value;
+      }
+    }
+  } // end of color type
+} // end of slider
+
+/**
+  radio & checkbox group
+*/
+.vu-checkbox-group.btn-group-toggle,
+.vu-radio-group.btn-group-toggle {
+  .btn {
+    background-color: $white;
+    color: $input-color;
+  }
+
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      &:focus, &:hover {
+        background-color: $white;
+        color: $value;
+      }
+      &.active {
+        background-color: $value;
+        color: $white;
+      }
+    }
+  } // end of color type
+}

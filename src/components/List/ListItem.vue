@@ -1,11 +1,11 @@
 <template>
   <component
-      v-bind="$attrs"
-      :is="button ? 'button' : (href ? 'a' : 'div')"
-      :class="classes"
-      :href="!button && href"
-      class="vu-list-item list-group-item">
-    <slot></slot>
+    v-bind="$attrs"
+    :is="button ? 'button' : (href ? 'a' : 'div')"
+    :class="classes"
+    :href="!button && href"
+    class="vu-list-item list-group-item">
+    <slot/>
   </component>
 </template>
 

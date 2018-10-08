@@ -3,12 +3,12 @@
     v-show="isActive"
     :class="{'show active': isActive}"
     class="vu-tab-item tab-pane fade">
-    <slot></slot>
+    <slot/>
   </section>
 </template>
 
 <script>
-import uuid from '@/utils/uuid';
+import uuid from '../../utils/uuid';
 
 export default {
   name: 'VuTabItem',

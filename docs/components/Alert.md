@@ -22,5 +22,5 @@
 
 ### Events
 | Event Name | Parameters | Description |
-| ------ | ----------- | ------ |:-----:|:-------------|
+| ------ | ----------- | ------ |
 | close   | - | when alert closed |

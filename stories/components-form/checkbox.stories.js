@@ -2,10 +2,11 @@ import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
-  boolean,
-} from '@storybook/addon-knobs';
+  boolean, selectV2,
+} from '@storybook/addon-knobs'
+import { COLOR_TYPES, SIZES } from '../constants'
 
-storiesOf('Components|Form/Checkbox', module)
+storiesOf('Components-Form|Checkbox', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const disabled = boolean('disabled', false);
@@ -30,7 +31,7 @@ storiesOf('Components|Form/Checkbox', module)
         <vu-checkbox
           v-model="checked2"
           checked-value="male"
-          un-checked-value="female"
+          unchecked-value="female"
           @change="onChange">
           Gender : {{ checked2 }}
         </vu-checkbox>
@@ -56,25 +57,61 @@ storiesOf('Components|Form/Checkbox', module)
     return ({
       data() {
         return {
-          checked: [],
+          checked: ['Pink'],
           items: [
-            {text: 'Red', value: 'Red'},
-            {text: 'Green', value: 'Green'},
-            {text: 'Blue', value: 'Blue'},
-            {text: 'Pink', value: 'Pink'}
+            {label: 'Red', value: 'Red'},
+            {label: 'Green', value: 'Green'},
+            {label: 'Blue', value: 'Blue'},
+            {label: 'Pink', value: 'Pink'}
           ],
         }
       },
       template: `
       <div>
         <h5>Selected : {{ checked }}</h5>
-        <vu-checkbox-group :stacked="${stacked}">
+        <vu-checkbox-group v-model="checked" :stacked="${stacked}">
           <vu-checkbox
             v-for="item in items"
             :key="item.text"
-            v-model="checked"
-            :checked-value="item.value">{{ item.text }}</vu-checkbox>
+            :checked-value="item.value">{{ item.label }}</vu-checkbox>
         </vu-checkbox-group>
+        
+        <h6 style="margin-top: 2rem;">using by options</h6>
+        <vu-checkbox-group
+          v-model="checked"
+          :options="items"
+          :stacked="${stacked}"></vu-checkbox-group>
+      </div>
+      `,
+    });
+  })
+  .add('button Style', () => {
+    const stacked = boolean('stacked', false);
+    const color = selectV2('color', COLOR_TYPES, 'primary')
+    const size = selectV2('size', SIZES, '')
+
+    return ({
+      data() {
+        return {
+          checked: ['Pink'],
+          items: [
+            {label: 'Red', value: 'Red'},
+            {label: 'Green', value: 'Green'},
+            {label: 'Blue', value: 'Blue'},
+            {label: 'Pink', value: 'Pink'}
+          ],
+        }
+      },
+      template: `
+      <div>
+        <h5>Selected : {{ checked }}</h5>
+        <vu-checkbox-group
+          v-model="checked"
+          :options="items"
+          :stacked="${stacked}"
+          color="${color}"
+          size="${size}"
+          buttonStyle/>
       </div>
       `,
     });
@@ -96,11 +133,10 @@ storiesOf('Components|Form/Checkbox', module)
           v-model="checkedAll"
           :indeterminate="indeterminate"
           @change="onChangeCheckAll">All</vu-checkbox>
-        <vu-checkbox-group stacked>
+        <vu-checkbox-group v-model="checked" stacked>
           <vu-checkbox
             v-for="(item, index) in items"
             :key="index"
-            v-model="checked"
             :checked-value="item">{{ item }}</vu-checkbox>
         </vu-checkbox-group>
       </div>

@@ -3,12 +3,12 @@
     :class="classes"
     class="vu-pagination pagination">
     <li
-        :class="{ disabled: current <= 1 }"
-        class="page-item">
+      :class="{ disabled: current <= 1 }"
+      class="page-item">
       <a
-          class="page-link"
-          href="#"
-          @click.stop.prevent="handleClickPage(1)">&laquo;</a>
+        class="page-link"
+        href="#"
+        @click.stop.prevent="handleClickPage(1)">&laquo;</a>
     </li>
     <li
       :class="{ disabled: current <= 1 }"
@@ -27,7 +27,7 @@
         class="page-link"
         href="#"
         @click.stop.prevent="handleClickPage(page)"
-        v-html="page"></a>
+        v-html="page"/>
     </li>
     <li
       :class="{ disabled: current >= pageCount }"
@@ -38,12 +38,12 @@
         @click.stop.prevent="handleClickNext">&rsaquo;</a>
     </li>
     <li
-        :class="{ disabled: current >= pageCount }"
-        class="page-item">
+      :class="{ disabled: current >= pageCount }"
+      class="page-item">
       <a
-          class="page-link"
-          href="#"
-          @click.stop.prevent="handleClickPage(pageCount)">&raquo;</a>
+        class="page-link"
+        href="#"
+        @click.stop.prevent="handleClickPage(pageCount)">&raquo;</a>
     </li>
   </ul>
 </template>
@@ -58,7 +58,6 @@ export default {
   },
   props: {
     /**
-     * @model
      * current page number
      */
     value: {
@@ -163,7 +162,6 @@ export default {
     },
     current(value) {
       this.$emit('change', value);
-      this.$emit('input', value);
       this.$emit('update', value);
     },
     perPage() {

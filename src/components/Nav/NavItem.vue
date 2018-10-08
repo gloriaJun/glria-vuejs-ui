@@ -8,13 +8,13 @@
       :class="classes"
       class="nav-link"
       @click.stop.prevent="handleClickMenu">
-      <slot></slot>
+      <slot/>
     </a>
     <div
       v-if="dropdown"
       :class="{show: show}"
       class="dropdown-menu">
-      <slot name="dropdown-menu"></slot>
+      <slot name="dropdown-menu"/>
     </div>
   </li>
 </template>

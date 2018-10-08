@@ -1,9 +1,9 @@
 <template>
-   <span
-     v-on="$listeners"
-     :class="elClasses"
-     class="vu-icon">
-     <i :class="iconClasses"></i>
+  <span
+    :class="elClasses"
+    class="vu-icon"
+    v-on="$listeners">
+    <i :class="iconClasses"/>
   </span>
 </template>
 

@@ -1,6 +1,7 @@
 import './styles/index.scss';
 
 import * as components from './components';
+import * as componentsFrom from './components-form';
 import * as directives from './directives';
 import * as services from './services';
 
@@ -14,6 +15,9 @@ const Gvu = {
 
     // component
     Object.values(components).forEach((component) => {
+      Vue.use(component);
+    });
+    Object.values(componentsFrom).forEach((component) => {
       Vue.use(component);
     });
 

@@ -2,15 +2,15 @@ import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
-  select,
+  selectV2,
   boolean,
 } from '@storybook/addon-knobs';
 
 storiesOf('Components|Tabs', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const type = select('type', ['line', 'card', 'pills'], 'line');
-    const align = select('align', ['left', 'center', 'right'], 'left');
+    const type = selectV2('type', ['line', 'card', 'pills'], 'line');
+    const align = selectV2('align', ['left', 'center', 'right'], 'left');
     const expanded = boolean('expanded', false);
 
     return ({

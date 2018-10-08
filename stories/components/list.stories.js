@@ -3,17 +3,17 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
+  selectV2,
   text,
 } from '@storybook/addon-knobs';
 
 import { COLOR_TYPES } from '../constants';
-const color_type = Object.assign(COLOR_TYPES, {DEFAULT: ''});
+const color_type = Object.assign({...COLOR_TYPES}, {DEFAULT: ''});
 
 storiesOf('Components|List', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const color = select('color', color_type, '');
+    const color = selectV2('color', color_type, '');
     const active = boolean('active', false);
     const disabled = boolean('disabled', false);
     const isLink = boolean('link', false);

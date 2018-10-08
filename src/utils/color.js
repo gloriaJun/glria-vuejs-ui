@@ -13,8 +13,15 @@ const COLOR_TYPES = Object.assign({
 }, STATUS_TYPES);
 
 export default {
+  STATUS: STATUS_TYPES,
   COLORS: COLOR_TYPES,
 
+  isStatus(status) {
+    return [
+      '',
+      ...Object.values(STATUS_TYPES),
+    ].includes(status);
+  },
   isColor(color) {
     return Object.values(COLOR_TYPES).includes(color);
   },

@@ -5,8 +5,8 @@
     :href="isLink && href"
     :class="elClasses"
     class="vu-button btn"
-    @click="onClick">
-    <slot></slot>
+    v-on="$listeners">
+    <slot/>
   </component>
 </template>
 
@@ -99,15 +99,6 @@ export default {
     },
     isLink() {
       return this.type === 'link';
-    },
-  },
-  methods: {
-    /**
-     * @event click
-     * @param event
-     */
-    onClick(event) {
-      this.$emit('click', event);
     },
   },
 };

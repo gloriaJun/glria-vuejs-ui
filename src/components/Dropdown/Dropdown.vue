@@ -8,14 +8,14 @@
       class="dropdown-button"
       @click="handleClickToggle">
       <!-- @slot Use this slot button for dropdown toggle -->
-      <slot></slot>
+      <slot/>
     </div>
 
     <div
-        :class="{show: show}"
-        class="dropdown-menu">
+      :class="{show: show}"
+      class="dropdown-menu">
       <!-- @slot Use this slot menu -->
-      <slot name="menu"></slot>
+      <slot name="menu"/>
     </div>
   </div>
 </template>

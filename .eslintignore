@@ -6,3 +6,6 @@
 /tests/unit/coverage/
 /stories/*.stories.js
 *.stories.js
+
+#temp
+/tests/

@@ -1,8 +1,8 @@
 <template>
   <ul
-      :class="classes"
-      class="vu-nav nav">
-    <slot></slot>
+    :class="classes"
+    class="vu-nav nav">
+    <slot/>
   </ul>
 </template>
 
