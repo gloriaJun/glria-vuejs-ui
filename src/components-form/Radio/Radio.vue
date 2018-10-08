@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    class="vu-radio custom-radio custom-control">
+    class="vu-radio vu-form-control custom-radio custom-control">
     <input
       v-model="currentChecked"
       :id="formId"

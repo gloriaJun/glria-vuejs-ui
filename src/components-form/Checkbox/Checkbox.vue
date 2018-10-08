@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    class="vu-checkbox custom-checkbox custom-control">
+    class="vu-checkbox vu-form-control custom-checkbox custom-control">
     <input
       ref="checkbox"
       v-model="currentChecked"

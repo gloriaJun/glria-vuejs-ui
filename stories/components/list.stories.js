@@ -8,7 +8,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import { COLOR_TYPES } from '../constants';
-const color_type = Object.assign(COLOR_TYPES, {DEFAULT: ''});
+const color_type = Object.assign({...COLOR_TYPES}, {DEFAULT: ''});
 
 storiesOf('Components|List', module)
   .addDecorator(VueInfoAddon)
