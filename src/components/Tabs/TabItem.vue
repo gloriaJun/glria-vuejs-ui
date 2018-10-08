@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import uuid from '@/utils/uuid';
+import uuid from '../../utils/uuid';
 
 export default {
   name: 'VuTabItem',

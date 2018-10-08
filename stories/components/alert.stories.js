@@ -3,7 +3,7 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
+  selectV2,
   text,
 } from '@storybook/addon-knobs';
 
@@ -12,7 +12,7 @@ import { COLOR_TYPES } from '../constants';
 storiesOf('Components|Alert', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const color = select('color', COLOR_TYPES, COLOR_TYPES.PRIMARY);
+    const color = selectV2('color', COLOR_TYPES, COLOR_TYPES.PRIMARY);
     const title = text('title', '');
     const closable = boolean('closable', false);
     const showIcon = boolean('showIcon', false);

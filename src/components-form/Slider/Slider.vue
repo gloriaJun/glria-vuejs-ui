@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    class="vu-slider">
+    class="vu-slider vu-form-control">
     <div
       ref="track"
       class="range-track"

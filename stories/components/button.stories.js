@@ -3,7 +3,7 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
+  selectV2,
   text,
 } from '@storybook/addon-knobs';
 
@@ -13,9 +13,9 @@ const color_type = Object.assign(COLOR_TYPES, {LINK: 'link'});
 storiesOf('Components|Buttons/Button', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const type = select('type', ['button', 'submit', 'reset', 'link'], 'button');
-    const color = select('color', color_type, 'primary');
-    const size = select('size', SIZES, '');
+    const type = selectV2('type', ['button', 'submit', 'reset', 'link'], 'button');
+    const color = selectV2('color', color_type, 'primary');
+    const size = selectV2('size', SIZES, '');
     const block = boolean('block', false);
     const outline = boolean('outline', false);
     const round = boolean('round', false);
@@ -41,8 +41,8 @@ storiesOf('Components|Buttons/Button', module)
     });
   })
   .add('link button', () => {
-    const color = select('color', color_type, 'link');
-    const size = select('size', SIZES, '');
+    const color = selectV2('color', color_type, 'link');
+    const size = selectV2('size', SIZES, '');
     const block = boolean('block', false);
     const outline = boolean('outline', false);
     const round = boolean('round', false);
@@ -66,9 +66,9 @@ storiesOf('Components|Buttons/Button', module)
     });
   })
   .add('with icon', () => {
-    const type = select('type', ['button', 'submit', 'reset', 'link'], 'button');
-    const color = select('color', color_type, 'primary');
-    const size = select('size', SIZES, '');
+    const type = selectV2('type', ['button', 'submit', 'reset', 'link'], 'button');
+    const color = selectV2('color', color_type, 'primary');
+    const size = selectV2('size', SIZES, '');
     const block = boolean('block', false);
     const outline = boolean('outline', false);
     const round = boolean('round', false);

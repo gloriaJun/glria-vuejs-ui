@@ -3,14 +3,14 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
+  selectV2,
 } from '@storybook/addon-knobs';
 
 storiesOf('Components|Dropdown', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const hoverable = boolean('hoverable', false);
-    const placement = select('placement', [
+    const placement = selectV2('placement', [
       'top',
       'left',
       'right',

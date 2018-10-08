@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info';
 import {
   boolean,
-  select,
+  selectV2,
 } from '@storybook/addon-knobs';
 
 import { SIZES } from '../constants';
@@ -10,7 +10,7 @@ import { SIZES } from '../constants';
 storiesOf('Components|Buttons/Button Group', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
-    const size = select('size', SIZES, '');
+    const size = selectV2('size', SIZES, '');
     const vertical = boolean('vertical', false);
 
     return ({

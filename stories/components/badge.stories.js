@@ -3,7 +3,7 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import { action } from '@storybook/addon-actions';
 import {
   boolean,
-  select,
+  selectV2,
   text,
 } from '@storybook/addon-knobs';
 
@@ -13,8 +13,8 @@ storiesOf('Components|Badge', module)
   .addDecorator(VueInfoAddon)
   .add('default', () => {
     const value = text('value', '5');
-    const position = select('position', ['right', 'left'], 'right');
-    const color = select('color', COLOR_TYPES, COLOR_TYPES.ERROR);
+    const position = selectV2('position', ['right', 'left'], 'right');
+    const color = selectV2('color', COLOR_TYPES, COLOR_TYPES.ERROR);
     const overlap = boolean('overlap', false);
 
     return ({
