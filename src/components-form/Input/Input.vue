@@ -100,7 +100,7 @@ export default {
     },
     inputClasses() {
       return [
-        `form-control${(this.plaintext && !(this.hasSlot('prepend') || this.hasSlot('prepend'))) ? '-plaintext' : ''}`,
+        `form-control${(this.plaintext && !(this.isInputGroup)) ? '-plaintext' : ''}`,
         { [`form-control-${this.size}`]: Boolean(this.size) },
       ];
     },
