@@ -22,7 +22,8 @@ storiesOf('Components-Form|Input', module)
     return ({
       data() {
         return {
-          value: plaintext ? 'It\'s Plain Text' : null,
+          // value: plaintext ? 'It\'s Plain Text' : null,
+          value: 'aaa',
         }
       },
       template: `
@@ -50,7 +51,6 @@ storiesOf('Components-Form|Input', module)
     const round = boolean('round', false);
     const readonly = boolean('readonly', false);
     const disabled = boolean('disabled', false);
-    const plaintext = boolean('plaintext', false);
 
     return ({
       template: `
@@ -60,11 +60,10 @@ storiesOf('Components-Form|Input', module)
           :round="${round}"
           :readonly="${readonly}"
           :disabled="${disabled}"
-          :plaintext="${plaintext}"
           size="${size}"
           placeholder="Please Input">
           <template v-if="${prepend}" slot="prepend">$</template>
-          <template v-if="${append}"  slot="append">.00</template>
+          <template v-if="${append}" slot="append">.00</template>
         </vu-input>
       </div>
       `,

@@ -17,6 +17,7 @@
       :value="currentValue"
       :placeholder="placeholder"
       :readonly="readonly"
+      :disabled="disabled"
       :class="inputClasses"
       v-on="listeners">
 
@@ -79,6 +80,7 @@ export default {
     label: String,
     placeholder: String,
     helpText: String,
+    // if input group, not work
     plaintext: Boolean,
   },
   data() {
@@ -93,11 +95,12 @@ export default {
         { [`input-group-${this.size}`]: Boolean(this.size) },
         { round: this.round },
         { [`status-${this.status}`]: Boolean(this.status) },
+        { disabled: this.disabled },
       ];
     },
     inputClasses() {
       return [
-        `form-control${this.plaintext ? '-plaintext' : ''}`,
+        `form-control${(this.plaintext && !(this.hasSlot('prepend') || this.hasSlot('prepend'))) ? '-plaintext' : ''}`,
         { [`form-control-${this.size}`]: Boolean(this.size) },
       ];
     },
