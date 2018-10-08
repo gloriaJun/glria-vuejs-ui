@@ -16,20 +16,14 @@
 ### Props
 | Name | Type | Default | Required | Description |
 | ------ | ----------- | ------ |:-----:|:-------------|
-| vertical   | Boolean | false | no | |
-
-#### Nav Item
-| Name | Type | Default | Required | Description |
-| ------ | ----------- | ------ |:-----:|:-------------|
-| value   | Number | 1 | no | current page number |
-| total   | Number | - | no | total item count |
-| perPage   | Number | 10 | no | item count of each page |
-| border   | Boolean | false | no | |
-| size   | String | '' | no | default, large(lg), small(sm) |
-| align   | String | '' | no | left(default), center, right |
+| value | Number | 1 | no | current page number |
+| total | Number | - | no | total item count |
+| perPage | Number | 10 | no | item count of each page |
+| border | Boolean | false | no | |
+| size | String | '' | no | default, large(lg), small(sm) |
+| align | String | '' | no | left(default), center, right |
 
 ### Events
-#### Nav Item
 | Event Name | Parameters | Description |
 | ------ | ----------- | ------ |:-----:|:-------------|
 | page-change | current | triggers when current-page changes |
