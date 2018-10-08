@@ -1,14 +1,8 @@
-# Alert
+# Input
 
 ## Examples
 ### Basic
-<code-pen hash='RYBgXR' :height='570'></code-pen>
-
-### closable
-<code-pen hash='bxjWON'></code-pen>
-
-### icon 
-<code-pen hash='QVBvNX' :height='570'></code-pen>
+<code-pen hash='ZMMEze' :height="200"></code-pen>
 
 
 ## API
