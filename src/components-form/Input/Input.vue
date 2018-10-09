@@ -77,10 +77,8 @@ export default {
       default: 'text',
       validator: value => TYPES.indexOf(value) > -1,
     },
-    label: String,
     placeholder: String,
-    helpText: String,
-    // if input group, not work
+    // if append or prepend is active, not work
     plaintext: Boolean,
   },
   data() {
