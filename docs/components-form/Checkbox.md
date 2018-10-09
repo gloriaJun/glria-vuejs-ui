@@ -12,7 +12,7 @@
 
 ### Style Option
 ##### inline(default) or stacked
-<code-pen hash='qJRYBM' :height="420"></code-pen>
+<code-pen hash='qJRYBM' :height="520"></code-pen>
 
 ##### disabled
 <code-pen hash='pxRaZB' :height="200"></code-pen>

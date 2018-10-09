@@ -2,19 +2,24 @@
 
 ## Examples
 ### Basic
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='bmqbwY' :height="250"></code-pen>
+
+### Disabled
+<code-pen hash='vVxBRx' :height="150"></code-pen>
 
 
 ## API
 ### Props
 | Name | Type | Default | Required | Description |
 | ------ | ----------- | ------ |:-----:|:-------------|
-| color   | String | 'primary' | no | Color of the alert |
-| icon   | String | - | no | show custom icon |
-| showIcon   | Boolean | false | no | show icon by color<br/>(info, success, warning, danger) |
-| closable   | Boolean | false | no | show close icon for alert close |
+| v-model | String, Number, Boolean | | no | |
+| checkedValue | String, Number, Boolean | true | no | |
+| uncheckedValue | String, Number, Boolean | false | no | |
+| color | String | 'primary' | no | Color of the alert |
+| showLabel | Boolean | false | no | |
+| disabled | Boolean | false | no | |
 
 ### Events
 | Event Name | Parameters | Description |
 | ------ | ----------- | ------ |
-| close   | - | when alert closed |
+| change | - | triggers when button clicked |
