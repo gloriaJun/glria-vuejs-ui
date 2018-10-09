@@ -61,6 +61,7 @@ export default {
     },
   },
   mounted() {
+    console.log('button style ? ', this.isButtonStyle);
     this.checked = this.$refs.checkbox && this.$refs.checkbox.checked;
     this.setIndeterminate(this.indeterminate);
   },
