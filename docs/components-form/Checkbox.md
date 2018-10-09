@@ -2,27 +2,23 @@
 
 ## Examples
 ### Basic
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='ReKQPG' :height="250"></code-pen>
 
 ### Checkbox Group 
-##### by using Options
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-##### by using sub component
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-### Style Option
-##### disabled
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-##### inline(default) or stacked
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-### Indeterminate
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='YJNeqW' :height="300"></code-pen>
 
 ### Button Style
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='QZdmRN' :height="200"></code-pen>
+
+### Style Option
+##### inline(default) or stacked
+<code-pen hash='qJRYBM' :height="420"></code-pen>
+
+##### disabled
+<code-pen hash='pxRaZB' :height="200"></code-pen>
+
+### Indeterminate
+<code-pen hash='mzRLVN' :height="200"></code-pen>
 
 ## API
 ### Props
