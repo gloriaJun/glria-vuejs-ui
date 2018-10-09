@@ -2,19 +2,32 @@
 
 ## Examples
 ### Basic
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='JmEQOy' :height="200"></code-pen>
 
+### Show Step
+<code-pen hash='VEPJEB' :height="200"></code-pen>
+
+### Disabled
+<code-pen hash='KGajJz' :height="200"></code-pen>
+
+### Range
+<code-pen hash='YJNoMR' :height="200"></code-pen>
 
 ## API
 ### Props
 | Name | Type | Default | Required | Description |
 | ------ | ----------- | ------ |:-----:|:-------------|
-| color   | String | 'primary' | no | Color of the alert |
-| icon   | String | - | no | show custom icon |
-| showIcon   | Boolean | false | no | show icon by color<br/>(info, success, warning, danger) |
-| closable   | Boolean | false | no | show close icon for alert close |
+| v-model | String, Number, Array | | no | if array type, set range |
+| color  | String | 'primary' | no | Color of the alert |
+| min | Number | 0 | no | min value |
+| max| Number | 100 | no | max value |
+| step | Number | 1 | no | |
+| showValue | Boolean | false | no | |
+| showStep | Boolean | false | no | |
+| showTooltip | Boolean | false | no | |
+| disabled | Boolean | false | no | |
 
 ### Events
 | Event Name | Parameters | Description |
 | ------ | ----------- | ------ |
-| close   | - | when alert closed |
+| change | - | when value is changed |
