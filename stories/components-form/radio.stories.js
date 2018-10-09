@@ -82,7 +82,7 @@ storiesOf('Components-Form|Radio', module)
           :stacked="${stacked}"
           color="${color}"
           size="${size}"
-          buttonStyle/>
+          button-style/>
       </div>
 
       `,

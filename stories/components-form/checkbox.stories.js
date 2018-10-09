@@ -111,7 +111,7 @@ storiesOf('Components-Form|Checkbox', module)
           :stacked="${stacked}"
           color="${color}"
           size="${size}"
-          buttonStyle/>
+          button-style/>
       </div>
       `,
     });
