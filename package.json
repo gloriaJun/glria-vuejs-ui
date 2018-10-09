@@ -1,6 +1,6 @@
 {
   "name": "@gloriajun/gvu",
-  "version": "0.1.14-rc0.9",
+  "version": "0.1.15",
   "homepage": "https://gloriajun.github.io/glria-vuejs-ui/",
   "description": "UI components for Vue.js based on Bootstrap",
   "license": "MIT",
