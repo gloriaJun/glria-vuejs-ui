@@ -10,7 +10,7 @@
       :value="checkedValue"
       :true-value="checkedValue"
       :false-value="uncheckedValue"
-      :disabled="disabled"
+      :disabled="isDisabled"
       type="checkbox"
       class="custom-control-input"
       @change="handleChange">
