@@ -35,7 +35,7 @@ storiesOf('Components-Form|Slider', module)
           color="${color}"
           :min="${min}"
           :max="${max}"
-          :showStep="${showStep}"
+          :show-step="${showStep}"
           :disabled="${disabled}"
           @change="onChange"></vu-slider>
       </div>

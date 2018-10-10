@@ -2,21 +2,17 @@
 
 ## Examples
 ### Basic
-##### by using Options
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-##### by using sub component
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-### Style Option
-##### disabled
-<code-pen hash='ZMMEze' :height="200"></code-pen>
-
-##### inline(default) or stacked
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='EdZzOj' :height="300"></code-pen>
 
 ### Button Style
-<code-pen hash='ZMMEze' :height="200"></code-pen>
+<code-pen hash='JmEqQR' :height="200"></code-pen>
+
+### Style Option
+##### inline(default) or stacked
+<code-pen hash='OBWeyo' :height="500"></code-pen>
+
+##### disabled
+<code-pen hash='xygoxE' :height="220"></code-pen>
 
 ## API
 ### Props
