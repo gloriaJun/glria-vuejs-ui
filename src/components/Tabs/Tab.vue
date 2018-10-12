@@ -6,7 +6,7 @@
         :key="index"
         :disabled="tab.disabled"
         :active="tab.isActive"
-        @click.prevent="handleClickTab(tab)">
+        @click="handleClickTab(tab)">
         <vu-slot
           v-if="tab.$slots.label"
           :component="tab"
