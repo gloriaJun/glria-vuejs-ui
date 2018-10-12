@@ -1,6 +1,11 @@
 # glria-vuejs-ui
 UI components for Vue.js based on Bootstrap
 
+## CI/CD
+ci : https://travis-ci.com/gloriaJun/glria-vuejs-ui    
+cd : https://www.npmjs.com/package/@gloriajun/gvu
+
+
 ## Install
 ```bash
 yarn add @gloriajun/gvu
