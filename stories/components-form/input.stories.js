@@ -4,6 +4,7 @@ import VueInfoAddon from 'storybook-addon-vue-info';
 import {
   selectV2,
   boolean,
+  text,
 } from '@storybook/addon-knobs';
 
 import { STATUS_TYPES, SIZES, INPUT_TYPES } from '../constants';
@@ -17,7 +18,7 @@ storiesOf('Components-Form|Input', module)
     const round = boolean('round', false);
     const readonly = boolean('readonly', false);
     const disabled = boolean('disabled', false);
-    const plaintext = boolean('plaintext', false);
+    const plaintext = boolean('plainText', false);
 
     return ({
       data() {
@@ -44,8 +45,6 @@ storiesOf('Components-Form|Input', module)
     });
   })
   .add('prepend & append', () => {
-    const prepend = boolean('prepend', true);
-    const append = boolean('append', true);
     const status = selectV2('status', {default: '', ...STATUS_TYPES}, '');
     const size = selectV2('size', SIZES, '');
     const round = boolean('round', false);
@@ -62,8 +61,13 @@ storiesOf('Components-Form|Input', module)
           :disabled="${disabled}"
           size="${size}"
           placeholder="Please Input">
-          <template v-if="${prepend}" slot="prepend">$</template>
-          <template v-if="${append}" slot="append">.00</template>
+          <vu-checkbox slot="prepend"></vu-checkbox>
+          <template slot="append">.00</template>
+        </vu-input>
+        
+        <vu-input placeholder="Please Input" style="margin-top: .5rem;">
+          <template slot="prepend">Http://</template>
+          <template slot="append">.00</template>
         </vu-input>
       </div>
       `,

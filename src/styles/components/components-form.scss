@@ -51,6 +51,30 @@
 }
 
 /**
+  input
+ */
+.vu-input {
+  .input-group-text {
+    .vu-checkbox {
+      margin-right: 0;
+      label:before {
+        border: 1px solid rgba($input-group-addon-color, .5);
+        background-color: #ffffff;
+      }
+    }
+  }
+  .input-group-prepend {
+  }
+  .input-group-append {
+    //@extend .input-group-text;
+    //&:last-child {
+    //  border-top-left-radius: 0;
+    //  border-bottom-left-radius: 0;
+    //}
+  }
+}
+
+/**
   slider
 */
 .vu-slider {

@@ -6,9 +6,9 @@
     <div
       v-if="hasSlot('prepend')"
       class="input-group-prepend">
-      <span class="input-group-text">
+      <div class="input-group-text">
         <slot name="prepend"/>
-      </span>
+      </div>
     </div>
 
     <input
@@ -24,9 +24,9 @@
     <div
       v-if="hasSlot('append')"
       class="input-group-append">
-      <span class="input-group-text">
+      <div class="input-group-text">
         <slot name="append"/>
-      </span>
+      </div>
     </div>
 
   </div>
