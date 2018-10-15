@@ -27,13 +27,13 @@
     $radius: $vu-border-radius-md;
 
     > .input-group-prepend:first-child > .input-group-text,
-    > .form-control:first-child {
+    > .input-box > .form-control {
       border-top-left-radius: $radius;
       border-bottom-left-radius: $radius;
     }
 
     > .input-group-append:last-child > .input-group-text,
-    > .form-control:last-child {
+    > .input-box > .form-control {
       border-top-right-radius: $radius;
       border-bottom-right-radius: $radius;
     }
@@ -54,6 +54,55 @@
   input
  */
 .vu-input {
+  &.input-group > .input-box {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+
+    &:not(:first-child) > .form-control {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:not(:last-child) > .form-control {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &.input-prefix .input-box > .form-control {
+    padding-left: 30px;
+  }
+  &.input-suffix .input-box > .form-control {
+    padding-right: 30px;
+  }
+  .input-box {
+    position: relative;
+    .prefix-icon, .suffix-icon {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      display: flex;
+      align-items: center;
+      color: rgba($input-group-addon-color, .6);
+      transition: all .3s;
+      pointer-events: none;
+    }
+    .prefix-icon {
+      left: 10px;
+    }
+    .suffix-icon {
+      right: 10px;
+    }
+    .input-clear {
+      cursor: pointer;
+      pointer-events: auto;
+      &:hover, &:focus {
+        color: $input-group-addon-color;
+      }
+    }
+  }
+
   .input-group-text {
     .vu-checkbox {
       margin-right: 0;
@@ -62,15 +111,6 @@
         background-color: #ffffff;
       }
     }
-  }
-  .input-group-prepend {
-  }
-  .input-group-append {
-    //@extend .input-group-text;
-    //&:last-child {
-    //  border-top-left-radius: 0;
-    //  border-bottom-left-radius: 0;
-    //}
   }
 }
 

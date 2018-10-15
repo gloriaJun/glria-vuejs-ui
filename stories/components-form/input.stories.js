@@ -18,6 +18,7 @@ storiesOf('Components-Form|Input', module)
     const round = boolean('round', false);
     const readonly = boolean('readonly', false);
     const disabled = boolean('disabled', false);
+    const clearable = boolean('clearable', false);
     const plaintext = boolean('plainText', false);
 
     return ({
@@ -38,8 +39,52 @@ storiesOf('Components-Form|Input', module)
           :readonly="${readonly}"
           :disabled="${disabled}"
           :plaintext="${plaintext}"
+          :clearable="${clearable}"
           size="${size}"
           placeholder="Please Input"></vu-input>
+      </div>
+      `,
+    });
+  })
+  .add('prefix & suffix', () => {
+    const status = selectV2('status', {default: '', ...STATUS_TYPES}, '');
+    const size = selectV2('size', SIZES, '');
+    const round = boolean('round', false);
+    const readonly = boolean('readonly', false);
+    const disabled = boolean('disabled', false);
+
+    return ({
+      template: `
+      <div>
+        <vu-input
+          status="${status}"
+          :round="${round}"
+          :readonly="${readonly}"
+          :disabled="${disabled}"
+          prefix-icon="search"
+          size="${size}"
+          placeholder="Please Input">
+        </vu-input>
+        
+        <vu-input
+          suffix-icon="search"
+          placeholder="Please Input"
+          style="margin-top: .5rem;">
+        </vu-input>   
+             
+        <vu-input
+          prefix-icon="search"
+          placeholder="Please Input"
+          style="margin-top: .5rem;">
+          <template slot="prepend">Http://</template>
+        </vu-input>
+        
+        <vu-input
+          suffix-icon="search"
+          placeholder="Please Input"
+          style="margin-top: .5rem;">
+          <template slot="append">.00</template>
+        </vu-input>
       </div>
       `,
     });
@@ -65,8 +110,19 @@ storiesOf('Components-Form|Input', module)
           <template slot="append">.00</template>
         </vu-input>
         
-        <vu-input placeholder="Please Input" style="margin-top: .5rem;">
+        <vu-input
+          :round="${round}"
+          size="${size}"
+          placeholder="Please Input"
+          style="margin-top: .5rem;">
           <template slot="prepend">Http://</template>
+        </vu-input>        
+        
+        <vu-input
+          :round="${round}"
+          size="${size}"
+          placeholder="Please Input"
+          style="margin-top: .5rem;">
           <template slot="append">.00</template>
         </vu-input>
       </div>

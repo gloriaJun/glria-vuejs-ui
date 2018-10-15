@@ -1,7 +1,9 @@
 <template>
   <div
     :class="classes"
-    class="vu-input vu-form-control">
+    class="vu-input vu-form-control"
+    @mouseenter="isHover = true"
+    @mouseleave="isHover = false">
 
     <div
       v-if="hasSlot('prepend')"
@@ -11,15 +13,35 @@
       </div>
     </div>
 
-    <input
-      :type="type"
-      :id="id"
-      :value="currentValue"
-      :placeholder="placeholder"
-      :readonly="readonly"
-      :disabled="disabled"
-      :class="inputClasses"
-      v-on="listeners">
+    <div class="input-box">
+      <span
+        v-if="hasPrefix"
+        class="prefix-icon">
+        <vu-icon :icon="prefixIcon"/>
+      </span>
+
+      <input
+        ref="input"
+        :type="type"
+        :id="id"
+        :value="currentValue"
+        :placeholder="placeholder"
+        :readonly="readonly"
+        :disabled="disabled"
+        :class="inputClasses"
+        v-on="listeners">
+
+      <span
+        v-if="hasSuffix"
+        class="suffix-icon">
+        <vu-icon
+          v-if="showClearIcon"
+          icon="times-circle"
+          class="input-clear"
+          @click="handleClickClear"/>
+        <vu-icon :icon="suffixIcon"/>
+      </span>
+    </div>
 
     <div
       v-if="hasSlot('append')"
@@ -78,18 +100,25 @@ export default {
       validator: value => TYPES.indexOf(value) > -1,
     },
     placeholder: String,
+    clearable: Boolean,
+    prefixIcon: String,
+    suffixIcon: String,
     // if append or prepend is active, not work
     plaintext: Boolean,
   },
   data() {
     return {
       currentValue: this.value,
+      isFocus: false,
+      isHover: false,
     };
   },
   computed: {
     classes() {
       return [
         { 'input-group': this.isInputGroup },
+        { 'input-prefix': this.hasPrefix },
+        { 'input-suffix': this.hasSuffix },
         { [`input-group-${this.size}`]: Boolean(this.size) },
         { round: this.round },
         { [`status-${this.status}`]: Boolean(this.status) },
@@ -106,10 +135,25 @@ export default {
       return {
         ...this.$listeners,
         input: event => this.handleInput(event),
+        focus: event => this.handleFocus(event),
+        blur: event => this.handleBlur(event),
       };
+    },
+    hasPrefix() {
+      return this.prefixIcon;
+    },
+    hasSuffix() {
+      return this.suffixIcon || this.clearable;
     },
     isInputGroup() {
       return this.hasSlot('prepend') || this.hasSlot('append');
+    },
+    showClearIcon() {
+      return this.clearable &&
+        !this.disabled &&
+        !this.readonly &&
+        this.currentValue !== '' &&
+        (this.isFocus || this.isHover);
     },
   },
   watch: {
@@ -121,12 +165,27 @@ export default {
     },
   },
   methods: {
+    focus() {
+      this.$refs.input.focus();
+    },
     /**
      * @event when input
      * @param event
      */
     handleInput(event) {
       this.currentValue = event.target.value;
+    },
+    handleFocus(event) {
+      this.isFocus = true;
+      this.$emit('focus', event);
+    },
+    handleBlur(event) {
+      this.isFocus = false;
+      this.$emit('blur', event);
+    },
+    handleClickClear() {
+      this.currentValue = '';
+      this.focus();
     },
   },
 };
