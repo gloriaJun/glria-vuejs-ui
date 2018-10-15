@@ -12,7 +12,6 @@ export default {
   data() {
     return {
       formId: this.id || uuid(),
-      currentValue: this.value,
     };
   },
   computed: {
@@ -47,14 +46,6 @@ export default {
         size ? `btn-${size}` : '',
         { disabled: this.isDisabled },
       ];
-    },
-  },
-  watch: {
-    value(newVal) {
-      this.currentValue = newVal;
-    },
-    currentValue(newVal) {
-      this.$emit('input', newVal);
     },
   },
 };
