@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import formMixin from '../../utils/formMixin';
-import FormRadioCheckMixin from '../../utils/formRadioCheckMixin';
+import formMixin from '../../mixins/formMixin';
+import FormRadioCheckMixin from '../../mixins/formRadioCheckMixin';
 
 export default {
   name: 'VuCheckbox',

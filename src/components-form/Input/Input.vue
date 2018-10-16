@@ -57,28 +57,16 @@
 <script>
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
-import slotMixin from '../../utils/slotMixin';
-
-// Valid supported input types
-const TYPES = [
-  'text',
-  'password',
-  'email',
-  'number',
-  'url',
-  'tel',
-  'search',
-  'range',
-  'color',
-  'date',
-  'time',
-  'month',
-  'week',
-];
+import formMixin from '../../mixins/formMixin';
+import slotMixin from '../../mixins/slotMixin';
+import inputTypes from './input-types';
 
 export default {
   name: 'VuInput',
-  mixins: [slotMixin],
+  mixins: [
+    slotMixin,
+    formMixin,
+  ],
   props: {
     id: String,
     value: [String, Number],
@@ -97,7 +85,7 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validator: value => TYPES.indexOf(value) > -1,
+      validator: value => inputTypes.includes(value),
     },
     placeholder: String,
     clearable: Boolean,

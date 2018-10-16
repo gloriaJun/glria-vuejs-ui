@@ -18,8 +18,8 @@
 
 <script>
 import VuRadio from './Radio.vue';
-import formOptionMixin from '../../utils/formOptionMixin';
-import formRadioCheckGroupMixin from '../../utils/formRadioCheckGroupMixin';
+import formOptionMixin from '../../mixins/formOptionMixin';
+import formRadioCheckGroupMixin from '../../mixins/formRadioCheckGroupMixin';
 
 export default {
   name: 'VuRadioGroup',

@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import formMixin from '../../utils/formMixin';
+import formMixin from '../../mixins/formMixin';
 import colorUtility from '../../utils/color';
 
 export default {

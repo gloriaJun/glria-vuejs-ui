@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import SlotMixin from '../../utils/slotMixin';
+import SlotMixin from '../../mixins/slotMixin';
 
 export default {
   name: 'VuNavbar',

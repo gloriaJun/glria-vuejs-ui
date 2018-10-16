@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import messageMixin from '../../utils/messageMixin';
+import messageMixin from '../../mixins/messageMixin';
 
 export default {
   name: 'VuAlert',

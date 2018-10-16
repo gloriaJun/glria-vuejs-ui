@@ -1,5 +1,5 @@
-import colorUtility from './color';
-import sizeUtility from './size';
+import colorUtility from '../utils/color';
+import sizeUtility from '../utils/size';
 
 export default {
   props: {

@@ -18,8 +18,8 @@
 
 <script>
 import VuCheckbox from '../Checkbox/Checkbox.vue';
-import formOptionMixin from '../../utils/formOptionMixin';
-import formRadioCheckGroupMixin from '../../utils/formRadioCheckGroupMixin';
+import formOptionMixin from '../../mixins/formOptionMixin';
+import formRadioCheckGroupMixin from '../../mixins/formRadioCheckGroupMixin';
 
 export default {
   name: 'VuCheckboxGroup',
