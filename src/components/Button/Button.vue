@@ -2,6 +2,7 @@
   <component
     v-bind="$attrs"
     :is="isLink ? 'a' : 'button'"
+    :type="!isLink && type"
     :href="isLink && href"
     :class="elClasses"
     class="vu-button btn"

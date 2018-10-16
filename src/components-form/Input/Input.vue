@@ -58,7 +58,6 @@
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
 import slotMixin from '../../utils/slotMixin';
-import formMixin from '../../utils/formMixin';
 
 // Valid supported input types
 const TYPES = [
@@ -79,10 +78,7 @@ const TYPES = [
 
 export default {
   name: 'VuInput',
-  mixins: [
-    slotMixin,
-    formMixin,
-  ],
+  mixins: [slotMixin],
   props: {
     id: String,
     value: [String, Number],
@@ -95,6 +91,8 @@ export default {
       type: String,
       validator: value => sizeUtility.isSizes(value),
     },
+    disabled: Boolean,
+    readonly: Boolean,
     round: Boolean,
     type: {
       type: String,
@@ -110,6 +108,7 @@ export default {
   },
   data() {
     return {
+      currentValue: this.value,
       isFocus: false,
       isHover: false,
     };
@@ -155,6 +154,14 @@ export default {
         !this.readonly &&
         this.currentValue !== '' &&
         (this.isFocus || this.isHover);
+    },
+  },
+  watch: {
+    value(newVal) {
+      this.currentValue = newVal;
+    },
+    currentValue(newVal) {
+      this.$emit('input', newVal);
     },
   },
   methods: {
