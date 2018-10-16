@@ -12,8 +12,13 @@
     <!-- form control -->
     <slot/>
 
+    <div
+      v-if="validMessage || invalidMessage"
+      :class="[`${validMessage ? valid : invalid}-feedback`]">
+      {{ validMessage ? validMessage : invalidMessage }}
+    </div>
     <small
-      v-if="helpText"
+      v-else-if="helpText"
       class="form-text text-muted">
       {{ helpText }}
     </small>
@@ -34,6 +39,8 @@ export default {
     id: String,
     label: String,
     helpText: String,
+    validMessage: String,
+    invalidMessage: String,
   },
   data() {
     return {
