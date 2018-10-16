@@ -57,7 +57,6 @@
 <script>
 import colorUtility from '../../utils/color';
 import sizeUtility from '../../utils/size';
-import formMixin from '../../utils/formMixin';
 import slotMixin from '../../utils/slotMixin';
 
 // Valid supported input types
@@ -79,10 +78,7 @@ const TYPES = [
 
 export default {
   name: 'VuInput',
-  mixins: [
-    formMixin,
-    slotMixin,
-  ],
+  mixins: [slotMixin],
   props: {
     id: String,
     value: [String, Number],
