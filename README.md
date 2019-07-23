@@ -2,8 +2,8 @@
 UI components for Vue.js based on Bootstrap
 
 > Previous my ui component 
-> Demo : https://gloriajun.gitlab.io/vip-component
-> source -> https://gitlab.com/gloriaJun/vip-component/tree/develop
+> - Demo : https://gloriajun.gitlab.io/vip-component
+> - source -> https://gitlab.com/gloriaJun/vip-component/tree/develop
 
 ## Install
 ```bash
